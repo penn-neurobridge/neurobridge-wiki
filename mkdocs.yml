@@ -100,8 +100,8 @@ extra:
       - { dir: redcap,           title: "REDCap & Clinical Metadata" }
       - { dir: operations,       title: "Operations" }
     cnt_manual:        # where cnt: links resolve. style: github (Markdown on GitHub) | site (a hosted build)
-      url: https://github.com/penn-cnt/cnt-procedures/blob/main/docs/
-      style: github
+      url: https://penn-cnt.github.io/cnt-procedures/
+      style: site
     stages:
       - "Data Collection"
       - "Data Governance"
