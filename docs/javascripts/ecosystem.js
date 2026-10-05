@@ -1,116 +1,167 @@
-/* Landing-page graph: the lab in the middle, the partner centers around it, and the procedures the
-   lab follows at a center drawn as small nodes on the edge between the two. Data: map/graph.json. */
+/* Landing-page graph: the lab in the middle, the partner centers around it, and the procedures that
+   involve a center drawn as small nodes on the edge between the two. Data: map/graph.json.
+   Responsive: the SVG is laid out in real pixels for the width it gets (text never scales down),
+   and below 640 px it becomes a list. No library needed. */
 (function () {
   const THEME_COLORS = {
     "Data": "#2a78d6", "Compute": "#eb6834", "Imaging": "#1baf7a",
     "Electrophysiology": "#eda100", "REDCap & Clinical Metadata": "#e87ba4", "Operations": "#008300"
   };
+  const NS = "http://www.w3.org/2000/svg";
+  const el = (tag, attrs, parent) => {
+    const e = document.createElementNS(NS, tag);
+    for (const k in attrs) e.setAttribute(k, attrs[k]);
+    if (parent) parent.appendChild(e);
+    return e;
+  };
+  const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 
-  async function boot() {
-    const host = document.getElementById("nb-ecosystem");
-    if (!host || host.dataset.ready) return;
-    host.dataset.ready = "1";
-    const d3 = await import("https://cdn.jsdelivr.net/npm/d3@7/+esm");
-    const root = host.dataset.root || "./";
-    const data = await (await fetch(root + "map/graph.json", { cache: "no-store" })).json();
-    const centers = data.centers || [];
-    if (!centers.length) return;
+  let data = null, host = null, tip = null;
 
-    const W = 1000, H = 640, cx = W / 2, cy = H / 2;
-    const svg = d3.select(host).append("svg").attr("viewBox", [0, 0, W, H]).attr("role", "img")
-      .attr("aria-label", "The lab and its partner centers; the procedures the lab follows at each center are drawn on the connecting edge.");
-    const tip = d3.select(host).append("div").attr("class", "wm-tip").attr("hidden", true);
+  function wrap(name, max) {
+    const lines = []; let line = "";
+    name.split(" ").forEach(w => { if ((line + " " + w).trim().length > max) { lines.push(line.trim()); line = w; } else line += " " + w; });
+    lines.push(line.trim()); return lines;
+  }
 
-    // centers on a ring; the one with the most shared procedures sits to the right with extra room
-    const ordered = centers.slice().sort((a, b) => (b.shared_count || 0) - (a.shared_count || 0));
-    const n = ordered.length;
-    const pos = ordered.map((c, i) => {
-      const a = (i / n) * 2 * Math.PI;                       // 0 = east
-      const r = i === 0 ? 340 : 255;
-      return { c, x: cx + Math.cos(a) * r, y: cy + Math.sin(a) * r * 0.74, a };
+  function showTip(e, nd) {
+    tip.hidden = false;
+    tip.innerHTML = `<b>${esc(nd.title)}</b><br>${esc(nd.theme)}${nd.section ? " › " + esc(nd.section) : ""}<br><span>${esc(nd.stage)}</span>`;
+    const r = host.getBoundingClientRect();
+    tip.style.left = (e.clientX - r.left + 14) + "px"; tip.style.top = (e.clientY - r.top + 14) + "px";
+  }
+
+  function nodeCircle(parent, nd, x, y, r, root) {
+    const a = el("a", { href: nd.external ? nd.url : root + nd.url }, parent);
+    const c = el("circle", { cx: x, cy: y, r, fill: nd.external ? "#fff" : (THEME_COLORS[nd.theme] || "#888"),
+      stroke: nd.external ? (THEME_COLORS[nd.theme] || "#888") : "#fff", "stroke-width": nd.external ? 2 : 1.5 }, a);
+    c.addEventListener("mousemove", e => showTip(e, nd));
+    c.addEventListener("mouseleave", () => { tip.hidden = true; });
+    el("title", {}, c).textContent = nd.title;
+    return c;
+  }
+
+  function renderSvg(W, root) {
+    const centers = data.centers.slice().sort((a, b) => (b.shared_count || 0) - (a.shared_count || 0));
+    const n = centers.length;
+    const H = Math.round(Math.max(500, Math.min(640, W * 0.8)));
+    const cx = W / 2, cy = H / 2;
+    const compact = W < 900;
+    const hubR = compact ? 32 : 40, labR = compact ? 56 : 70, dotR = compact ? 4.5 : 5.5;
+    const ringR = Math.min(W * 0.33, (H / 2 - hubR - 78) / 0.72), farR = Math.min(W * 0.42, W / 2 - 112, ringR * 1.32);
+
+    const svg = el("svg", { viewBox: `0 0 ${W} ${H}`, width: W, height: H, role: "img",
+      "aria-label": "The lab and its partner centers; the procedures that involve a center sit on the edge between it and the lab." }, host);
+
+    const pos = centers.map((c, i) => {
+      const a = (i / n) * 2 * Math.PI, r = i === 0 ? farR : ringR;
+      return { c, x: cx + Math.cos(a) * r, y: cy + Math.sin(a) * r * 0.72 };
     });
 
-    // edges
-    const edges = svg.append("g");
+    const edges = el("g", {}, svg);
     pos.forEach(p => {
-      if (p.c.shared_count) edges.append("line").attr("x1", cx).attr("y1", cy).attr("x2", p.x).attr("y2", p.y)
-        .attr("stroke", "var(--nb-soft)").attr("stroke-width", 44).attr("stroke-linecap", "round");
-      edges.append("line").attr("x1", cx).attr("y1", cy).attr("x2", p.x).attr("y2", p.y)
-        .attr("stroke", "var(--nb-line)").attr("stroke-width", p.c.shared_count ? 1.5 + Math.min(10, p.c.shared_count / 6) : 1.5)
-        .attr("stroke-opacity", p.c.shared_count ? 0.9 : 0.8).attr("stroke-dasharray", p.c.shared_count ? null : "4 4");
+      if (p.c.shared_count) el("line", { x1: cx, y1: cy, x2: p.x, y2: p.y, stroke: "var(--nb-soft)", "stroke-width": compact ? 34 : 44, "stroke-linecap": "round" }, edges);
+      el("line", { x1: cx, y1: cy, x2: p.x, y2: p.y, stroke: "var(--nb-line)", "stroke-width": 1.5,
+        "stroke-dasharray": p.c.shared_count ? "" : "4 4" }, edges);
     });
 
-    // shared procedures as nodes along each edge (phyllotaxis around the edge's midpoint)
-    const dots = svg.append("g");
+    // procedures on each edge: phyllotaxis around the midpoint, stretched along the edge
+    const dots = el("g", {}, svg);
     pos.forEach(p => {
       const nodes = data.nodes.filter(nd => nd.center === p.c.id);
       if (!nodes.length) return;
-      const mx = cx + (p.x - cx) * 0.5, my = cy + (p.y - cy) * 0.5;
+      const ex = p.x - cx, ey = p.y - cy, L = Math.hypot(ex, ey), ux = ex / L, uy = ey / L;
+      const mx = cx + ex * 0.5, my = cy + ey * 0.5;
+      const room = (L - labR - hubR - 12) / 2;                 // half-length available along the edge
       const golden = Math.PI * (3 - Math.sqrt(5));
-      const ex = (p.x - cx), ey = (p.y - cy), L = Math.hypot(ex, ey), ux = ex / L, uy = ey / L;
+      const spread = (dotR * 1.45) * Math.sqrt(nodes.length);  // nominal cluster radius
+      const kAlong = Math.max(1, Math.min(1.7, room / spread)), kAcross = 0.95;
       nodes.forEach((nd, i) => {
-        const rr = 7.5 * Math.sqrt(i + 0.5), th = i * golden;
-        // stretch along the edge, squeeze across it
-        const along = Math.cos(th) * rr * 1.7, across = Math.sin(th) * rr * 0.95;
-        nd._x = mx + ux * along - uy * across; nd._y = my + uy * along + ux * across;
+        const rr = dotR * 1.45 * Math.sqrt(i + 0.5), th = i * golden;
+        const along = Math.cos(th) * rr * kAlong, across = Math.sin(th) * rr * kAcross;
+        nodeCircle(dots, nd, mx + ux * along - uy * across, my + uy * along + ux * across, dotR, root);
       });
-      dots.selectAll(null).data(nodes).enter().append("a")
-        .attr("href", nd => nd.external ? nd.url : root + nd.url)
-        .append("circle").attr("cx", nd => nd._x).attr("cy", nd => nd._y).attr("r", 5.5)
-        .attr("fill", nd => nd.external ? "#fff" : (THEME_COLORS[nd.theme] || "#888"))
-        .attr("stroke", nd => THEME_COLORS[nd.theme] || "#888").attr("stroke-width", 2)
-        .on("mousemove", (e, nd) => {
-          tip.attr("hidden", null).html(`<b>${nd.title}</b><br>${nd.theme}${nd.section ? " › " + nd.section : ""}<br><span>${nd.stage}</span>`);
-          const r = host.getBoundingClientRect();
-          tip.style("left", (e.clientX - r.left + 14) + "px").style("top", (e.clientY - r.top + 14) + "px");
-        })
-        .on("mouseleave", () => tip.attr("hidden", true));
     });
 
-    // the lab's own procedures that involve no particular center: a ring around the lab
+    // the lab's own procedures that involve no center: a ring around the lab
     const own = data.nodes.filter(nd => !nd.external && !nd.center);
     if (own.length) {
-      const ring = svg.append("g");
-      own.forEach((nd, i) => { const a = -Math.PI / 2 + i * 2 * Math.PI / own.length; nd._x = cx + Math.cos(a) * 92; nd._y = cy + Math.sin(a) * 92; });
-      ring.selectAll(null).data(own).enter().append("a").attr("href", nd => root + nd.url)
-        .append("circle").attr("cx", nd => nd._x).attr("cy", nd => nd._y).attr("r", 5.5)
-        .attr("fill", nd => THEME_COLORS[nd.theme] || "#888").attr("stroke", "#fff").attr("stroke-width", 1.5)
-        .on("mousemove", (e, nd) => {
-          tip.attr("hidden", null).html(`<b>${nd.title}</b><br>${nd.theme}${nd.section ? " › " + nd.section : ""}<br><span>${nd.stage}</span>`);
-          const r = host.getBoundingClientRect();
-          tip.style("left", (e.clientX - r.left + 14) + "px").style("top", (e.clientY - r.top + 14) + "px");
-        })
-        .on("mouseleave", () => tip.attr("hidden", true));
+      const ring = el("g", {}, svg);
+      own.forEach((nd, i) => { const a = -Math.PI / 2 + i * 2 * Math.PI / own.length; nodeCircle(ring, nd, cx + Math.cos(a) * (labR + 22), cy + Math.sin(a) * (labR + 22), dotR, root); });
     }
 
-    // center hubs
-    const hubs = svg.append("g");
-    const hub = hubs.selectAll("g").data(pos).enter().append("a").attr("href", p => root + "centers/" + p.c.id + "/")
-      .append("g").attr("transform", p => `translate(${p.x},${p.y})`);
-    hub.append("circle").attr("r", 40).attr("fill", "#fff").attr("stroke", "var(--nb-navy)").attr("stroke-width", 2.5);
-    hub.append("text").attr("class", "eco-short").attr("text-anchor", "middle").attr("dy", 5).text(p => p.c.short);
-    hub.append("text").attr("class", "eco-name").attr("text-anchor", "middle")
-      .each(function (p) {
-        const words = p.c.name.split(" "); const lines = []; let line = "";
-        words.forEach(w => { if ((line + " " + w).trim().length > 26) { lines.push(line.trim()); line = w; } else line += " " + w; });
-        lines.push(line.trim());
-        const t = d3.select(this);
-        lines.forEach((l, i) => t.append("tspan").attr("x", 0).attr("dy", i === 0 ? 58 : 14).text(l));
-        if (p.c.shared_count) t.append("tspan").attr("class", "eco-count").attr("x", 0).attr("dy", 15).text(p.c.shared_count + (p.c.id === "cnt" ? " procedures run jointly" : " procedures"));
-      });
+    // hubs
+    pos.forEach(p => {
+      const a = el("a", { href: root + "centers/" + p.c.id + "/" }, svg);
+      const g = el("g", { transform: `translate(${p.x},${p.y})`, class: "eco-hub" }, a);
+      el("circle", { r: hubR, fill: "#fff", stroke: "var(--nb-navy)", "stroke-width": 2.5 }, g);
+      el("text", { class: "eco-short", "text-anchor": "middle", dy: 5 }, g).textContent = p.c.short;
+      const t = el("text", { class: "eco-name", "text-anchor": "middle" }, g);
+      wrap(p.c.name, compact ? 22 : 26).forEach((l, i) => { el("tspan", { x: 0, dy: i === 0 ? hubR + 18 : 14 }, t).textContent = l; });
+      if (p.c.shared_count) el("tspan", { x: 0, dy: 15, class: "eco-count" }, t).textContent =
+        p.c.shared_count + (p.c.id === "cnt" ? " procedures run jointly" : " procedures");
+    });
 
     // the lab
-    const lab = svg.append("a").attr("href", root + "lab-manual/start-here/").append("g").attr("transform", `translate(${cx},${cy})`);
-    lab.append("circle").attr("r", 70).attr("fill", "var(--nb-navy)");
-    lab.append("text").attr("class", "eco-lab").attr("text-anchor", "middle").attr("dy", -8).text("NeuroBridge");
-    lab.append("text").attr("class", "eco-lab").attr("text-anchor", "middle").attr("dy", 11).text("Lab");
-    lab.append("text").attr("class", "eco-lab-sub").attr("text-anchor", "middle").attr("dy", 28).text("data coordinating");
-    lab.append("text").attr("class", "eco-lab-sub").attr("text-anchor", "middle").attr("dy", 42).text("center");
+    const la = el("a", { href: root + "lab-manual/start-here/" }, svg);
+    const lg = el("g", { transform: `translate(${cx},${cy})` }, la);
+    el("circle", { r: labR, fill: "var(--nb-navy)" }, lg);
+    el("text", { class: "eco-lab", "text-anchor": "middle", dy: compact ? -4 : -8 }, lg).textContent = "NeuroBridge";
+    el("text", { class: "eco-lab", "text-anchor": "middle", dy: compact ? 14 : 11 }, lg).textContent = "Lab";
+    if (compact) {
+      el("text", { class: "eco-lab-sub eco-lab-sub--s", "text-anchor": "middle", dy: 27 }, lg).textContent = "data coordinating";
+      el("text", { class: "eco-lab-sub eco-lab-sub--s", "text-anchor": "middle", dy: 39 }, lg).textContent = "center";
+    } else {
+      el("text", { class: "eco-lab-sub", "text-anchor": "middle", dy: 28 }, lg).textContent = "data coordinating";
+      el("text", { class: "eco-lab-sub", "text-anchor": "middle", dy: 42 }, lg).textContent = "center";
+    }
+  }
 
-    // legend
-    const lg = d3.select(host).append("div").attr("class", "wm-legend");
-    lg.html(Object.entries(THEME_COLORS).map(([t, c]) => `<span class="wm-key"><i style="background:${c}"></i>${t}</span>`).join("") +
-      `<span class="wm-key wm-key-note">node = one procedure, on the edge of the center it involves · filled = in this wiki · hollow = in the CNT manual only · click to open</span>`);
+  function renderList(root) {
+    const centers = data.centers.slice().sort((a, b) => (b.shared_count || 0) - (a.shared_count || 0));
+    const box = document.createElement("div"); box.className = "eco-list"; host.appendChild(box);
+    const lab = document.createElement("a"); lab.className = "eco-list__lab"; lab.href = root + "lab-manual/start-here/";
+    lab.innerHTML = `<b>NeuroBridge Lab</b><span>data coordinating center</span>`;
+    box.appendChild(lab);
+    centers.forEach(c => {
+      const nodes = data.nodes.filter(nd => nd.center === c.id);
+      const byTheme = {};
+      nodes.forEach(nd => { byTheme[nd.theme] = (byTheme[nd.theme] || 0) + 1; });
+      const row = document.createElement("a"); row.className = "eco-list__row"; row.href = root + "centers/" + c.id + "/";
+      row.innerHTML = `<span class="eco-list__short">${esc(c.short)}</span>
+        <span class="eco-list__body"><b>${esc(c.name)}</b><span class="eco-list__rel">${esc(c.relation || "")}</span>
+        ${nodes.length ? `<span class="eco-list__counts">${Object.entries(byTheme).map(([t, k]) => `<span><i style="background:${THEME_COLORS[t] || "#888"}"></i>${k} ${esc(t)}</span>`).join("")}</span>` : ""}</span>`;
+      box.appendChild(row);
+    });
+  }
+
+  function legend() {
+    const lg = document.createElement("div"); lg.className = "wm-legend"; host.appendChild(lg);
+    lg.innerHTML = Object.entries(THEME_COLORS).map(([t, c]) => `<span class="wm-key"><i style="background:${c}"></i>${t}</span>`).join("") +
+      `<span class="wm-key wm-key-note">node = one procedure, on the edge of the center it involves · filled = in this wiki · hollow = in the CNT manual only · click to open</span>`;
+  }
+
+  let lastW = 0;
+  function render() {
+    const W = Math.floor(host.clientWidth);
+    if (!W || W === lastW) return;
+    lastW = W;
+    host.innerHTML = "";
+    tip = document.createElement("div"); tip.className = "wm-tip"; tip.hidden = true; host.appendChild(tip);
+    const root = host.dataset.root || "./";
+    if (W < 640) renderList(root); else { renderSvg(W, root); legend(); }
+  }
+
+  async function boot() {
+    host = document.getElementById("nb-ecosystem");
+    if (!host || host.dataset.ready) return;
+    host.dataset.ready = "1";
+    const root = host.dataset.root || "./";
+    data = await (await fetch(root + "map/graph.json", { cache: "no-store" })).json();
+    if (!(data.centers || []).length) return;
+    render();
+    if (window.ResizeObserver) new ResizeObserver(() => render()).observe(host);
+    else window.addEventListener("resize", render);
   }
 
   if (window.document$) { window.document$.subscribe(boot); } else { document.addEventListener("DOMContentLoaded", boot); }
