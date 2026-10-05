@@ -31,7 +31,7 @@ No patient identifiers. No credentials. One procedure per page. See `docs/about/
 
 ## Relationship to the CNT procedures manual
 
-The lab shares the CNT's epilepsy data pipelines. The CNT keeps the complete set of procedures, including the clinical and shared-system work the lab only depends on, in [penn-neurobridge/cnt-procedures](https://github.com/penn-neurobridge/cnt-procedures), maintained by the CNT associate director. This wiki keeps only the procedures the lab's own people run; pages that also exist in the CNT manual carry `source: cnt` and a note with the link, and pages that live only there are linked with `cnt:` links, resolved from one setting in `mkdocs.yml` (`extra.wiki.cnt_manual`; switch `style` to `site` once the CNT manual is hosted).
+The lab shares the CNT's epilepsy data pipelines. The CNT keeps the complete set of procedures, including the clinical and shared-system work the lab only depends on, in [penn-cnt/cnt-procedures](https://github.com/penn-cnt/cnt-procedures), maintained by the CNT associate director. This wiki keeps only the procedures the lab's own people run; pages that also exist in the CNT manual carry `source: cnt` and a note with the link, and pages that live only there are linked with `cnt:` links, resolved from one setting in `mkdocs.yml` (`extra.wiki.cnt_manual`; switch `style` to `site` once the CNT manual is hosted).
 
 ## Audit
 
