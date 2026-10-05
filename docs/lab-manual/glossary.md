@@ -22,7 +22,7 @@ order: 8
 | sEEG / iEEG | Stereo-EEG / intracranial EEG — recordings from implanted electrodes |
 | Natus | The clinical EEG recording system; recordings are exported from it |
 | natusdir, mef | The exported Natus directory; the compressed format (MEF) produced by natus2mef for [ieeg.org](http://ieeg.org) |
-| RID / HUP-number | Research ID used in REDCap and internal study records / CNT subject number (HUPXXX) used in the data-sharing workflow. The CNT SOP specifies HUP numbers rather than RID numbers for shared outputs; follow its identifier mapping and de-identification steps in [Overview of CNT Systems](../compute/overview/overview-of-cnt-systems.md). |
+| RID / HUP-number | Research ID used in REDCap and internal study records / CNT subject number (HUPXXX) used in the data-sharing workflow. The CNT SOP specifies HUP numbers rather than RID numbers for shared outputs; follow its identifier mapping and de-identification steps in [Overview of CNT Systems](cnt:compute/overview/overview-of-cnt-systems.md). |
 | BIDS | Brain Imaging Data Structure — a data organization standard. The lab's Data Structure v1.0 specification (being written into Data › Standards) defines the curated layout for Dataset 49; pipeline-specific input and session names may differ and require an explicit mapping. |
 | FAIR | Findable, Accessible, Interoperable, Reusable — the standard the lab's data is held to |
 | REDCap | The clinical research database; holds clinical variables and outcomes |

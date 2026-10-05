@@ -8,7 +8,7 @@ order: 2
 !!! warning "Draft"
     This section still needs the PI's pass. Edit it directly; the structure is a proposal.
 
-Everyone in the lab touches the same data infrastructure, so the roles differ in **what they own**, not in which systems they may use. Each role below lists what you own, what success looks like, which wiki *reader roles* to follow (these drive the [Map](../map/index.md) and the [Tags](../tags.md) page), and your first-month checklist. The onboarding steps common to everyone are in [§3](getting-set-up.md).
+Everyone in the lab touches the same data infrastructure, so the roles differ in **what they own**, not in which systems they may use. Each role below lists what you own, what success looks like, which wiki *reader roles* to follow (these drive the [Map](../map/index.md)), and your first-month checklist. The onboarding steps common to everyone are in [§3](getting-set-up.md).
 
 ## Research coordinator — data (informatics RC)
 

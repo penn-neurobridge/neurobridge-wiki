@@ -18,7 +18,7 @@ order: 9
 
 ## Access removal
 
-The data manager works the removal column of the [Onboarding & Offboarding Checklist](../operations/onboarding-and-offboarding/onboarding-and-offboarding-checklist.md): IRB protocols, PMACS and SEAS accounts, cnt1/cnt-fs, REDCap projects, [ieeg.org](http://ieeg.org) and Pennsieve projects, Box folders, AWS, GitHub, listservs, PennChart. Leftover user data on servers is organized and documented before removal.
+The data manager works the removal column of the [Onboarding & Offboarding Checklist](cnt:operations/onboarding-and-offboarding/onboarding-and-offboarding-checklist.md): IRB protocols, PMACS and SEAS accounts, cnt1/cnt-fs, REDCap projects, [ieeg.org](http://ieeg.org) and Pennsieve projects, Box folders, AWS, GitHub, listservs, PennChart. Leftover user data on servers is organized and documented before removal.
 
 ## Keep in touch
 

@@ -12,7 +12,7 @@ order: 6
 
 ## The protocols
 
-The lab's work runs under several IRB protocols (R01, R61/R33 and collaborative protocols among them) and each collaborating site is either covered by one or explicitly does not need one. You must be **added to a protocol before touching its data** — [Adding Personnel to an IRB Study](../operations/regulatory-irb-and-reporting/adding-personnel-to-an-irb-study.md). Annual continuing reviews and study closure are in [Operations › Regulatory, IRB & Reporting](../operations/regulatory-irb-and-reporting/index.md).
+The lab's work runs under several IRB protocols (R01, R61/R33 and collaborative protocols among them) and each collaborating site is either covered by one or explicitly does not need one. You must be **added to a protocol before touching its data** — [Adding Personnel to an IRB Study](cnt:operations/regulatory-irb-and-reporting/adding-personnel-to-an-irb-study.md). Annual continuing reviews and study closure are in [Operations › Regulatory, IRB & Reporting](cnt:operations/regulatory-irb-and-reporting/index.md).
 
 ## Where PHI may and may not live
 

@@ -1,5 +1,8 @@
 """MkDocs hooks for the NeuroBridge wiki.
 
+centers.json (repo root) lists the partner centers and, for the CNT, the procedures the lab follows
+in the CNT manual; they appear on the landing graph, the map and the center pages as external nodes.
+
 A page carries only what cannot be derived: title, stage, roles, scope, and
 optionally order (and audit while the 2026 audit is being worked through).
 Everything else comes from the folder it sits in or from git.
@@ -79,6 +82,10 @@ def on_config(config):
     lm = os.path.join(docs, "lab-manual")
     if os.path.isdir(lm):
         nav.append({"Lab Manual": pages_in(lm, docs)})
+    cdir = os.path.join(docs, "centers")
+    if os.path.isdir(cdir):
+        entries = (["centers/index.md"] if os.path.exists(os.path.join(cdir, "index.md")) else []) + pages_in(cdir, docs)
+        nav.append({"Centers": entries})
     for t in themes:
         tdir = os.path.join(docs, t["dir"])
         if os.path.isdir(tdir):
@@ -100,6 +107,10 @@ def _theme_dirs(config):
 def _roles(config):
     path = os.path.join(os.path.dirname(config["docs_dir"]), "roles.json")
     return json.load(open(path)) if os.path.exists(path) else {}
+
+def _centers(config):
+    path = os.path.join(os.path.dirname(config["docs_dir"]), "centers.json")
+    return json.load(open(path, encoding="utf-8")) if os.path.exists(path) else {"lab": {}, "centers": []}
 
 def _procedures(config):
     """Every procedure page: a .md that is not an index, inside a theme folder, with a stage."""
@@ -126,6 +137,7 @@ def _procedures(config):
                     "url": re.sub(r"\.md$", "/", rel),
                     "theme": ttitle, "section": section, "stage": str(fm["stage"]),
                     "roles": list(fm.get("roles") or []), "scope": fm.get("scope", ""), "audit": fm.get("audit", ""),
+                    "center": fm.get("center", ""),
                 })
     return nodes
 
@@ -195,9 +207,32 @@ def on_page_markdown(markdown, page, config, files):
         else:
             markdown = banners + markdown
 
+    if "%%SHARED:" in markdown:
+        centers = {c["id"]: c for c in _centers(config)["centers"]}
+        own = [n for n in _procedures(config) if n.get("center")]
+        def shared_list(m):
+            cid = m.group(1)
+            c = centers.get(cid)
+            mine = [n for n in own if n["center"] == cid]
+            ext = (c or {}).get("shared") or []
+            if not mine and not ext:
+                return "*No procedures yet. They are added here as the collaboration produces them.*"
+            out = []
+            if mine:
+                out.append("**Written by the lab**\n")
+                out.append("\n".join(f"- [{n['title']}](../{n['id']})" for n in mine) + "\n")
+            by_theme = {}
+            for sp in ext:
+                by_theme.setdefault(sp["theme"], []).append(sp)
+            for theme, items in by_theme.items():
+                out.append(f"**{theme}** ({len(items)}), in the CNT manual\n")
+                out.append("\n".join(f"- [{i['title']}](cnt:{i['path']}) · {i['section']}" if i.get("section") else f"- [{i['title']}](cnt:{i['path']})" for i in items) + "\n")
+            return "\n".join(out)
+        markdown = re.sub(r"%%SHARED:([a-z0-9\-]+)%%", shared_list, markdown)
+
     markdown = CNT_LINK.sub(lambda m: m.group(1) + cnt_url(m.group(2), config), markdown)
 
-    if page.file.src_path != "index.md" or "%%" not in markdown:
+    if "%%" not in markdown:
         return markdown
     nodes = _procedures(config)
     docs = config["docs_dir"]
@@ -206,6 +241,9 @@ def on_page_markdown(markdown, page, config, files):
         key = m.group(1)
         if key == "PAGES": return str(len(nodes))
         if key == "MANUAL": return str(manual)
+        if key.startswith("SHAREDCOUNT:"):
+            c = next((c for c in _centers(config)["centers"] if c["id"] == key[12:]), None)
+            return str(len(c["shared"])) if c else "0"
         if key.startswith("T:"): return str(sum(1 for n in nodes if n["theme"] == key[2:]))
         if key.startswith("S:"): return str(sum(1 for n in nodes if n["stage"] == key[2:]))
         return m.group(0)
@@ -232,10 +270,19 @@ def on_post_build(config):
     docs = config["docs_dir"]
     repo = os.path.dirname(docs)
     nodes = _procedures(config)
+    own_count = len(nodes)
+    centers = _centers(config)
+    for c in centers["centers"]:
+        for sp in c.get("shared") or []:
+            nodes.append({"id": f"{c['id']}:" + sp["path"], "title": sp["title"], "url": cnt_url(sp["path"], config),
+                          "external": True, "center": c["id"], "theme": sp["theme"], "section": sp.get("section", ""),
+                          "stage": sp["stage"], "roles": list(sp.get("roles") or []), "scope": "", "audit": ""})
     scopes = {"core": "Core: our people do this", "shared": "Shared infrastructure", "reference": "Background reading",
               "clinical-coverage": "Clinical coverage only", "flagged": "Flagged: retire or merge"}
     out = {"generated": datetime.date.today().isoformat(), "themes": list(_theme_dirs(config).values()),
-           "stages": config["extra"]["wiki"]["stages"], "roles": _roles(config), "nodes": nodes,
+           "stages": config["extra"]["wiki"]["stages"], "roles": _roles(config), "nodes": nodes, "own_count": own_count,
+           "lab": centers.get("lab", {}),
+           "centers": [{k: v for k, v in c.items() if k != "shared"} | {"shared_count": len(c.get("shared") or [])} for c in centers["centers"]],
            "scopes": scopes if any(n["scope"] for n in nodes) else {}}
     os.makedirs(os.path.join(config["site_dir"], "map"), exist_ok=True)
     json.dump(out, open(os.path.join(config["site_dir"], "map", "graph.json"), "w"), indent=0)
@@ -245,6 +292,8 @@ def on_post_build(config):
     hist = git_history(repo)
     report = []
     for n in nodes:
+        if n.get("external"):
+            continue
         rel = os.path.join(os.path.basename(docs), n["id"])
         date, author, commits = hist.get(rel, (None, None, 0))
         try:

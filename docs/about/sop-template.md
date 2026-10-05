@@ -12,6 +12,7 @@ Copy the block below into a new file in the right theme and section folder (for 
 title: "Verb + object, e.g. Exporting EEG from Natus"
 stage: "Data Collection"
 roles: [data-rc]
+center: stroke
 order: 99
 ---
 

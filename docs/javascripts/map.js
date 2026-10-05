@@ -94,7 +94,7 @@
       const node = nodeL.selectAll("circle").data(nodes.filter(n => !n.hub), d => d.id);
       node.exit().remove();
       node.enter().append("circle").attr("r", 5.5).attr("stroke", "var(--md-default-bg-color)").attr("stroke-width", 1.5)
-        .on("click", (e, d) => { location.href = root + d.url; })
+        .on("click", (e, d) => { location.href = d.external ? d.url : root + d.url; })
         .on("mousemove", (e, d) => {
           tip.hidden = false;
           tip.innerHTML = `<b>${d.title}</b><br>${d.theme} › ${d.section}<br><span>${d.stage}</span><br><span>${d.roles.map(r => (data.roles[r] || [r])[0]).join(" · ")}</span>${d.scope ? `<br><span>${(data.scopes && data.scopes[d.scope]) || d.scope}</span>` : ""}`;
@@ -103,7 +103,8 @@
         })
         .on("mouseleave", () => { tip.hidden = true; })
         .call(drag(sim))
-        .merge(node).attr("fill", d => color(d.theme)).style("cursor", "pointer");
+        .merge(node).attr("fill", d => d.external ? "var(--md-default-bg-color)" : color(d.theme))
+        .attr("stroke", d => d.external ? color(d.theme) : "var(--md-default-bg-color)").attr("stroke-width", d => d.external ? 2 : 1.5).style("cursor", "pointer");
 
       const hub = hubL.selectAll("g").data(hubs, d => d.id);
       hub.exit().remove();

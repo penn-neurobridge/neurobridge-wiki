@@ -1,8 +1,6 @@
 # Audit of the wiki, October 2026
 
-Every page was read in full and scored against one question: could a new member of NeuroBridge, with no background in clinical neuroscience, follow it alone? On 5 October the 92 procedures that are the CNT's clinical work or shared infrastructure moved to the CNT procedures manual, with their audit rows and questions; this file keeps the rows for the 56 procedures the lab's own people run. *Stale* and *New* run from 0 to 3: the risk that the page is out of date, and how far a newcomer gets unaided (3 is all the way). *Action* is the recommendation; where it is merge or retire, the page carries an `audit:` field and a banner until the lab decides.
-
-Procedures kept: 56. Stale risk 2 or 3: 42. Newcomer score 0 or 1: 32. Recommended actions: rewrite 28, tighten 14, merge 11, needs-pi 2, reframe-as-reference 1.
+Every page was read in full and scored against one question: could a new member of NeuroBridge, with no background in clinical neuroscience, follow it alone? On 5 October all 149 procedures moved to the CNT procedures manual, which now holds the page-by-page table (`AUDIT.md` there); this wiki lists the 56 the lab follows in `centers.json` and links to them. What stays here is the assessment of how the material reads to a newcomer, and the questions that only the lab can answer, which shape the lab's own pages still to be written.
 
 ## What was fixed immediately
 
@@ -22,92 +20,6 @@ A postdoc arriving from physics to work on stroke or brain injury finds that onl
 
 What the site needed, and now has, is routing: a *Start here* page that tells each of these four people what to read and in what order, a banner on every page that says whether it is ours, shared, reference or clinical coverage, a scope view on the map, and the five rules a newcomer must not break stated once, prominently. What it still needs is in the tables below: about fifty merges that would take the six themes from 149 procedures to roughly a hundred, fifteen retirements, a one-page data-governance statement that resolves the contradictions above, and a dozen pages that do not exist yet: a REDCap project catalogue, identifier mapping (MRN, RID, HUP, subject IDs), getting data out of REDCap, Data Structure v1.0 and the BIDS layout, how collaborating sites deliver data, a defacing policy, a BIDS conversion procedure, a NeuroBridge onboarding matrix by role, requesting cnt1 and cnt-fs access, required trainings, and a consumer's guide to ieeg.org and Pennsieve.
 
-
-## Data
-
-| Page | Stale | New | Action | Note |
-|---|---|---|---|---|
-| [Data Storage Locations](docs/data/storage-locations/data-storage-locations.md) | 2 | 1 | rewrite | rewrite: as a table: system / what lives there / PHI allowed? / who grants access / how to reach it (link) |
-| [Moving Data Across cnt-fs, cnt1, BSC, Borel & Leif](docs/data/moving-data/moving-data-across-cnt-fs-cnt1-bsc-borel-and-leif.md) | 2 | 1 | merge | merge: absorb 'Moving Imaging Data Across CNT Servers' into this page as 'Moving data between servers (rsync)' |
-| [Transferring Files from Box to cnt-fs (rclone)](docs/data/moving-data/transferring-files-from-box-to-cnt-fs-rclone.md) | 3 | 1 | rewrite | add: the one-time rclone setup section (rclone config -> box -> authorize on a machine with a browser -> paste token) so the page stands … |
-| [Archiving EEG Data to Azure](docs/data/archiving-azure/archiving-eeg-data-to-azure.md) | 2 | 2 | tighten | add: a 'When to archive' line and the decision owner |
-| [cnt1 Scripts for Azure Archiving & Unarchiving](docs/data/archiving-azure/cnt1-scripts-for-azure-archiving-and-unarchiving.md) | 2 | 2 | tighten | reorder: put the four scripts in a table (name / purpose / input / output dir / log) at the top, then the unarchive procedure |
-| [Pennsieve Data Access Rules](docs/data/sharing-pennsieve-and-ieeg-org/pennsieve-data-access-rules.md) | 2 | 1 | needs-pi | rewrite: as a decision table: consent status x data type -> allowed destination (Discover public / controlled / internal only) x key cust… |
-| [Uploading to Pennsieve Locally](docs/data/sharing-pennsieve-and-ieeg-org/uploading-to-pennsieve-locally.md) | 2 | 2 | merge | merge: with 'Uploading from cnt1 to Pennsieve' into one page with two 'where you run it' variants (laptop vs cnt1 module load) |
-| [Uploading from cnt1 to Pennsieve](docs/data/sharing-pennsieve-and-ieeg-org/uploading-from-cnt1-to-pennsieve.md) | 3 | 1 | rewrite | duplicate of `uploading-to-pennsieve-locally.md`; URGENT cut: the api_token/api_secret values; rotate that key; add the 'Credential remov… |
-| [Pennsieve Downloader](docs/data/sharing-pennsieve-and-ieeg-org/pennsieve-downloader.md) | 3 | 1 | rewrite | add: script location (GitHub repo and commit) and requirements |
-| [De-Identifying EDFs](docs/data/de-identification/de-identifying-edfs.md) | 2 | 1 | merge | merge: with 'De-Identifying EDF Headers' into one page 'De-identifying EDF files' with a decision line: keep annotations (anonymize_edfs.… |
-| [De-Identifying EDF Headers](docs/data/de-identification/de-identifying-edf-headers.md) | 3 | 1 | merge | duplicate of `anonymize-and-upload-edfs-to-ieeg-org.md`; merge: the generic 'anonymize EDF header' step into one De-identifying EDF files… |
-| [De-identifying NIfTI Headers](docs/data/de-identification/de-identifying-nifti-headers.md) | 3 | 1 | rewrite | rewrite: state what deid_json.sh does (fields removed), its true path, the queue format, the output, and a verification command (e.g., gr… |
-
-## Compute
-
-| Page | Stale | New | Action | Note |
-|---|---|---|---|---|
-| [Overview of CNT Systems](docs/compute/overview/overview-of-cnt-systems.md) | 3 | 1 | rewrite | split: move the Data Sharing Crash Course (HUP vs RID, limited vs anonymized, date shift to 2000-01-01) to its own page under Data and li… |
-| [SEAS Servers: Borel, Leif, Pioneer](docs/compute/seas-cets-servers/seas-servers-borel-leif-pioneer.md) | 2 | 1 | rewrite | rewrite: five-row table — Borel (CPU, ssh), Pioneer (GPU, ssh), Finkel (GPU, SLURM only), Leif (SMB view of the same storage), Sauce (fil… |
-| [Accessing Borel over SSH](docs/compute/seas-cets-servers/accessing-borel-over-ssh.md) | 2 | 2 | tighten | cut: the dangling 'Open' and the 'future instructions' note |
-| [Mounting Leif over SMB](docs/compute/seas-cets-servers/mounting-leif-over-smb.md) | 1 | 2 | tighten | add: list of Leif volumes and what each maps to on Borel |
-| [Submitting Jobs with SLURM](docs/compute/seas-cets-servers/submitting-jobs-with-slurm.md) | 2 | 2 | tighten | cut: the first pasted CETS email and the 'consider this channel' line |
-| [SLURM on Finkel: Configuration & Limits](docs/compute/seas-cets-servers/slurm-on-finkel-configuration-and-limits.md) | 2 | 2 | merge | duplicate of `submitting-jobs-with-slurm.md`; merge: into submitting-jobs-with-slurm.md as a 'Limits (as of <date>)' section |
-| [BSC Cluster](docs/compute/pmacs-psom-systems/bsc-cluster.md) | 3 | 1 | rewrite | keep: Resources link, How to Connect steps 1-4, the queue table (re-dated), and one sentence on bscsub2 for VS Code editing only |
-| [PMACS VPN](docs/compute/pmacs-psom-systems/pmacs-vpn.md) | 3 | 1 | rewrite | rewrite: (1) when you need it; (2) install from med.upenn.edu/dart/vpn-instructions.html; (3) connect: open Ivanti, server remote.pmacs.u… |
-| [Submitting CETS & PMACS Helpdesk Tickets](docs/compute/support-and-tickets/submitting-cets-and-pmacs-helpdesk-tickets.md) | 3 | 2 | rewrite | split: (a) an access-request matrix — what you need / who files / where / template / turnaround / how to verify; (b) one short page per r… |
-
-## Imaging
-
-| Page | Stale | New | Action | Note |
-|---|---|---|---|---|
-| [DICOM → NIfTI (non-BIDS)](docs/imaging/formatting/dicom-nifti-non-bids.md) | 2 | 0 | rewrite | rewrite: as a short procedure - purpose, prerequisites, the one script to run, an example path edit, expected output, next step |
-| [Electrode Reconstruction: Prep & Software](docs/imaging/electrode-reconstruction/electrode-reconstruction-prep-and-software.md) | 3 | 2 | merge | duplicate of `gui-docker-reconstruction-workflow.md`; merge: into the GUI/Docker page as the canonical procedure; keep from here only the… |
-| [GUI/Docker Reconstruction Workflow](docs/imaging/electrode-reconstruction/gui-docker-reconstruction-workflow.md) | 2 | 2 | rewrite | rewrite: as the canonical reconstruction page - prerequisites (software, access), Part A export (CNT clinical), Part B convert and name, … |
-| [MUSC Reconstruction](docs/imaging/electrode-reconstruction/musc-reconstruction.md) | 2 | 2 | merge | duplicate of `electrode-reconstruction-prep-and-software.md`; merge: into the canonical reconstruction page as a 'Site variant: MUSC' box… |
-| [Grid Electrode Labeling Conventions](docs/imaging/electrode-reconstruction/grid-electrode-labeling-conventions.md) | 1 | 1 | merge | merge: into the canonical reconstruction page as 'Appendix: grids and strips' |
-| [RADAR Data Pulls](docs/imaging/clinical-imaging-pulls-radar/radar-data-pulls.md) | 3 | 2 | rewrite | rewrite: as NeuroBridge's canonical 'Requesting clinical imaging' SOP - prerequisites (IRB, PI request, RADAR fee), request, receive, lan… |
-
-## Electrophysiology
-
-| Page | Stale | New | Action | Note |
-|---|---|---|---|---|
-| [sEEG Phase II Processing: Overview & Timeline](docs/electrophysiology/overview-and-setup/seeg-phase-ii-processing-overview-and-timeline.md) | 1 | 1 | rewrite | add: ordered nine-step chain with a link per step and the role that owns it |
-| [Setup for Processing](docs/electrophysiology/overview-and-setup/setup-for-processing.md) | 2 | 1 | rewrite | add: two sentences on why two PDF versions exist (limited keeps the implant date for internal use; anonymized is shareable) and who may o… |
-| [Mounting cnt-fs](docs/electrophysiology/overview-and-setup/mounting-cnt-fs.md) | 1 | 2 | tighten | add: one line on what cnt-fs is (PMACS HIPAA fileshare; identified data allowed) and who grants access |
-| [natusdir & Data Collection Files](docs/electrophysiology/overview-and-setup/natusdir-and-data-collection-files.md) | 1 | 1 | rewrite | add: a plain-text template of each file with one example line and a comment per field |
-| [The config Folder](docs/electrophysiology/overview-and-setup/the-config-folder.md) | 2 | 2 | tighten | fix: the cnt-fs path typo |
-| [The ieeg.properties File](docs/electrophysiology/overview-and-setup/the-ieeg-properties-file.md) | 2 | 1 | rewrite | add: prerequisite - an ieeg.org account with upload rights, and who grants it |
-| [Exporting Files from Natus](docs/electrophysiology/exporting-from-natus/exporting-files-from-natus.md) | 3 | 1 | rewrite | reorder: procedure first, troubleshooting at the end |
-| [Automated Channel Mapping](docs/electrophysiology/channel-mapping/automated-channel-mapping.md) | 2 | 1 | rewrite | add: a six-line example output with header, three contacts and EKG1/2 |
-| [Channel Mapping for EDFs (ieeg-dataset.ini)](docs/electrophysiology/channel-mapping/channel-mapping-for-edfs-ieeg-dataset-ini.md) | 1 | 2 | merge | duplicate of `anonymize-and-upload-edfs-to-ieeg-org.md`; merge: into Anonymize & Upload EDFs as the 'channel mapping (.ini)' step, genera… |
-| [Processing for ieeg.org (natus2mef -> validate -> upload)](docs/electrophysiology/processing-and-upload-to-ieeg-org/processing-for-ieeg-org-natus2mef-validate-upload.md) | 2 | 1 | rewrite | rewrite: one parameterised procedure (TYPE in Intracranial, CCEPS, Gottfried, Gold) with a table of per-type differences: folder, natusdi… |
-| [Troubleshooting Processing Errors](docs/electrophysiology/processing-and-upload-to-ieeg-org/troubleshooting-processing-errors.md) | 2 | 1 | tighten | restructure: a three-column table - symptom, likely cause, fix |
-| [Anonymize & Upload EDFs to ieeg.org](docs/electrophysiology/processing-and-upload-to-ieeg-org/anonymize-and-upload-edfs-to-ieeg-org.md) | 2 | 2 | rewrite | generalise: 'any EDF to ieeg.org' with Mxene as one example path |
-| [Adding an iEEG File to a Project](docs/electrophysiology/processing-and-upload-to-ieeg-org/adding-an-ieeg-file-to-a-project.md) | 1 | 1 | merge | merge: into Troubleshooting as a 'dataset not in project' row with cause and fix |
-| [Splitting Datasets](docs/electrophysiology/processing-and-upload-to-ieeg-org/splitting-datasets.md) | 1 | 1 | tighten | add: the three triggers (overlap, electrode change, sampling-rate change) in one list |
-| [Final Step: Delete mef Folders](docs/electrophysiology/processing-and-upload-to-ieeg-org/final-step-delete-mef-folders.md) | 1 | 2 | merge | merge: into Processing as the closing step with a three-item precondition list (datasets open on ieeg.org; config folder in ieeg_metadata… |
-| [Deleting a Dataset from ieeg.org](docs/electrophysiology/processing-and-upload-to-ieeg-org/deleting-a-dataset-from-ieeg-org.md) | 1 | 2 | tighten | add: when (PHI leak, wrong project, failed upload) and who approves |
-| [Archiving ieeg Files](docs/electrophysiology/archiving-on-ieeg-org/archiving-ieeg-files.md) | 3 | 1 | rewrite | rewrite: one current route; move the dated workaround to a note |
-| [Unarchiving an ieeg Dataset](docs/electrophysiology/archiving-on-ieeg-org/unarchiving-an-ieeg-dataset.md) | 3 | 0 | needs-pi | needs content: the restore steps (az download, destination recently_unarchived/HUPXXX, who runs it, how long) |
-| [Re-uploading Archived Datasets](docs/electrophysiology/archiving-on-ieeg-org/re-uploading-archived-datasets.md) | 2 | 1 | tighten | add: triggers and the order: delete bad dataset on ieeg.org -> restore -> rebuild folder -> reprocess |
-
-## REDCap & Clinical Metadata
-
-| Page | Stale | New | Action | Note |
-|---|---|---|---|---|
-| [RADAR Pull → REDCap Entry](docs/redcap/clinical-data-pulls-ehr-redcap/radar-pull-redcap-entry.md) | 2 | 2 | rewrite | add: a three-line header — purpose (metadata for every clinical 3T/fMRI epilepsy patient), owner, cadence (yearly, triggered by the RADAR… |
-| [Surgical Outcomes REDCap Project](docs/redcap/projects-and-data-entry/surgical-outcomes-redcap-project.md) | 1 | 1 | rewrite | rewrite as the project overview: name, PID, owner, DAGs, one line per instrument (what it holds, who fills it, when), and how RID links r… |
-| [REDCap Tips](docs/redcap/projects-and-data-entry/redcap-tips.md) | 1 | 1 | rewrite | rewrite the export tip: User Rights → the user's role → Data Export Rights; set the needed instruments to 'Full Data Set' (or 'De-Identif… |
-| [Seizure Terminology Reference](docs/redcap/projects-and-data-entry/seizure-terminology-reference.md) | 1 | 2 | reframe-as-reference | merge the Engel→ILAE text list and the table image into one Markdown table with a Notes column; cite Engel (1993), ILAE/Wieser (2001) and… |
-
-## Operations
-
-| Page | Stale | New | Action | Note |
-|---|---|---|---|---|
-| [PennKey & REDCap Access for External Guests](docs/operations/access-and-accounts/pennkey-and-redcap-access-for-external-guests.md) | 2 | 0 | rewrite | rewrite: transcribe the PDF into numbered steps with sponsor, form links and turnaround |
-| [Requesting a REDCap Account](docs/operations/access-and-accounts/requesting-a-redcap-account.md) | 2 | 2 | tighten | fix: numbering and the triple-rendered link |
-| [Adding Users to the ieeg.org Portal](docs/operations/access-and-accounts/adding-users-to-the-ieeg-org-portal.md) | 1 | 2 | tighten | add: one line: ieeg.org is the de-identified iEEG portal; never PHI |
-| [Onboarding & Offboarding Checklist](docs/operations/onboarding-and-offboarding/onboarding-and-offboarding-checklist.md) | 2 | 1 | rewrite | rewrite: as a role x system matrix (data RC / analyst / student / PI) with Owner-by-role, How-to-request, Verify, Offboard columns |
-| [Adding Personnel to an IRB Study](docs/operations/regulatory-irb-and-reporting/adding-personnel-to-an-irb-study.md) | 2 | 2 | tighten | fix: the two personnel-list links; delete 'You do not have access to this Doc' |
-| [Adding a Non-Penn / New Hire to a Study](docs/operations/regulatory-irb-and-reporting/adding-a-non-penn-new-hire-to-a-study.md) | 2 | 2 | rewrite | rewrite: remove the legacy tool name; point step 5 at the real personnel list |
 
 ## Questions only the lab can answer
 
