@@ -2,8 +2,8 @@
 title: "Data Storage Locations"
 stage: "Data Governance"
 roles: [data-rc, analyst, pi-manager]
-scope: core
 order: 1
+source: cnt
 ---
 
 # Data Storage Locations

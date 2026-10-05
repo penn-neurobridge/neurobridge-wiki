@@ -2,9 +2,9 @@
 title: "Grid Electrode Labeling Conventions"
 stage: "Data Standardization & Integration"
 roles: [data-rc, analyst]
-scope: core
 audit: merge
 order: 5
+source: cnt
 ---
 
 # Grid Electrode Labeling Conventions

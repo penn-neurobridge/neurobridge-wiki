@@ -2,9 +2,9 @@
 title: "Adding an iEEG File to a Project"
 stage: "Data Standardization & Integration"
 roles: [data-rc, pipeline]
-scope: core
 audit: merge
 order: 5
+source: cnt
 ---
 
 # Adding an iEEG File to a Project

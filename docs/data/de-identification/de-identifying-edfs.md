@@ -2,9 +2,9 @@
 title: "De-Identifying EDFs"
 stage: "Data Governance"
 roles: [data-rc, pipeline]
-scope: core
 audit: merge
 order: 1
+source: cnt
 ---
 
 # De-Identifying EDFs

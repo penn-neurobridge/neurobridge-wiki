@@ -2,8 +2,8 @@
 title: "SEAS Servers: Borel, Leif, Pioneer"
 stage: "Data Analytics"
 roles: [analyst, pipeline]
-scope: core
 order: 1
+source: cnt
 ---
 
 # SEAS Servers: Borel, Leif, Pioneer

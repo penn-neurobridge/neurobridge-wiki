@@ -2,8 +2,8 @@
 title: "Submitting CETS & PMACS Helpdesk Tickets"
 stage: "Data Analytics"
 roles: [analyst, pipeline, data-rc]
-scope: core
 order: 1
+source: cnt
 ---
 
 # Submitting CETS & PMACS Helpdesk Tickets

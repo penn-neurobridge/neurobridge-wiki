@@ -2,8 +2,8 @@
 title: "Mounting Leif over SMB"
 stage: "Data Analytics"
 roles: [analyst, pipeline]
-scope: core
 order: 3
+source: cnt
 ---
 
 # Mounting Leif over SMB

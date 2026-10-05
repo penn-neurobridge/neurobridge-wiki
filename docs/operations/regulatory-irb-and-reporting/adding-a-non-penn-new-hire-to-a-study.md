@@ -2,8 +2,8 @@
 title: "Adding a Non-Penn / New Hire to a Study"
 stage: "Data Governance"
 roles: [crc, pi-manager]
-scope: core
 order: 2
+source: cnt
 ---
 
 # Adding a Non-Penn / New Hire to a Study

@@ -2,8 +2,8 @@
 title: "Exporting Files from Natus"
 stage: "Data Collection"
 roles: [data-rc, crc]
-scope: core
 order: 1
+source: cnt
 ---
 
 # Exporting Files from Natus

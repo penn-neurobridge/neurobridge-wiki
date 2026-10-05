@@ -2,8 +2,8 @@
 title: "BSC Cluster"
 stage: "Data Analytics"
 roles: [analyst, pipeline, data-rc]
-scope: core
 order: 3
+source: cnt
 ---
 
 # BSC Cluster

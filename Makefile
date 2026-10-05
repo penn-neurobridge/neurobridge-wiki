@@ -7,5 +7,6 @@ build:        ## strict build into site/
 check: build  ## build + secret scan (needs gitleaks) + identifier scan
 	@command -v gitleaks >/dev/null && gitleaks detect --no-banner --redact || echo "gitleaks not installed — skipping secret scan"
 	@uv run python scripts/check_content.py
+	@test -d ../cnt-procedures && uv run python scripts/check_cnt_links.py ../cnt-procedures || echo "no ../cnt-procedures checkout — skipping cross-repo link check"
 stale:        ## list pages past their review window
 	@uv run python scripts/stale_pages.py

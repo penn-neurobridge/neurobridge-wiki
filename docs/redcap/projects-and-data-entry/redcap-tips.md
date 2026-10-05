@@ -2,8 +2,8 @@
 title: "REDCap Tips"
 stage: "Data Collection"
 roles: [crc, data-rc]
-scope: core
 order: 6
+source: cnt
 ---
 
 # REDCap Tips

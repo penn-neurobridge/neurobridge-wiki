@@ -2,8 +2,8 @@
 title: "cnt1 Scripts for Azure Archiving & Unarchiving"
 stage: "Data Governance"
 roles: [pipeline, data-rc]
-scope: core
 order: 2
+source: cnt
 ---
 
 # cnt1 Scripts for Azure Archiving & Unarchiving

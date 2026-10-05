@@ -19,9 +19,10 @@
       stage: { label: "Stage", hubs: data.stages, of: n => [n.stage] },
       role:  { label: "Role",  hubs: Object.keys(data.roles), of: n => n.roles,
                name: k => (data.roles[k] ? data.roles[k][0] : k) },
-      scope: { label: "Scope", hubs: Object.keys(data.scopes || {}), of: n => [n.scope || "core"],
-               name: k => (data.scopes && data.scopes[k]) || k },
     };
+    if (data.scopes && Object.keys(data.scopes).length) {
+      views.scope = { label: "Scope", hubs: Object.keys(data.scopes), of: n => [n.scope || "core"], name: k => data.scopes[k] || k };
+    }
     let view = (location.hash.replace("#", "") in views) ? location.hash.replace("#", "") : "theme";
     let query = "";
 

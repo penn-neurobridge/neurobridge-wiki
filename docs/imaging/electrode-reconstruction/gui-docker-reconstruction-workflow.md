@@ -2,8 +2,8 @@
 title: "GUI/Docker Reconstruction Workflow"
 stage: "Data Standardization & Integration"
 roles: [data-rc, analyst]
-scope: core
 order: 2
+source: cnt
 ---
 
 # GUI/Docker Reconstruction Workflow
@@ -51,7 +51,7 @@ order: 2
         *   This image should have at least 120 slices or above
 
 *       *   This is the CT scan done on the day of their implant
-    *   **If no bone axial exists** then you need to either let Joel know or you can call the Pavilion CT Scan Tech to have them make this for you. This number is found in Important Contacts ([Important Contacts & Emergency Numbers](../../operations/contacts/important-contacts-and-emergency-numbers.md))
+    *   **If no bone axial exists** then you need to either let Joel know or you can call the Pavilion CT Scan Tech to have them make this for you. This number is found in Important Contacts ([Important Contacts & Emergency Numbers](cnt:operations/contacts/important-contacts-and-emergency-numbers.md))
     *   Right click on scan→ Export to media
     *   Select ONLY the bone axial head sequence in the CT
     *   Uncheck: ‘Include DICOM viewer’ and ‘Include annotations’

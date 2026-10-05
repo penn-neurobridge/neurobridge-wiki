@@ -2,8 +2,8 @@
 title: "PMACS VPN"
 stage: "Data Analytics"
 roles: [analyst, pipeline, data-rc]
-scope: core
 order: 5
+source: cnt
 ---
 
 # PMACS VPN

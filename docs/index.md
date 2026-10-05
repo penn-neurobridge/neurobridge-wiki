@@ -25,17 +25,17 @@ hide:
   </section>
   <section class="nb-card">
     <h2><a href="compute/">Compute</a></h2>
-    <p>The servers, clusters and cloud accounts the lab computes on, the software installed on them, and how to obtain access.</p>
+    <p>The servers and clusters the lab computes on, and how to obtain access.</p>
     <p class="nb-card__links"><a href="compute/overview/overview-of-cnt-systems/">Overview of CNT systems</a> · <a href="compute/seas-cets-servers/accessing-borel-over-ssh/">Accessing Borel over SSH</a> · <a href="compute/seas-cets-servers/submitting-jobs-with-slurm/">Submitting jobs with SLURM</a> · <a href="compute/pmacs-psom-systems/pmacs-vpn/">PMACS VPN</a></p>
   </section>
   <section class="nb-card">
     <h2><a href="imaging/">Imaging</a></h2>
-    <p>MRI and CT, from scheduling a scan through the scanner session, transfer of the images, conversion to NIfTI and reconstruction of electrode positions.</p>
-    <p class="nb-card__links"><a href="imaging/scheduling-and-visits/visit-checklist-3t-study/">Visit checklist for a 3T study</a> · <a href="imaging/at-the-scanner/running-the-7t/">Running the 7T</a> · <a href="imaging/post-scan-transfer/flywheel-cnt-fs-3t/">Flywheel to cnt-fs</a> · <a href="imaging/electrode-reconstruction/gui-docker-reconstruction-workflow/">Electrode reconstruction</a></p>
+    <p>Clinical imaging pulls, conversion of scans to NIfTI, and reconstruction of electrode positions. Scheduling and scanner-day work is in the CNT manual.</p>
+    <p class="nb-card__links"><a href="imaging/clinical-imaging-pulls-radar/radar-data-pulls/">RADAR data pulls</a> · <a href="imaging/formatting/dicom-nifti-non-bids/">DICOM to NIfTI</a> · <a href="imaging/electrode-reconstruction/gui-docker-reconstruction-workflow/">Electrode reconstruction</a> · <a href="imaging/electrode-reconstruction/grid-electrode-labeling-conventions/">Grid labeling conventions</a></p>
   </section>
   <section class="nb-card">
     <h2><a href="electrophysiology/">Electrophysiology</a></h2>
-    <p>Scalp and intracranial EEG, from acquisition in the epilepsy monitoring unit through export from Natus, channel mapping and publication on ieeg.org.</p>
+    <p>Intracranial EEG from export out of Natus through channel mapping, conversion and publication on ieeg.org, and its archiving.</p>
     <p class="nb-card__links"><a href="electrophysiology/exporting-from-natus/exporting-files-from-natus/">Exporting files from Natus</a> · <a href="electrophysiology/channel-mapping/automated-channel-mapping/">Automated channel mapping</a> · <a href="electrophysiology/processing-and-upload-to-ieeg-org/processing-for-ieeg-org-natus2mef-validate-upload/">Processing for ieeg.org</a> · <a href="electrophysiology/overview-and-setup/seeg-phase-ii-processing-overview-and-timeline/">Phase II timeline</a></p>
   </section>
   <section class="nb-card">
@@ -45,10 +45,12 @@ hide:
   </section>
   <section class="nb-card">
     <h2><a href="operations/">Operations</a></h2>
-    <p>Accounts and access, onboarding and offboarding, IRB submissions, consent, scheduling, participant reimbursement, neuropsychological testing and contacts.</p>
-    <p class="nb-card__links"><a href="operations/access-and-accounts/crc-access-checklist-systems-badges-trainings/">Access checklist</a> · <a href="operations/onboarding-and-offboarding/onboarding-and-offboarding-checklist/">Onboarding and offboarding</a> · <a href="operations/regulatory-irb-and-reporting/adding-personnel-to-an-irb-study/">Adding personnel to an IRB study</a> · <a href="operations/consenting/consent-signing-checklist/">Consent signing checklist</a></p>
+    <p>Accounts and access, onboarding and offboarding, and adding people to IRB studies. Consent, scheduling, reimbursement and testing are in the CNT manual.</p>
+    <p class="nb-card__links"><a href="operations/onboarding-and-offboarding/onboarding-and-offboarding-checklist/">Onboarding and offboarding</a> · <a href="operations/regulatory-irb-and-reporting/adding-personnel-to-an-irb-study/">Adding personnel to an IRB study</a> · <a href="operations/access-and-accounts/requesting-a-redcap-account/">Requesting a REDCap account</a> · <a href="operations/access-and-accounts/adding-users-to-the-ieeg-org-portal/">ieeg.org portal access</a></p>
   </section>
 </div>
+
+<p class="nb-grid__note">The CNT keeps the complete set of procedures, including the clinical and shared-system work the lab only depends on, in its own <a href="cnt:index.md">procedures manual</a>. Pages here that also exist there say so at the top.</p>
 
 <div class="nb-columns" markdown="0">
   <section>

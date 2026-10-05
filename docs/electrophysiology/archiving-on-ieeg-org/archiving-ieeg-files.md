@@ -2,8 +2,8 @@
 title: "Archiving ieeg Files"
 stage: "Data Governance"
 roles: [pipeline]
-scope: core
 order: 1
+source: cnt
 ---
 
 # Archiving ieeg Files

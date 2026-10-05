@@ -2,8 +2,8 @@
 title: "Overview of CNT Systems"
 stage: "Data Analytics"
 roles: [data-rc, analyst, pipeline]
-scope: core
 order: 1
+source: cnt
 ---
 
 # Overview of CNT Systems

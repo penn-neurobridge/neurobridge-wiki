@@ -2,8 +2,8 @@
 title: "Submitting Jobs with SLURM"
 stage: "Data Analytics"
 roles: [analyst, pipeline]
-scope: core
 order: 4
+source: cnt
 ---
 
 # Submitting Jobs with SLURM

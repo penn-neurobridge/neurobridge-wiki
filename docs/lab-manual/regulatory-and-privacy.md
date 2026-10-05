@@ -22,9 +22,9 @@ The lab's work runs under several IRB protocols (R01, R61/R33 and collaborative 
 
 ## Documentation you maintain
 
-- The e-regulatory binder and eDoA: [e-Regulatory Binder & eDoA (Audit Prep)](../operations/regulatory-irb-and-reporting/e-regulatory-binder-and-edoa-audit-prep.md)
-- NIH progress reporting: [RPPR: Dates, Targets & Milestones](../operations/regulatory-irb-and-reporting/rppr-dates-targets-and-milestones.md) and [RPPR Demographic Tables](../operations/regulatory-irb-and-reporting/rppr-demographic-tables.md)
+- The e-regulatory binder and eDoA: [e-Regulatory Binder & eDoA (Audit Prep)](cnt:operations/regulatory-irb-and-reporting/e-regulatory-binder-and-edoa-audit-prep.md)
+- NIH progress reporting: [RPPR: Dates, Targets & Milestones](cnt:operations/regulatory-irb-and-reporting/rppr-dates-targets-and-milestones.md) and [RPPR Demographic Tables](cnt:operations/regulatory-irb-and-reporting/rppr-demographic-tables.md)
 
 ## If you consent a participant
 
-Read [Consent Signing Checklist](../operations/consenting/consent-signing-checklist.md) and [How the e-Consent Form Works](../operations/consenting/how-the-e-consent-form-works.md) first; use the study's script and the [Consent Note Templates](../operations/consenting/consent-note-templates.md). Current forms are linked from [All Consent Forms (Box links)](../operations/consenting/all-consent-forms-box-links.md).
+Read [Consent Signing Checklist](cnt:operations/consenting/consent-signing-checklist.md) and [How the e-Consent Form Works](cnt:operations/consenting/how-the-e-consent-form-works.md) first; use the study's script and the [Consent Note Templates](cnt:operations/consenting/consent-note-templates.md). Current forms are linked from [All Consent Forms (Box links)](cnt:operations/consenting/all-consent-forms-box-links.md).

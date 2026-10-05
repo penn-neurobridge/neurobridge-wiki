@@ -6,7 +6,7 @@ hide:
 
 # Map of the wiki
 
-Every procedure, four ways. **Theme** is where a page lives in the navigation (which system it touches). **Stage** is where it sits in the life of the data. **Role** is who needs it; a page can serve several roles, so in that view it links to more than one hub. **Scope** is whether our own people do it, whether it is shared infrastructure or background reading, whether it is clinical work we only cover, or whether the audit flagged it for retirement or merging. Colour always means theme, so you can see, for example, that Electrophysiology is almost entirely *Standardization & Integration* and that Operations splits between *Collection* and *Governance*.
+Every procedure, three ways. **Theme** is where a page lives in the navigation (which system it touches). **Stage** is where it sits in the life of the data. **Role** is who needs it; a page can serve several roles, so in that view it links to more than one hub. Colour always means theme, so you can see, for example, that Electrophysiology is almost entirely *Standardization & Integration* and that Operations splits between *Collection* and *Governance*.
 
 <div id="wiki-map" markdown="0"></div>
 

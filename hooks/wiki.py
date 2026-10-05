@@ -153,6 +153,22 @@ AUDIT_NOTE = {
 def _banner(kind, title, text):
     return f'!!! {kind} "{title}"\n    {text}\n\n'
 
+def _cnt(config):
+    """Where the CNT procedures manual lives: {url, style}. style 'github' links to the Markdown on
+    GitHub (works before the site is hosted); 'site' links to a hosted MkDocs build."""
+    c = (config["extra"].get("wiki") or {}).get("cnt_manual") or {}
+    return c.get("url", "").rstrip("/") + "/", c.get("style", "github")
+
+def cnt_url(path, config):
+    base, style = _cnt(config)
+    path, _, anchor = path.partition("#")
+    if style == "site":
+        path = re.sub(r"(^|/)index\.md$", r"\1", path)
+        path = re.sub(r"\.md$", "/", path)
+    return base + path + (("#" + anchor) if anchor else "")
+
+CNT_LINK = re.compile(r'(\]\(|href=")cnt:([^)\s"]+)')
+
 @event_priority(50)   # before the Material tags plugin reads page.meta["tags"]
 def on_page_markdown(markdown, page, config, files):
     meta = page.meta or {}
@@ -164,6 +180,10 @@ def on_page_markdown(markdown, page, config, files):
 
     scope = meta.get("scope")
     banners = ""
+    if meta.get("source") == "cnt":
+        banners += _banner("info", "Also in the CNT manual",
+            f"This procedure is also kept in the [CNT procedures manual]({cnt_url(page.file.src_path, config)}), "
+            "where it is maintained for the shared CNT systems. Differences specific to this lab belong on this page.")
     if scope in SCOPE_BANNERS:
         banners += _banner(*SCOPE_BANNERS[scope])
     if scope != "flagged" and meta.get("audit") in AUDIT_NOTE:
@@ -174,6 +194,8 @@ def on_page_markdown(markdown, page, config, files):
             markdown = lines[0] + "\n\n" + banners + (lines[1] if len(lines) > 1 else "")
         else:
             markdown = banners + markdown
+
+    markdown = CNT_LINK.sub(lambda m: m.group(1) + cnt_url(m.group(2), config), markdown)
 
     if page.file.src_path != "index.md" or "%%" not in markdown:
         return markdown
@@ -213,7 +235,8 @@ def on_post_build(config):
     scopes = {"core": "Core: our people do this", "shared": "Shared infrastructure", "reference": "Background reading",
               "clinical-coverage": "Clinical coverage only", "flagged": "Flagged: retire or merge"}
     out = {"generated": datetime.date.today().isoformat(), "themes": list(_theme_dirs(config).values()),
-           "stages": config["extra"]["wiki"]["stages"], "roles": _roles(config), "scopes": scopes, "nodes": nodes}
+           "stages": config["extra"]["wiki"]["stages"], "roles": _roles(config), "nodes": nodes,
+           "scopes": scopes if any(n["scope"] for n in nodes) else {}}
     os.makedirs(os.path.join(config["site_dir"], "map"), exist_ok=True)
     json.dump(out, open(os.path.join(config["site_dir"], "map", "graph.json"), "w"), indent=0)
 

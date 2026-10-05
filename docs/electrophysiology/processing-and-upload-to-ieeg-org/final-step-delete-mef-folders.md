@@ -2,9 +2,9 @@
 title: "Final Step: Delete mef Folders"
 stage: "Data Standardization & Integration"
 roles: [data-rc, pipeline]
-scope: core
 audit: merge
 order: 7
+source: cnt
 ---
 
 # Final Step: Delete mef Folders

@@ -2,9 +2,9 @@
 title: "MUSC Reconstruction"
 stage: "Data Standardization & Integration"
 roles: [data-rc, analyst]
-scope: core
 audit: merge
 order: 3
+source: cnt
 ---
 
 # MUSC Reconstruction

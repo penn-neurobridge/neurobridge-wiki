@@ -2,9 +2,9 @@
 title: "Channel Mapping for EDFs (ieeg-dataset.ini)"
 stage: "Data Standardization & Integration"
 roles: [data-rc, pipeline]
-scope: core
 audit: merge
 order: 4
+source: cnt
 ---
 
 # Channel Mapping for EDFs (ieeg-dataset.ini)

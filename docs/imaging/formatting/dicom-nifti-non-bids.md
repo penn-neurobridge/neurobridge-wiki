@@ -2,8 +2,8 @@
 title: "DICOM → NIfTI (non-BIDS)"
 stage: "Data Standardization & Integration"
 roles: [data-rc, analyst]
-scope: core
 order: 1
+source: cnt
 ---
 
 # DICOM → NIfTI (non-BIDS)

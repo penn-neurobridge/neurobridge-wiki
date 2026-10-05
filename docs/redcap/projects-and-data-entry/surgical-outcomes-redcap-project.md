@@ -2,8 +2,8 @@
 title: "Surgical Outcomes REDCap Project"
 stage: "Data Collection"
 roles: [crc, data-rc]
-scope: core
 order: 1
+source: cnt
 ---
 
 # Surgical Outcomes REDCap Project

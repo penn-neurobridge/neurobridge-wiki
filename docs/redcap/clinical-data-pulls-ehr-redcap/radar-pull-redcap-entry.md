@@ -2,8 +2,8 @@
 title: "RADAR Pull → REDCap Entry"
 stage: "Data Collection"
 roles: [data-rc]
-scope: core
 order: 1
+source: cnt
 ---
 
 # RADAR Pull → REDCap Entry

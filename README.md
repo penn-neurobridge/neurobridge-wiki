@@ -1,6 +1,6 @@
 # NeuroBridge Lab Wiki
 
-Standard operating procedures of the Penn NeuroBridge Lab / CNT, as Markdown, built into a website with [MkDocs](https://www.mkdocs.org) + [Material](https://squidfunk.github.io/mkdocs-material/).
+Standard operating procedures of the Penn NeuroBridge Lab, as Markdown, built into a website with [MkDocs](https://www.mkdocs.org) + [Material](https://squidfunk.github.io/mkdocs-material/).
 
 - `docs/` — the content. One folder per theme, one sub-folder per section, one file per procedure. **This folder is also an Obsidian vault-friendly tree**; the repository root is the vault.
 - `hooks/wiki.py` — builds the navigation from the folders and writes `map/graph.json` + `_reports/stale.json` at build time. No hand-maintained nav.
@@ -29,6 +29,10 @@ Dependencies are declared in `pyproject.toml` and pinned in `uv.lock`; `uv run m
 
 No patient identifiers. No credentials. One procedure per page. See `docs/about/contributing.md`.
 
+## Relationship to the CNT procedures manual
+
+The lab shares the CNT's epilepsy data pipelines. The CNT keeps the complete set of procedures, including the clinical and shared-system work the lab only depends on, in [penn-neurobridge/cnt-procedures](https://github.com/penn-neurobridge/cnt-procedures), maintained by the CNT associate director. This wiki keeps only the procedures the lab's own people run; pages that also exist in the CNT manual carry `source: cnt` and a note with the link, and pages that live only there are linked with `cnt:` links, resolved from one setting in `mkdocs.yml` (`extra.wiki.cnt_manual`; switch `style` to `site` once the CNT manual is hosted).
+
 ## Audit
 
-`AUDIT.md` records the October 2026 page-by-page audit: a scope for every procedure (core, shared, clinical coverage, reference, retire), stale-risk and newcomer scores, the recommended action, and the questions only the lab can answer. Each page's `scope` and `audit` front-matter fields come from it and drive the banners on the site.
+`AUDIT.md` records the October 2026 page-by-page audit of the procedures kept here: stale-risk and newcomer scores, the recommended action, and the questions only the lab can answer. Pages the audit flagged carry an `audit: merge` or `audit: retire` field and a banner until the lab decides.

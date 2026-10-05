@@ -2,8 +2,8 @@
 title: "Accessing Borel over SSH"
 stage: "Data Analytics"
 roles: [analyst, pipeline]
-scope: core
 order: 2
+source: cnt
 ---
 
 # Accessing Borel over SSH

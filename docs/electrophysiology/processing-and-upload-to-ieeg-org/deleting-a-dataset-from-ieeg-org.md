@@ -2,8 +2,8 @@
 title: "Deleting a Dataset from ieeg.org"
 stage: "Data Governance"
 roles: [data-rc, pipeline]
-scope: core
 order: 8
+source: cnt
 ---
 
 # Deleting a Dataset from ieeg.org

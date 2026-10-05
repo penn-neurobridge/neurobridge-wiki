@@ -2,8 +2,8 @@
 title: "Unarchiving an ieeg Dataset"
 stage: "Data Governance"
 roles: [pipeline]
-scope: core
 order: 2
+source: cnt
 ---
 
 # Unarchiving an ieeg Dataset

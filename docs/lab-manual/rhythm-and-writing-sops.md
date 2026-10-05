@@ -26,7 +26,7 @@ order: 7
 
 - Servers, accounts, software — [Submitting CETS & PMACS Helpdesk Tickets](../compute/support-and-tickets/submitting-cets-and-pmacs-helpdesk-tickets.md).
 - Penn Medicine systems (PennChart, F5, Citrix, drives) — UPHS IS ticket; see Operations › Access & Accounts.
-- Anything else — [Important Contacts & Emergency Numbers](../operations/contacts/important-contacts-and-emergency-numbers.md).
+- Anything else — [Important Contacts & Emergency Numbers](cnt:operations/contacts/important-contacts-and-emergency-numbers.md).
 
 ## How to write a new SOP
 

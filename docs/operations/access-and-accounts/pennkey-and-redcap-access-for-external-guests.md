@@ -2,8 +2,8 @@
 title: "PennKey & REDCap Access for External Guests"
 stage: "Data Governance"
 roles: [crc, data-rc, analyst, pipeline, pi-manager]
-scope: core
 order: 7
+source: cnt
 ---
 
 # PennKey & REDCap Access for External Guests

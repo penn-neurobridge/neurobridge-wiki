@@ -2,8 +2,8 @@
 title: "Requesting a REDCap Account"
 stage: "Data Governance"
 roles: [crc, data-rc, analyst, pipeline, pi-manager]
-scope: core
 order: 8
+source: cnt
 ---
 
 # Requesting a REDCap Account

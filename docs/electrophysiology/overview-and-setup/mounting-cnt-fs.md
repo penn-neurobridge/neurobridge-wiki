@@ -2,8 +2,8 @@
 title: "Mounting cnt-fs"
 stage: "Data Standardization & Integration"
 roles: [data-rc, pipeline]
-scope: core
 order: 3
+source: cnt
 ---
 
 # Mounting cnt-fs

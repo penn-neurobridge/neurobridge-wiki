@@ -2,8 +2,8 @@
 title: "RADAR Data Pulls"
 stage: "Data Collection"
 roles: [data-rc]
-scope: core
 order: 1
+source: cnt
 ---
 
 # RADAR Data Pulls

@@ -4,7 +4,7 @@ title: "REDCap & Clinical Metadata"
 
 # REDCap & Clinical Metadata
 
-**Where do clinical variables live and how are they entered?**
+**Where do the clinical variables live, and how do they get there?**
 
 | Section | What it covers |
 |---|---|

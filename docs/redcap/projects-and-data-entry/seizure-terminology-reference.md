@@ -2,8 +2,8 @@
 title: "Seizure Terminology Reference"
 stage: "Data Standardization & Integration"
 roles: [crc, data-rc]
-scope: core
 order: 3
+source: cnt
 ---
 
 # Seizure Terminology Reference

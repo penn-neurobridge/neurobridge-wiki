@@ -2,8 +2,8 @@
 title: "sEEG Phase II Processing: Overview & Timeline"
 stage: "Data Standardization & Integration"
 roles: [data-rc, pipeline]
-scope: core
 order: 1
+source: cnt
 ---
 
 # sEEG Phase II Processing: Overview & Timeline

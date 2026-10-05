@@ -2,9 +2,9 @@
 title: "Electrode Reconstruction: Prep & Software"
 stage: "Data Standardization & Integration"
 roles: [data-rc, analyst]
-scope: core
 audit: merge
 order: 1
+source: cnt
 ---
 
 # Electrode Reconstruction: Prep & Software
@@ -69,7 +69,7 @@ You need 2 images to run the reconstruction: the preimplant MRI and the postimpl
 ![Image header dimensions/spacing/origin fields](../../assets/imaging/electrode-reconstruction-prep-and-software/electrode-reconstruction-prep-and-software-01.png)
 
 *       *   This is the CT scan done on the day of their implant
-    *   **If no bone axial exists** then you need to either let Joel know or you can call the Pavilion CT Scan Tech to have them make this for you. This number is found in Important Contacts ([Important Contacts & Emergency Numbers](../../operations/contacts/important-contacts-and-emergency-numbers.md))
+    *   **If no bone axial exists** then you need to either let Joel know or you can call the Pavilion CT Scan Tech to have them make this for you. This number is found in Important Contacts ([Important Contacts & Emergency Numbers](cnt:operations/contacts/important-contacts-and-emergency-numbers.md))
     *   Right click on scan→ Export to media
     *   Select ONLY the bone axial head sequence in the CT
     *   Uncheck: ‘Include DICOM viewer’ and ‘Include annotations’

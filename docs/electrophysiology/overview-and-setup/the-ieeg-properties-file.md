@@ -2,8 +2,8 @@
 title: "The ieeg.properties File"
 stage: "Data Standardization & Integration"
 roles: [data-rc, pipeline]
-scope: core
 order: 6
+source: cnt
 ---
 
 # The ieeg.properties File

@@ -2,9 +2,9 @@
 title: "Uploading to Pennsieve Locally"
 stage: "Data Standardization & Integration"
 roles: [data-rc, analyst, collaborator]
-scope: core
 audit: merge
 order: 2
+source: cnt
 ---
 
 # Uploading to Pennsieve Locally

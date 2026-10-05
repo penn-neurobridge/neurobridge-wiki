@@ -2,8 +2,8 @@
 title: "natusdir & Data Collection Files"
 stage: "Data Collection"
 roles: [data-rc, pipeline]
-scope: core
 order: 4
+source: cnt
 ---
 
 # natusdir & Data Collection Files

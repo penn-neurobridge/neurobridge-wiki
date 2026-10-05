@@ -2,8 +2,8 @@
 title: "Anonymize & Upload EDFs to ieeg.org"
 stage: "Data Standardization & Integration"
 roles: [data-rc, pipeline]
-scope: core
 order: 4
+source: cnt
 ---
 
 # Anonymize & Upload EDFs to ieeg.org

@@ -40,6 +40,7 @@
 
 
 /* ---------- landing page ---------- */
+.md-typeset .nb-grid__note { max-width: 60rem; margin: 1.2rem auto 0; font-size: .85rem; color: var(--nb-muted); text-align: center; }
 :root { --nb-ink: #1f2937; --nb-muted: #5b6472; --nb-line: #d9dee6; --nb-soft: #f5f7fa; --nb-navy: var(--md-primary-fg-color); --nb-link: #1d4ed8; --nb-dur: 160ms; }
 .md-content__inner:has(.nb-banner) .md-content__button { display: none; }
 .md-content__inner:has(.nb-banner) { padding-top: 0; }

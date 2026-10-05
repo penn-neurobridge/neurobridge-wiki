@@ -2,8 +2,8 @@
 title: "Uploading from cnt1 to Pennsieve"
 stage: "Data Standardization & Integration"
 roles: [data-rc, analyst, collaborator]
-scope: core
 order: 3
+source: cnt
 ---
 
 # Uploading from cnt1 to Pennsieve

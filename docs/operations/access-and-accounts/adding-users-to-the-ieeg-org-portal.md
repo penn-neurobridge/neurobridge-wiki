@@ -2,8 +2,8 @@
 title: "Adding Users to the ieeg.org Portal"
 stage: "Data Governance"
 roles: [crc, data-rc, analyst, pipeline, pi-manager]
-scope: core
 order: 10
+source: cnt
 ---
 
 # Adding Users to the ieeg.org Portal

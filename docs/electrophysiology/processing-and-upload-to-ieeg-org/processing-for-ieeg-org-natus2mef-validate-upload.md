@@ -2,8 +2,8 @@
 title: "Processing for ieeg.org (natus2mef → validate → upload)"
 stage: "Data Standardization & Integration"
 roles: [data-rc, pipeline]
-scope: core
 order: 1
+source: cnt
 ---
 
 # Processing for ieeg.org (natus2mef → validate → upload)

@@ -2,8 +2,8 @@
 title: "De-identifying NIfTI Headers"
 stage: "Data Governance"
 roles: [data-rc, pipeline]
-scope: core
 order: 3
+source: cnt
 ---
 
 # De-identifying NIfTI Headers

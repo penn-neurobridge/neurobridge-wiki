@@ -2,8 +2,8 @@
 title: "Automated Channel Mapping"
 stage: "Data Standardization & Integration"
 roles: [data-rc, pipeline]
-scope: core
 order: 1
+source: cnt
 ---
 
 # Automated Channel Mapping

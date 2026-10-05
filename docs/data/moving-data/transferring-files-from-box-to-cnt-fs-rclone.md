@@ -2,8 +2,8 @@
 title: "Transferring Files from Box to cnt-fs (rclone)"
 stage: "Data Standardization & Integration"
 roles: [data-rc, analyst, pipeline]
-scope: core
 order: 3
+source: cnt
 ---
 
 # Transferring Files from Box to cnt-fs (rclone)

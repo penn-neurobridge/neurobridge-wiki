@@ -2,8 +2,8 @@
 title: "Splitting Datasets"
 stage: "Data Standardization & Integration"
 roles: [data-rc, pipeline]
-scope: core
 order: 6
+source: cnt
 ---
 
 # Splitting Datasets

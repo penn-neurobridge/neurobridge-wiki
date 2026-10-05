@@ -2,8 +2,8 @@
 title: "The config Folder"
 stage: "Data Standardization & Integration"
 roles: [data-rc, pipeline]
-scope: core
 order: 5
+source: cnt
 ---
 
 # The config Folder

@@ -2,8 +2,8 @@
 title: "Adding Personnel to an IRB Study"
 stage: "Data Governance"
 roles: [crc, pi-manager]
-scope: core
 order: 1
+source: cnt
 ---
 
 # Adding Personnel to an IRB Study

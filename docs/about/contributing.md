@@ -34,12 +34,12 @@ A page carries only what cannot be read from its folder or from git. Five fields
 title: "Exporting Files from Natus"   # shown in navigation and search
 stage: "Data Collection"              # one of four lifecycle stages (drives the map and the tags)
 roles: [data-rc, crc]                 # who needs this page; see Roles
-scope: core                           # core | shared | reference | clinical-coverage (see below)
+source: cnt                           # only on pages that also exist in the CNT manual
 order: 2                              # optional: position within the section
 ---
 ```
 
-`scope` says whom the page is for and puts a banner on it: `core` is work our own people do (no banner); `shared` is a CNT or Penn system we depend on but do not run; `reference` is background to read once; `clinical-coverage` is participant-facing CNT work we only cover. The theme and section come from the folder the file sits in; the tags on the Tags page are generated from `stage` and `roles`. Who last changed a page, and when, is what git records, so there is no owner or review-date field to keep up: the page history on GitHub is the record, `CODEOWNERS` names who reviews each theme, and `make stale` (or `_reports/stale.json` in the built site) lists every procedure by its last change and marks those untouched for a year. While the October 2026 audit is being worked through, some pages also carry `audit: merge` or `audit: retire`; delete the line once the page has been dealt with.
+`source: cnt` marks a page that also exists in the CNT procedures manual, where the CNT associate director maintains it for the shared systems; the build adds a note with the link, and lab-specific differences belong on our copy. To link to a page that lives only in the CNT manual, write `[text](cnt:theme/section/page.md)`; the build turns it into the right URL, which is set once in `mkdocs.yml`. The theme and section come from the folder the file sits in; the tags on the Tags page are generated from `stage` and `roles`. Who last changed a page, and when, is what git records, so there is no owner or review-date field to keep up: the page history on GitHub is the record, `CODEOWNERS` names who reviews each theme, and `make stale` (or `_reports/stale.json` in the built site) lists every procedure by its last change and marks those untouched for a year. While the October 2026 audit is being worked through, some pages also carry `audit: merge` or `audit: retire`; delete the line once the page has been dealt with.
 
 ## Reviewing
 

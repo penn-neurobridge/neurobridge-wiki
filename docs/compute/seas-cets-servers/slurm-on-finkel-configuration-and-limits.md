@@ -2,9 +2,9 @@
 title: "SLURM on Finkel: Configuration & Limits"
 stage: "Data Analytics"
 roles: [analyst, pipeline]
-scope: core
 audit: merge
 order: 5
+source: cnt
 ---
 
 # SLURM on Finkel: Configuration & Limits

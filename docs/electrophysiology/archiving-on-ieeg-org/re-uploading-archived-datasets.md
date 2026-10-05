@@ -2,8 +2,8 @@
 title: "Re-uploading Archived Datasets"
 stage: "Data Governance"
 roles: [pipeline]
-scope: core
 order: 3
+source: cnt
 ---
 
 # Re-uploading Archived Datasets

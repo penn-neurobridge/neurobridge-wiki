@@ -2,8 +2,8 @@
 title: "Pennsieve Downloader"
 stage: "Data Standardization & Integration"
 roles: [data-rc, analyst, collaborator]
-scope: core
 order: 4
+source: cnt
 ---
 
 # Pennsieve Downloader

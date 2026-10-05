@@ -2,8 +2,8 @@
 title: "Troubleshooting Processing Errors"
 stage: "Data Standardization & Integration"
 roles: [data-rc, pipeline]
-scope: core
 order: 2
+source: cnt
 ---
 
 # Troubleshooting Processing Errors

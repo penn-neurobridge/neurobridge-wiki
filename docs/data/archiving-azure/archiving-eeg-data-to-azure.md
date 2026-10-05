@@ -2,8 +2,8 @@
 title: "Archiving EEG Data to Azure"
 stage: "Data Governance"
 roles: [pipeline, data-rc]
-scope: core
 order: 1
+source: cnt
 ---
 
 # Archiving EEG Data to Azure

@@ -2,8 +2,8 @@
 title: "Pennsieve Data Access Rules"
 stage: "Data Standardization & Integration"
 roles: [pi-manager, data-rc, collaborator]
-scope: core
 order: 1
+source: cnt
 ---
 
 # Pennsieve Data Access Rules

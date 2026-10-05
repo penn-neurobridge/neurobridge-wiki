@@ -2,8 +2,8 @@
 title: "Onboarding & Offboarding Checklist"
 stage: "Data Governance"
 roles: [crc, data-rc, analyst, pipeline, pi-manager]
-scope: core
 order: 1
+source: cnt
 ---
 
 # Onboarding & Offboarding Checklist

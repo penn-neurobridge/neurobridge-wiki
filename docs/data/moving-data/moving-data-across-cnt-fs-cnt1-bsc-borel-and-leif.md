@@ -2,9 +2,9 @@
 title: "Moving Data Across cnt-fs, cnt1, BSC, Borel & Leif"
 stage: "Data Standardization & Integration"
 roles: [data-rc, analyst, pipeline]
-scope: core
 audit: merge
 order: 1
+source: cnt
 ---
 
 # Moving Data Across cnt-fs, cnt1, BSC, Borel & Leif

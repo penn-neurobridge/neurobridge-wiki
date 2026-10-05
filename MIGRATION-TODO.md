@@ -1,6 +1,6 @@
 # Migration to-do
 
-Generated 2026-10-05 after the import from the lab's previous knowledge base. Tick items off as they are done; delete this file when it is empty.
+Generated 2026-10-05 after the import from the lab's previous knowledge base, and trimmed on the same day when the clinical and shared-system procedures moved to the CNT procedures manual (their open items went with them). Tick items off as they are done; delete this file when it is empty.
 
 ## Attachments
 
@@ -8,21 +8,16 @@ All attachments were downloaded and reviewed for patient identifiers; 153 were c
 
 **Screenshots withheld after PHI review** (each shows as a red 🚫 note on its page; replace with a de-identified capture):
 
-- [ ] **Flywheel → cnt-fs (3T)** (`docs/imaging/post-scan-transfer/flywheel-cnt-fs-3t.md`) — Real coded research subjects (sub-RID0985, RID983, etc., plus ex723011331) paired with exact scan dates/times; acquisition dates visible
-- [ ] **Opening ITK-SNAP Files from PennBox** (`docs/imaging/electrode-reconstruction/opening-itk-snap-files-from-pennbox.md`) — Non-defaced MRI: sagittal view shows facial soft-tissue profile (nose, lips, chin) of a real coded subject
-- [ ] **Opening ITK-SNAP Files from PennBox** (`docs/imaging/electrode-reconstruction/opening-itk-snap-files-from-pennbox.md`) — Non-defaced MRI: sagittal view shows facial soft-tissue profile of a real coded subject
 - [ ] **Seizure Terminology Reference** (`docs/redcap/projects-and-data-entry/seizure-terminology-reference.md`) — Open patient chart tab 'Collins, Maurice' visible in Epic header; patient name on a hospital record screen (staff user Gabriela Bustamante also shown)
 
 **Screen recordings kept out of Git** (GitHub's 100 MB file limit; stored in `Dropbox/NeuroBridge/wiki-media/` and referenced from the page):
 
 - [ ] **Grid Electrode Labeling Conventions** (`docs/imaging/electrode-reconstruction/grid-electrode-labeling-conventions.md`) — video1338425901.mp4
-- [ ] **RPPR Demographic Tables** (`docs/operations/regulatory-irb-and-reporting/rppr-demographic-tables.md`) — RPPR_Demographic_Table_Video_Tutorial.mov
 - [ ] Decide whether recordings should move to Penn+Box or Git LFS; update the links on those pages accordingly.
 
 ## Pages that need a human pass
 
 - [ ] Reshape migrated pages into the house template (Purpose / Scope / Prerequisites / Procedure / Troubleshooting / Notes), one theme at a time; a page counts as verified once someone has followed it and committed the fixes (git keeps the date and the name).
-- [ ] Merge the duplicate scalp-EEG pipeline page and delete the copy.
 - [ ] Pages whose original held a password (now removed): confirm the credential is in the password manager, then remove the warning box.
 - [ ] Lab Manual sections 1, 2, 5, 6, 7 and 9 are drafts awaiting the PI's pass; §1 and §5 need the stroke/LCNS/brainSTIM and CBIR columns filled in; §2 needs each role's expectations confirmed.
 - [ ] Write the gap pages: Data › Standards (the Data Structure v1.0 specification), Data › Site intake protocol, Data › Inventory, REDCap › Overview, Compute › Environments (conda / modules).
