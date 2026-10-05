@@ -11,6 +11,6 @@ center: ibi
 
 IBI is the informatics institute of the Perelman School of Medicine and the lab's intellectual home alongside its department. It hosts the informatics faculty, the seminar series and the computing community the lab belongs to.
 
-## Procedures the lab follows here
+## Procedures that involve this center
 
 %%SHARED:ibi%%

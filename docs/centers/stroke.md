@@ -11,6 +11,6 @@ center: stroke
 
 The Penn Stroke Center is the clinical stroke service; LCNS and the brainSTIM center are the neuromodulation and cognitive-neurology groups the lab works with. From this partnership come stroke and aphasia cohorts, lesion imaging, neuromodulation trial data and outcome scales. The Data and Compute procedures the lab follows at the CNT apply here unchanged; the imaging procedures will be adapted rather than copied.
 
-## Procedures the lab follows here
+## Procedures that involve this center
 
 %%SHARED:stroke%%

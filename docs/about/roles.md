@@ -5,7 +5,7 @@ order: 4
 
 # Roles
 
-Every page lists the roles it serves in its front matter (`roles: [...]`). These are *reader roles*, not job titles: one person usually holds two or three, and the Lab Manual's [Roles in the lab](../lab-manual/roles-in-the-lab.md) says which reader roles each job (coordinator, research assistant, postdoc, PhD, master's, undergraduate, collaborator) should follow. Use the [Map](../map/index.md) in Role view to see what each role needs to know.
+Every page lists the roles it serves in its front matter (`roles: [...]`). These are *reader roles*, not job titles: one person usually holds two or three, and the Lab Manual's [Roles in the lab](../lab-manual/roles-in-the-lab.md) says which reader roles each job (coordinator, research assistant, postdoc, PhD, master's, undergraduate, collaborator) should follow. Use the [Map](../map/index.md) in Role view, or the [Tags](../tags.md) page, to see what each role needs to know.
 
 | Key | Role | Reads the pages about |
 |---|---|---|

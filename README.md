@@ -2,9 +2,8 @@
 
 Standard operating procedures of the Penn NeuroBridge Lab, as Markdown, built into a website with [MkDocs](https://www.mkdocs.org) + [Material](https://squidfunk.github.io/mkdocs-material/).
 
-- `docs/` — the content: the Lab Manual, a page per partner center, the map, and (as the lab writes them) its own procedures, one folder per theme, one sub-folder per section, one file per procedure. **The repository root is an Obsidian vault.**
-- `centers.json` — the partner centers and, for the CNT, the procedures the lab follows in the CNT manual; drives the home-page graph, the center pages and the map.
-- `hooks/wiki.py` — builds the navigation from the folders, resolves `cnt:` links, and writes `map/graph.json` + `_reports/stale.json` at build time. No hand-maintained nav.
+- `docs/` — the content. One folder per theme, one sub-folder per section, one file per procedure. **This folder is also an Obsidian vault-friendly tree**; the repository root is the vault.
+- `hooks/wiki.py` — builds the navigation from the folders and writes `map/graph.json` + `_reports/stale.json` at build time. No hand-maintained nav.
 - `docs/about/` — how to contribute, style guide, SOP template, roles.
 - `design-system/` — the visual direction the landing page follows (tokens, pattern, checklist), generated with the UI/UX Pro Max skill.
 - `MIGRATION-TODO.md` — what still needs a human pass after the import from the previous knowledge base.
@@ -32,8 +31,8 @@ No patient identifiers. No credentials. One procedure per page. See `docs/about/
 
 ## Relationship to the CNT procedures manual
 
-The lab shares the CNT's epilepsy data pipelines. The CNT keeps all of its procedures in [penn-neurobridge/cnt-procedures](https://github.com/penn-neurobridge/cnt-procedures), maintained by the CNT associate director. This wiki copies none of them: `centers.json` lists the ones the lab follows, the home page draws them on the edge between the lab and the CNT, and every link to them is written `[text](cnt:theme/section/page.md)` and resolved from one setting in `mkdocs.yml` (`extra.wiki.cnt_manual`; switch `style` to `site` once the CNT manual is hosted). `scripts/check_cnt_links.py ../cnt-procedures` verifies the targets and runs in `make check`.
+The lab shares the CNT's epilepsy data pipelines. The CNT keeps the complete set of procedures, including the clinical and shared-system work the lab only depends on, in [penn-neurobridge/cnt-procedures](https://github.com/penn-neurobridge/cnt-procedures), maintained by the CNT associate director. This wiki keeps only the procedures the lab's own people run; pages that also exist in the CNT manual carry `source: cnt` and a note with the link, and pages that live only there are linked with `cnt:` links, resolved from one setting in `mkdocs.yml` (`extra.wiki.cnt_manual`; switch `style` to `site` once the CNT manual is hosted).
 
 ## Audit
 
-`AUDIT.md` keeps the October 2026 assessment of how the inherited procedures read to a newcomer and the questions only the lab can answer; the page-by-page table lives with the pages, in the CNT manual's `AUDIT.md`.
+`AUDIT.md` records the October 2026 page-by-page audit of the procedures kept here: stale-risk and newcomer scores, the recommended action, and the questions only the lab can answer. Pages the audit flagged carry an `audit: merge` or `audit: retire` field and a banner until the lab decides.

@@ -11,6 +11,6 @@ center: cceb
 
 CCEB is home to the biostatistics and epidemiology training programs that several lab members belong to. Coursework and program milestones run in parallel with lab work; tell the PI early when they collide.
 
-## Procedures the lab follows here
+## Procedures that involve this center
 
 %%SHARED:cceb%%

@@ -33,6 +33,8 @@
     // edges
     const edges = svg.append("g");
     pos.forEach(p => {
+      if (p.c.shared_count) edges.append("line").attr("x1", cx).attr("y1", cy).attr("x2", p.x).attr("y2", p.y)
+        .attr("stroke", "var(--nb-soft)").attr("stroke-width", 44).attr("stroke-linecap", "round");
       edges.append("line").attr("x1", cx).attr("y1", cy).attr("x2", p.x).attr("y2", p.y)
         .attr("stroke", "var(--nb-line)").attr("stroke-width", p.c.shared_count ? 1.5 + Math.min(10, p.c.shared_count / 6) : 1.5)
         .attr("stroke-opacity", p.c.shared_count ? 0.9 : 0.8).attr("stroke-dasharray", p.c.shared_count ? null : "4 4");
@@ -65,6 +67,22 @@
         .on("mouseleave", () => tip.attr("hidden", true));
     });
 
+    // the lab's own procedures that involve no particular center: a ring around the lab
+    const own = data.nodes.filter(nd => !nd.external && !nd.center);
+    if (own.length) {
+      const ring = svg.append("g");
+      own.forEach((nd, i) => { const a = -Math.PI / 2 + i * 2 * Math.PI / own.length; nd._x = cx + Math.cos(a) * 92; nd._y = cy + Math.sin(a) * 92; });
+      ring.selectAll(null).data(own).enter().append("a").attr("href", nd => root + nd.url)
+        .append("circle").attr("cx", nd => nd._x).attr("cy", nd => nd._y).attr("r", 5.5)
+        .attr("fill", nd => THEME_COLORS[nd.theme] || "#888").attr("stroke", "#fff").attr("stroke-width", 1.5)
+        .on("mousemove", (e, nd) => {
+          tip.attr("hidden", null).html(`<b>${nd.title}</b><br>${nd.theme}${nd.section ? " › " + nd.section : ""}<br><span>${nd.stage}</span>`);
+          const r = host.getBoundingClientRect();
+          tip.style("left", (e.clientX - r.left + 14) + "px").style("top", (e.clientY - r.top + 14) + "px");
+        })
+        .on("mouseleave", () => tip.attr("hidden", true));
+    }
+
     // center hubs
     const hubs = svg.append("g");
     const hub = hubs.selectAll("g").data(pos).enter().append("a").attr("href", p => root + "centers/" + p.c.id + "/")
@@ -78,20 +96,21 @@
         lines.push(line.trim());
         const t = d3.select(this);
         lines.forEach((l, i) => t.append("tspan").attr("x", 0).attr("dy", i === 0 ? 58 : 14).text(l));
-        if (p.c.shared_count) t.append("tspan").attr("class", "eco-count").attr("x", 0).attr("dy", 15).text(p.c.shared_count + " procedures the lab follows");
+        if (p.c.shared_count) t.append("tspan").attr("class", "eco-count").attr("x", 0).attr("dy", 15).text(p.c.shared_count + (p.c.id === "cnt" ? " procedures run jointly" : " procedures"));
       });
 
     // the lab
     const lab = svg.append("a").attr("href", root + "lab-manual/start-here/").append("g").attr("transform", `translate(${cx},${cy})`);
-    lab.append("circle").attr("r", 64).attr("fill", "var(--nb-navy)");
-    lab.append("text").attr("class", "eco-lab").attr("text-anchor", "middle").attr("dy", -6).text("NeuroBridge");
-    lab.append("text").attr("class", "eco-lab").attr("text-anchor", "middle").attr("dy", 13).text("Lab");
-    lab.append("text").attr("class", "eco-lab-sub").attr("text-anchor", "middle").attr("dy", 32).text("DBEI");
+    lab.append("circle").attr("r", 70).attr("fill", "var(--nb-navy)");
+    lab.append("text").attr("class", "eco-lab").attr("text-anchor", "middle").attr("dy", -8).text("NeuroBridge");
+    lab.append("text").attr("class", "eco-lab").attr("text-anchor", "middle").attr("dy", 11).text("Lab");
+    lab.append("text").attr("class", "eco-lab-sub").attr("text-anchor", "middle").attr("dy", 28).text("data coordinating");
+    lab.append("text").attr("class", "eco-lab-sub").attr("text-anchor", "middle").attr("dy", 42).text("center");
 
     // legend
     const lg = d3.select(host).append("div").attr("class", "wm-legend");
     lg.html(Object.entries(THEME_COLORS).map(([t, c]) => `<span class="wm-key"><i style="background:${c}"></i>${t}</span>`).join("") +
-      `<span class="wm-key wm-key-note">node = one procedure the lab follows at that center · hollow = kept in the CNT manual · click to open</span>`);
+      `<span class="wm-key wm-key-note">node = one procedure, on the edge of the center it involves · filled = in this wiki · hollow = in the CNT manual only · click to open</span>`);
   }
 
   if (window.document$) { window.document$.subscribe(boot); } else { document.addEventListener("DOMContentLoaded", boot); }

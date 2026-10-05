@@ -137,7 +137,8 @@ def _procedures(config):
                     "url": re.sub(r"\.md$", "/", rel),
                     "theme": ttitle, "section": section, "stage": str(fm["stage"]),
                     "roles": list(fm.get("roles") or []), "scope": fm.get("scope", ""), "audit": fm.get("audit", ""),
-                    "center": fm.get("center", ""),
+                    "center": fm.get("center") or ("cnt" if fm.get("source") == "cnt" else ""),
+                    "source": fm.get("source", ""),
                 })
     return nodes
 
@@ -193,9 +194,9 @@ def on_page_markdown(markdown, page, config, files):
     scope = meta.get("scope")
     banners = ""
     if meta.get("source") == "cnt":
-        banners += _banner("info", "Also in the CNT manual",
-            f"This procedure is also kept in the [CNT procedures manual]({cnt_url(page.file.src_path, config)}), "
-            "where it is maintained for the shared CNT systems. Differences specific to this lab belong on this page.")
+        banners += _banner("info", "Shared with the CNT",
+            "This procedure runs on infrastructure the lab and the CNT operate together. The CNT manual keeps "
+            f"[its own copy]({cnt_url(page.file.src_path, config)}); changes to the shared steps are agreed with the CNT.")
     if scope in SCOPE_BANNERS:
         banners += _banner(*SCOPE_BANNERS[scope])
     if scope != "flagged" and meta.get("audit") in AUDIT_NOTE:
@@ -218,14 +219,17 @@ def on_page_markdown(markdown, page, config, files):
             if not mine and not ext:
                 return "*No procedures yet. They are added here as the collaboration produces them.*"
             out = []
-            if mine:
-                out.append("**Written by the lab**\n")
-                out.append("\n".join(f"- [{n['title']}](../{n['id']})" for n in mine) + "\n")
+            by_theme = {}
+            for n in mine:
+                by_theme.setdefault(n["theme"], []).append(n)
+            for theme, items in by_theme.items():
+                out.append(f"**{theme}** ({len(items)})\n")
+                out.append("\n".join(f"- [{n['title']}](../{n['id']})" + (f" · {n['section']}" if n.get("section") else "") for n in items) + "\n")
             by_theme = {}
             for sp in ext:
                 by_theme.setdefault(sp["theme"], []).append(sp)
             for theme, items in by_theme.items():
-                out.append(f"**{theme}** ({len(items)}), in the CNT manual\n")
+                out.append(f"**{theme}** ({len(items)}), in the CNT manual only\n")
                 out.append("\n".join(f"- [{i['title']}](cnt:{i['path']}) · {i['section']}" if i.get("section") else f"- [{i['title']}](cnt:{i['path']})" for i in items) + "\n")
             return "\n".join(out)
         markdown = re.sub(r"%%SHARED:([a-z0-9\-]+)%%", shared_list, markdown)
@@ -243,7 +247,7 @@ def on_page_markdown(markdown, page, config, files):
         if key == "MANUAL": return str(manual)
         if key.startswith("SHAREDCOUNT:"):
             c = next((c for c in _centers(config)["centers"] if c["id"] == key[12:]), None)
-            return str(len(c["shared"])) if c else "0"
+            return str(len(c["shared"]) + sum(1 for n in nodes if n.get("center") == key[12:])) if c else "0"
         if key.startswith("T:"): return str(sum(1 for n in nodes if n["theme"] == key[2:]))
         if key.startswith("S:"): return str(sum(1 for n in nodes if n["stage"] == key[2:]))
         return m.group(0)
@@ -282,7 +286,7 @@ def on_post_build(config):
     out = {"generated": datetime.date.today().isoformat(), "themes": list(_theme_dirs(config).values()),
            "stages": config["extra"]["wiki"]["stages"], "roles": _roles(config), "nodes": nodes, "own_count": own_count,
            "lab": centers.get("lab", {}),
-           "centers": [{k: v for k, v in c.items() if k != "shared"} | {"shared_count": len(c.get("shared") or [])} for c in centers["centers"]],
+           "centers": [{k: v for k, v in c.items() if k != "shared"} | {"shared_count": len(c.get("shared") or []) + sum(1 for n in nodes if not n.get("external") and n.get("center") == c["id"])} for c in centers["centers"]],
            "scopes": scopes if any(n["scope"] for n in nodes) else {}}
     os.makedirs(os.path.join(config["site_dir"], "map"), exist_ok=True)
     json.dump(out, open(os.path.join(config["site_dir"], "map", "graph.json"), "w"), indent=0)
