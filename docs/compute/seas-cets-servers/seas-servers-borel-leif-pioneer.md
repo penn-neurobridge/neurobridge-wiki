@@ -11,28 +11,32 @@ source: cnt
 !!! abstract "What this page tells you"
     Borel is the CETS Linux compute server (ssh with PennKey); Leif is the file store you mount, which needs a SEAS Local Password set at accounts.seas.upenn.edu; Pioneer is Borel's GPU. No PHI on any. Access lasts while your SEAS account is active.
 
+Borel, Leif and Pioneer are the CNT's servers at the School of Engineering (SEAS), managed by CETS. Any lab member with an active SEAS account can use them. No PHI is allowed on any of them.
+
 ### Littlab Servers (Borel, Leif, Pioneer)
 
-**Borel**: Linux compute server under CETS, not PMACS. We own this, and no other group can access it. No PHI data is allowed here.
-Borel and Leif are essentially two parts of one system -- Leif is the server/drive where you store your data/files (you mount it and open it in Finder / File Explorer), and Borel is the linux compute server where you run your code/computations (you ssh into this), and Borel and Leif are connected. For example, in Leif when you create a file in your USERS/pennkey folder, it will show up in Borel in `cd /users/pennkey`
+**Borel** is a Linux compute server managed by CETS, not PMACS. The CNT owns it, and no other group can access it. No PHI is allowed on Borel.
 
-I don't think people need to set their SEAS local password to SSH into Borel. They use their PennKey username and password for that. Specifically it looks like we're using Kerberos which authenticates against the campus Kerberos servers.
+Borel and Leif are two parts of one system. Leif is the server where you store your data and files; you mount it and open it in Finder or File Explorer. Borel is the Linux compute server where you run your code; you ssh into it. The two are connected: a file you create in your USERS/pennkey folder on Leif appears on Borel under `cd /users/pennkey`.
 
-       Are you using your PennKey password or your SEAS Local Password? You need to use your SEAS Local Password, which is a separate password pretty much just for SMB. Unfortunately we can't get the SMB server to use PennKeys for authentication.
+You do not need a SEAS Local Password to SSH into Borel. SSH uses your PennKey username and password, authenticated through Kerberos against the campus Kerberos servers.
 
-       To set your SEAS Local Password, go to [https://accounts.seas.upenn.edu](https://accounts.seas.upenn.edu/) and log in with your PennKey. Then click "SEAS local password" on the left and follow the instructions.
+Mounting Leif over SMB is different. It requires your SEAS Local Password, which is a separate password used mainly for SMB, because the SMB server cannot authenticate with PennKeys.
 
-**Pioneer**: The GPU attached to borel. No PHI is allowed here.
+To set your SEAS Local Password, go to [https://accounts.seas.upenn.edu](https://accounts.seas.upenn.edu/) and log in with your PennKey. Then click "SEAS local password" on the left and follow the instructions.
 
-*   Pioneer *(retired page)*
+**Pioneer** is the GPU attached to Borel. No PHI is allowed on Pioneer.
 
 ### Software
 
-*   Matlab *(retired page)*
+Matlab is installed on Borel and Pioneer. See [Submitting CETS & PMACS Helpdesk Tickets](../support-and-tickets/submitting-cets-and-pmacs-helpdesk-tickets.md) for how to request a personal license if you need one.
 
 ### Security and Best Practices
 
 *   CETS Security Presentation Fall 2023:
 
 [📄 seascetssecurity.pptx](../../assets/compute/seas-servers-borel-leif-pioneer/01-seascetssecurity.pptx)
-        Sorry for the delay. Their SEAS account has been renewed for another year. That will grant them access to SEAS resources. As for access to the Littlab servers they have no expiration on their access so as long as their SEAS account is active, they will be able to access those servers.
+
+### Access Duration
+
+Access to the Littlab servers has no expiration of its own. It lasts for as long as your SEAS account is active, and SEAS accounts are renewed yearly. See [Submitting CETS & PMACS Helpdesk Tickets](../support-and-tickets/submitting-cets-and-pmacs-helpdesk-tickets.md) for how access and renewals are requested.

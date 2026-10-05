@@ -9,16 +9,16 @@ source: cnt
 # RADAR Pull → REDCap Entry
 
 !!! abstract "What this page tells you"
-    Yearly, Joel Stein pulls MRNs and accession numbers for clinical 3T epilepsy and fMRI scans; coordinators add these patients to the Multimodal Clinical 3T Repository REDCap via CSV import (batches of 10), using the codebook and EPIC search phrases for handedness, lesions, neuropsych, and lateralization.
+    Yearly, the neuroradiologist pulls MRNs and accession numbers for clinical 3T epilepsy and fMRI scans; coordinators add these patients to the Multimodal Clinical 3T Repository REDCap via CSV import (batches of 10), using the codebook and EPIC search phrases for handedness, lesions, neuropsych, and lateralization.
 
-*   About once a year, there is a RADAR pull--Joel Stein will pull the list of MRNs and accession numbers for all patients in the last year that have had a clinical 3T scan (labeled in pennchart as MR HEAD EPILEPSY MULTIMODAL PRE EMU WO IV CONTRAST)
-    *   Joel will also do a pull ~yearly for all patients in the last year that have had a functional MRI scan (task based fMRI)
+*   About once a year, there is a RADAR pull--the neuroradiologist will pull the list of MRNs and accession numbers for all patients in the last year that have had a clinical 3T scan (labeled in pennchart as MR HEAD EPILEPSY MULTIMODAL PRE EMU WO IV CONTRAST)
+    *   the neuroradiologist will also do a pull ~yearly for all patients in the last year that have had a functional MRI scan (task based fMRI)
     *   **A clinician may label patient's as being drug resistant or having PNEE. If so, you can fill this out in REDCap. If not, leave blank**
 *   The scans will be pulled and put onto one of the servers (i.e. borel, BSC)
 *   Coordinators are responsible for putting these patients in the Multimodal Clinical 3T Repository in REDCap to store their metadata [https://redcap.med.upenn.edu/redcap\_v15.1.2/index.php?pid=42518](https://redcap.med.upenn.edu/redcap_v15.1.2/index.php?pid=42518)
 *   Because the pulls contain about 400 patients, it is easiest to create a cvs spreadsheet to use for filling out the data, and then import the spreadsheet into REDCap; I usually import patients in groups of 10 in case something goes wrong
 *   **\*\*\*\*You should periodically check for updates on all existing patients in this REDCap--i.e. if they've since had neuropsych testing, surgery, scans, a new lesion, etc.**
-    *   Ensure you reach out to Joel or Kate once a year ish to ask for the list of accession numbers for the most recent pull so that you can get the metadata and import that cohort!
+    *   Ensure you reach out to the neuroradiologist or Kate Davis once a year ish to ask for the list of accession numbers for the most recent pull so that you can get the metadata and import that cohort!
 
 **To create a spreadsheet with the proper titles:**
 

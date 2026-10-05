@@ -10,7 +10,7 @@ The CNT is home to the Penn Epilepsy Center research groups of Erin Conrad, Kate
 
 Procedures that both groups use are kept in both manuals and maintained together; each such page here carries a note and a link to the CNT's copy, and a change to a shared step is agreed with the CNT before either manual is edited. The CNT's own work, such as consenting, scanner-day and participant-facing coordinator procedures, lives only in the [CNT procedures manual](cnt:index.md), maintained by the CNT associate director.
 
-## Procedures run jointly with the CNT
+## Procedures kept in both manuals
 
 %%SHARED:cnt%%
 

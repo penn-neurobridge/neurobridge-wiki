@@ -20,4 +20,4 @@ source: cnt
     1. To activate your learning account:
     [📄 Self-Service-Access-to-Workday-Learning-by-the-Extended-Penn-Community.pdf](../../assets/operations/requesting-a-redcap-account/01-self-service-access-to-workday-learning-by-the-extended-penn-community.pdf)
     2. [solutioncenter@upenn.edu](mailto:solutioncenter@upenn.edu) for any other issues
-4. Fill out [https://](https://redcap.med.upenn.edu/surveys/?s=YbCvd4)[**redcap**](https://redcap.med.upenn.edu/surveys/?s=YbCvd4)[.med.upenn.edu/surveys/?s=YbCv](https://redcap.med.upenn.edu/surveys/?s=YbCvd4) and an account will be created for you. All users are required to have a PennKey, so be sure to include your PennKey in the survey.
+4. Fill out [https://](https://redcap.med.upenn.edu/surveys/?s=YbCvd4)[**redcap**](https://redcap.med.upenn.edu/surveys/?s=YbCvd4)[.med.upenn.edu/surveys/?s=YbCv](https://redcap.med.upenn.edu/surveys/?s=YbCvd4) and an account will be created for you. All users are required to have a PennKey, so be sure to include your PennKey in the survey.

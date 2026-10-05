@@ -5,9 +5,6 @@ order: 1
 
 # 1. What this lab is
 
-!!! warning "Draft"
-    This section still needs the PI's pass. Edit it directly; the structure is a proposal.
-
 ## Mission
 
 The lab exists to **quantify disease severity, progression and outcomes**, to **overcome barriers to clinical translation**, and to **guide personalized treatment** in neurological disorders. Everything the lab does falls under one of three thrusts:
@@ -27,18 +24,17 @@ The data comes from clinical partners. Each partnership brings its own patients,
 | Partner | What they are | What the lab does with them | Where their procedures live |
 |---|---|---|---|
 | **Center for Neuroengineering & Therapeutics (CNT)** and the **Penn Epilepsy Center** | The epilepsy groups of Erin Conrad, Kate Davis and Brian Litt; the lab has a touchdown space at CNT and shares its servers, data and coordinators | Intracranial and scalp EEG, MRI/CT, electrode reconstruction, surgical outcomes; most of the data pipelines the lab runs started here | Electrophysiology, Imaging, REDCap, Compute (cnt1/cnt-fs), Operations |
-| **Penn Stroke Center**, with the **Laboratory for Cognition and Neural Stimulation (LCNS)** and the **Penn Brain Science, Translation, Innovation and Modulation Center (brainSTIM)** | Roy Hamilton's neuromodulation and cognitive-neurology groups and the clinical stroke service | Stroke and aphasia cohorts, lesion imaging, neuromodulation trial data, outcome scales | *Procedures to be added — see §5* |
-| **Center for Brain Injury and Repair (CBIR)** | Penn's traumatic-brain-injury research center | TBI cohorts, imaging and clinical trajectories | *Procedures to be added — see §5* |
+| **Penn Stroke Center**, with the **Laboratory for Cognition and Neural Stimulation (LCNS)** and the **Penn Brain Science, Translation, Innovation and Modulation Center (brainSTIM)** | Roy Hamilton's neuromodulation and cognitive-neurology groups and the clinical stroke service | Stroke and aphasia cohorts, lesion imaging, neuromodulation trial data, outcome scales | *In preparation* |
+| **Center for Brain Injury and Repair (CBIR)** | Penn's traumatic-brain-injury research center | TBI cohorts, imaging and clinical trajectories | *In preparation* |
 | **IBI / DBEI / CCEB** | The methods institutes (not data sources) | Compute allocations, biostatistics and informatics collaborators, training programs, seminars | Compute (PMACS), Operations › Onboarding |
 
-!!! note "Why the wiki looks epilepsy-heavy today"
-    The 150 procedures imported in October 2026 came from the CNT knowledge base, so the Electrophysiology, Imaging and REDCap themes describe epilepsy workflows. The structure is deliberately generic: a stroke MRI follows the same Imaging stages (book → scan → transfer → format → derive), and a TBI cohort enters through the same Data › Site intake protocol. As the stroke and TBI collaborations produce their own procedures, they are added to the same themes with a `program` tag rather than to a separate section.
+The procedures in this wiki today are the epilepsy workflows run jointly with the CNT, because that is where the lab's infrastructure began. The structure is generic: a stroke MRI follows the same Imaging stages (book, scan, transfer, format, derive), and a TBI cohort enters through the same site-intake protocol. Procedures for the other centers are added to the same themes, with a `center:` line in their front matter, as the collaborations produce them.
 
 ## Who's who
 
 - **PI** — Nishant Sinha.
-- **Collaborating PIs** — Erin Conrad and Kate Davis (Penn Epilepsy Center); Brian Litt (CNT); the Penn Stroke Center / LCNS / brainSTIM and CBIR investigators the lab works with. *(Add names as collaborations are formalised.)*
-- **Team** — research coordinators (data and clinical), research assistants, postdocs, PhD students, master's and undergraduate students, and a cloud-infrastructure project manager. Roles are described in [§2](roles-in-the-lab.md). *(Add a People table: name · role · program · start date.)*
+- **Collaborating PIs** — Erin Conrad and Kate Davis (Penn Epilepsy Center); Brian Litt (CNT); the Penn Stroke Center / LCNS / brainSTIM and CBIR investigators the lab works with.
+- **Team** — research coordinators (data and clinical), research assistants, postdocs, PhD students, master's and undergraduate students, and a cloud-infrastructure project manager. Roles are described in [§2](roles-in-the-lab.md). The people directory is in the lab's project workspace.
 
 ## How we work
 

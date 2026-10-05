@@ -16,35 +16,30 @@ source: cnt
 
 ### Uploading from CNT1 to Pennsieve
 
-
 1. **Open Terminal**
-2. **SSH into BSC cluster**
-    *   Command: ssh [USER@bscsub.pmacs.upenn.edu](mailto:USER@bscsub.pmacs.upenn.edu)
-    *   For example: ssh [bach2@bscsub.pmacs.upenn.edu](mailto:bach2@bscsub.pmacs.upenn.edu)
-3. SSH into CNT1
-    *   Once into bsc log into CNT1 with ssh USER@CNT1
-4. **Load and Configure Pennsieve Agent or use script command ./pennsieve\_setup.sh to do this manually (the setup script's companion page was not migrated)**
-    *   Load module: module load pennsieve
-    *   Start config wizard: pennsieve config wizard
-    *   In a separate terminal, get your secret and token with this command: cat .pennsieve/config.ini
-    *   Enter the api\_token and api\_secret from your own `.pennsieve/config.ini` (they are personal; never paste them into a wiki page)
-    *   Create a new profile bach2 (name it as you wish)
+2. **SSH into the BSC cluster**
+    *   Command: `ssh USER@bscsub.pmacs.upenn.edu`
+    *   Example: `ssh <pennkey>@bscsub.pmacs.upenn.edu`
+3. **SSH into CNT1**
+    *   Once on BSC, log in to CNT1 with `ssh USER@CNT1`
+4. **Load and configure the Pennsieve agent**, or run the `./pennsieve_setup.sh` script to do it (the setup script's companion page was not migrated)
+    *   Load the module: `module load pennsieve`
+    *   Start the config wizard: `pennsieve config wizard`
+    *   In a separate terminal, get your secret and token with this command: `cat .pennsieve/config.ini`
+    *   Enter the `api_token` and `api_secret` from your own `.pennsieve/config.ini` (they are personal; never paste them into a wiki page)
+    *   Create a new profile and name it as you wish
     *   Confirm with 'Y'
-5. **Verify Pennsieve Login**
-    *   Command: pennsieve whoami
-    *   Ensure it returns your Pennsieve username
-6. **Identify Dataset Number**
+5. **Verify the Pennsieve login**
+    *   Command: `pennsieve whoami`
+    *   Make sure it returns your Pennsieve username
+6. **Identify the dataset number**
     *   Log in to Pennsieve and find the dataset node ID (N) you want to use
-7. **Select the Dataset**
-    *   Command: pennsieve dataset use N
-8. **Create a Manifest for Your Folder**
-    *   Command: pennsieve manifest create "cnt1 folder name"
-    *   _Example:_ pennsieve manifest create "/project/rns/NYU\_Neuropace/"
-9. **Upload the Manifest**
-    *   Command: pennsieve upload manifest # (replace # with the manifest ID)
-10. **(Optional) View Command History**
-    *   Command: history
-
-* * *
-
-This version provides a clear, step-by-step guide for transferring files between Pennbox and CNT1, with improved organization and clarity.
+7. **Select the dataset**
+    *   Command: `pennsieve dataset use N`
+8. **Create a manifest for your folder**
+    *   Command: `pennsieve manifest create "cnt1 folder name"`
+    *   _Example:_ `pennsieve manifest create "/project/rns/NYU_Neuropace/"`
+9. **Upload the manifest**
+    *   Command: `pennsieve upload manifest #` (replace # with the manifest ID)
+10. **(Optional) View the command history**
+    *   Command: `history`

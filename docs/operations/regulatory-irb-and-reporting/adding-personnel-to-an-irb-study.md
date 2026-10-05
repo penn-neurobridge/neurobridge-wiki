@@ -14,10 +14,10 @@ source: cnt
 *   When you want to add personnel to an IRB study, first make sure they have [the following documents in pennbox](https://upenn.box.com/s/bwjk5cr1d3b8r52dba0sc1pvkj5sl71s) in CNT administration➝IRB➝[CNT\_personnel](https://upenn.box.com/s/h7t1pc3oz4wzklqifjupkuol82j4z3cz) as they are required by OCR **(****_note: only CITI Biomedical Research is needed for submission when adding someone through HSERA, but for audit reasons, be sure we have these documents on file before adding_****)**
     *   CITI Biomedical Research - Human Research (no expiration)
     *   CITI Good Clinical Practice (expires every 3 years)
-    *   _Current_ HIPAA (expires annually)
-    *   _Current_ CV
+    *   _Current_ HIPAA (expires annually)
+    *   _Current_ CV
     *   Medical license (_if applicable)_
-*   If the study has an electronic regulatory binder in pennbox, their personnel folder should be labeled: PositionTitle-Firstname\_lastname (ex: ResearchCoordinator-Nina\_Petillo) **and these documents should be copied to their personnel folder in the eReg binder**
+*   If the study has an electronic regulatory binder in pennbox, their personnel folder should be labeled: PositionTitle-Firstname\_lastname (ex: ResearchCoordinator-Jane\_Doe) **and these documents should be copied to their personnel folder in the eReg binder**
     *   If not, the documents can live in their personnel folder within CNT personnel (Lastname\_Firstname)
 **To obtain the actual CERTIFICATE:**
 

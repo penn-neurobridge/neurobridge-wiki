@@ -30,7 +30,6 @@ source: cnt
 4C (4.3) = worsening
 
 #### **ILAE Classification Cheat Sheet-**
-\- made by Cat Kulick
 
 <span class="attachment-withheld" title="Withheld after PHI review">🚫 Screenshot withheld (PHI review): Epic PROD Staff Msg compose with ILAE outcome SmartList dropdown — replace with a de-identified capture</span>
 
@@ -38,25 +37,25 @@ source: cnt
 
 #### **Seizure Medications**
 Levetiracetam = Keppra
- Lorazepam = Ativan
- Lamotrigine = Lamictal
- Clobazam = Onfi
- Lacosamide = Vimpat
- Oxcarbazepine = trileptal, oxtellar
- Valproic Acid = Valproate, depakote
- Topiramate = Topamax
- Zonisamide = Zonegran
- Clonazepam = klonopin
- Gabapentin =  Gralise, Horizant, Neuraptine
- Brivaracetam = Brivact
- Carbamazepine = Tegretol XR, Carbatrol, Equetro
- Phenytoin = Phenytek, Dilantin Infatabs, Dilantin Kapseal
- Perampanel = fycompa
- Phenobarbital = phenobarbitone or phenobarb
- Eslicarbazepine = Aptiom and Zebinix
- Pregabalin = Lyrica
- Rufinamide = Banzel
- Cenobamate = Xcopri and Ontozry
+ Lorazepam = Ativan
+ Lamotrigine = Lamictal
+ Clobazam = Onfi
+ Lacosamide = Vimpat
+ Oxcarbazepine = trileptal, oxtellar
+ Valproic Acid = Valproate, depakote
+ Topiramate = Topamax
+ Zonisamide = Zonegran
+ Clonazepam = klonopin
+ Gabapentin =  Gralise, Horizant, Neuraptine
+ Brivaracetam = Brivact
+ Carbamazepine = Tegretol XR, Carbatrol, Equetro
+ Phenytoin = Phenytek, Dilantin Infatabs, Dilantin Kapseal
+ Perampanel = fycompa
+ Phenobarbital = phenobarbitone or phenobarb
+ Eslicarbazepine = Aptiom and Zebinix
+ Pregabalin = Lyrica
+ Rufinamide = Banzel
+ Cenobamate = Xcopri and Ontozry
 
 #### **Histology**
 

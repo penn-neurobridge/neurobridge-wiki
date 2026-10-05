@@ -9,11 +9,11 @@ source: cnt
 # Re-uploading Archived Datasets
 
 !!! abstract "What this page tells you"
-    To fix an already-archived dataset, ask Josh to unarchive it to /project/eeg_process/azure_archive/recently_unarchived/HUPXXX, recreate the HUPXXX folder in cnt-fs with channel mapping, natusdir, and data collection from ieeg_metadata, cp the recordings back, then rerun the Processing for ieeg.org SOP from the mef conversion.
+    To fix an already-archived dataset, ask the data research coordinator to unarchive it to /project/eeg_process/azure_archive/recently_unarchived/HUPXXX, recreate the HUPXXX folder in cnt-fs with channel mapping, natusdir, and data collection from ieeg_metadata, cp the recordings back, then rerun the Processing for ieeg.org SOP from the mef conversion.
 
 If there is an error in an uploaded dataset that has already been archived from cnt-fs, follow the steps below.
 
-1. Ask Josh to put in a ticket to request that it be unarchived
+1. Ask the data research coordinator to put in a ticket to request that it be unarchived
 2. He will move it to cnt1 in project/eeg\_process/azure\_archive/HUPXXX
 3. Create a HUPXXX folder in cnt-fs in eeg\_raw/ieeg\_raw
     1. move the channel mapping, natusdir, and data collection files from ieeg\_metadata to this HUPXXX folder

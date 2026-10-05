@@ -41,7 +41,7 @@ source: cnt
 1.     Hello,
     Can you please grant the following people access to the CNT VDI and please create a PMACS account for them if they do not already have one? I will complete the online VDI form shortly (I need this ticket number first). Thank you!
     < last name, first name, email address, pennkey >
-    Asuncion, Joshua, [asuncion@seas.upenn.edu](mailto:asuncion@seas.upenn.edu), asuncion
+    <Last>, <First>, <email>, <pennkey>
     1. 1. A PMACS account will be created for them if they do not already have an account. If they do not already have an existing PennMed account and have missing Penn affiliations, PMACS may ask you to provide a sponsor for proper affiliation. If asked, the affiliation should be:
 2.     Sponsor: < Kathryn Davis / Brian Litt / Flavia Vitale >
     Dept: Neurology
@@ -79,7 +79,7 @@ source: cnt
 
     1. Once granted VDI access, users will receive notification from PMACS on how to install and access the VDI. Instructions are also found on LabArchives.
 2. Next, the Data & Systems Manager must submit a PMACS IT ticket for cnt1 and cnt-fs access as a "Systems" ticket. When requesting access, users must be granted access to both cnt-fs and cnt1.
-    1. Note: The staff submitting the ticket must have "Systems" be granted to them first by PMACS before they are able to submit "Systems" tickets in the portal. Contact Josh Asuncion (Data & Systems Manager).
+    1. Note: The staff submitting the ticket must have "Systems" be granted to them first by PMACS before they are able to submit "Systems" tickets in the portal. Contact the data research coordinator.
     2. Note: Directories / usergroups in cnt1 and cnt-fs are tied to IRBs. CNT members must be on the correct IRBs first before they can be added to the corresponding directories / usergroups in cnt1 and cnt-fs.
     3. groups for cnt1/fs are as follows:
         1. cnt\_staff\_group
@@ -96,16 +96,16 @@ source: cnt
     4. Template to use in ticket:
 3.     Hello,
     Can you please grant the following people access to the CNT's HIPAA secure server cnt1 and windows fileshare cnt-fs? Can you also please grant them access to the following usergroups: < insert usergroup(s) >
-    **Josh add user group options and coordinating IRBs**
+    **Add the user-group options and the coordinating IRBs**
     VDI access have been requested through a separate ticket to the Client Services Group (TICK:XXXXXX). Thank you!
     < last name, first name, email address, pennkey >
-    Asuncion, Joshua, [asuncion@seas.upenn.edu](mailto:asuncion@seas.upenn.edu), asuncion
+    <Last>, <First>, <email>, <pennkey>
 
 ### PMACS: Request access to BSC Cluster
 
 1. BSC access is primarily granted to Davis lab users, CNT staff, and any CNT members who will be working primarily with brain imaging data in the BSC.
 2. The Data & Systems Manager must submit a PMACS/DART IT ticket through their online ticketing system, KACE ([https://helpdesk.pmacs.upenn.edu/userui/summary.php](https://helpdesk.pmacs.upenn.edu/userui/summary.php)), as a "Systems" ticket.
-    1. Note: The staff submitting the ticket must have "Systems" be granted to them first by PMACS before they are able to submit "Systems" tickets in the portal. Contact Josh Asuncion (Data & Systems Manager).
+    1. Note: The staff submitting the ticket must have "Systems" be granted to them first by PMACS before they are able to submit "Systems" tickets in the portal. Contact the data research coordinator.
     2. **Note:** If a PMACS account has already been requested in a separate ticket, such as for VDI / cnt-fs / cnt1 access, you must reference that ticket number in this ticket as well.
     3. Template to use in ticket:
 4.     Hello,
@@ -113,7 +113,7 @@ source: cnt
     User group: davisgroup
     Project directory access: /project/davis\_group\_1
     < Last name, first name, email address, pennkey >
-    Asuncion, Joshua, [asuncion@seas.upenn.edu](mailto:asuncion@seas.upenn.edu), asuncion
+    <Last>, <First>, <email>, <pennkey>
     1. Note: A PMACS account will be created for them if they do not already have an account. If they do not already have an existing PennMed account and have missing Penn affiliations, PMACS may ask you to provide a sponsor for proper affiliation. If asked, the affiliation should be:
 5.     Sponsor: < Kathryn Davis / Brian Litt / Flavia Vitale >
     Dept: Neurology
@@ -137,7 +137,7 @@ source: cnt
     The CNT has the following new staff/student(s). Please grant them access to Borel, Pioneer, Finkel and Sauce, create a user folder for each of them in /users/, and add them to the "littuser" / "davisuser" / "vitaleuser" usergroup (I specify which below) and the "cntgroup" usergroup.
     If they do not have a SEAS account, can you please create a sponsored research account for them? Access to the Littlab servers can expire (a year from now / insert length of time). Thank you!
     <Last name, first name, email address, pennkey, usergroup>
-    Asuncion, Joshua, [asuncion@seas.upenn.edu](mailto:asuncion@seas.upenn.edu), asuncion, littuser
+    <Last>, <First>, <email>, <pennkey>, littuser
 3. Email template for CNT staff:
 6.     Hello CETS,
     The CNT has a new staff member. Please grant them access to Borel, Pioneer, Finkel and Sauce, create a user folder for them in /users/, and add them to the “cntstaff”, “cntgroup” and \_\_\_\_\_\_ ("littuser" / "davisuser" / "vitaleuser") usergroups.
@@ -145,7 +145,7 @@ source: cnt
     <Last name, first name, email address, pennkey, usergroup>
     Prager, Brian, [bjprager@seas.upenn.edu](mailto:bjprager@seas.upenn.edu), bjprager, littuser
     Best,
-    Josh
+    <Your name>
 1. Note: they will need a SEAS sponsored research account if they do not already have a SEAS account. Access is granted for up to one year. Within a month of expiration, user should receive an email from CETS notifying them of their expiration. You will need to email CETS asking for a renewal:
     1. Example email received from CETS:
 7.     Your SEAS account will lose access to the littlab group on 2022-09-01.
@@ -156,10 +156,10 @@ source: cnt
     If you need to retain access to these servers please contact your research sponsor to request an extension. Thank you.
     1. Email template to send to CETS:
 8.     Hello CETS,
-    Please extend Joshua's access (pennkey: asuncion) to the Littlab servers Borel, Pioneer and Leif for one more year.
+    Please extend <Name>'s access (pennkey: <pennkey>) to the Littlab servers Borel, Pioneer and Leif for one more year.
     Thank you,
-    Josh
+    <Your name>
 
 ### CETS: Request Matlab license if needed
 
-1. The Matlab licenses installed on the Borel / Pioneer servers will be sufficient for most students/researchers. However, if a member needs his/her own Matlab license for personal, offline use, please reach out to Josh Asuncion for assistance in requesting a license.
+1. The Matlab licenses installed on the Borel / Pioneer servers will be sufficient for most students/researchers. However, if a member needs his/her own Matlab license for personal, offline use, please reach out to the data research coordinator for assistance in requesting a license.

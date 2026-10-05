@@ -5,9 +5,6 @@ order: 7
 
 # 7. Rhythm, communication and writing SOPs
 
-!!! warning "Draft"
-    This section still needs the PI's pass. Edit it directly; the structure is a proposal.
-
 *Draft — fill in days and times.*
 
 ## Meetings

@@ -5,9 +5,6 @@ order: 6
 
 # 6. Regulatory and privacy essentials
 
-!!! warning "Draft"
-    This section still needs the PI's pass. Edit it directly; the structure is a proposal.
-
 *Draft — summary layer over Operations › Regulatory and Consenting; needs the regulatory coordinator's pass.*
 
 ## The protocols

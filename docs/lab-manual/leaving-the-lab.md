@@ -5,9 +5,6 @@ order: 9
 
 # 9. Leaving the lab
 
-!!! warning "Draft"
-    This section still needs the PI's pass. Edit it directly; the structure is a proposal.
-
 *Draft — mirror of section 3, in reverse.*
 
 ## Before your last week

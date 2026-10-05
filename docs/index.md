@@ -14,13 +14,19 @@ hide:
       <a class="nb-btn" href="map/">Map of the wiki</a>
     </div>
   </div>
-  <p class="nb-banner__intro">The NeuroBridge Lab is the data coordinating center of a network of Penn and CHOP centers. This wiki holds the lab's own procedures for its data, compute and operations, grouped under six systems and cross-referenced by stage in the data lifecycle and by role. The infrastructure is run jointly with the Center for Neuroengineering &amp; Therapeutics, so shared procedures are maintained together. The wiki contains no patient identifiers and no credentials.</p>
+  <p class="nb-banner__intro">This wiki holds the lab's standard operating procedures for its data, compute and operations, grouped under six systems and cross-referenced by stage in the data lifecycle and by role. The lab works with centers across Penn and CHOP; the infrastructure it shares with the Center for Neuroengineering &amp; Therapeutics is maintained jointly. The wiki contains no patient identifiers and no credentials. Anyone in the lab can edit it.</p>
 </section>
 
-<section class="nb-eco" markdown="0">
-  <h2>The lab and its centers</h2>
-  <p>Each center brings cohorts, systems, training or collaborators. The procedures that involve a center are drawn on the edge between it and the lab; today they are the %%SHAREDCOUNT:cnt%% procedures run jointly with the CNT, and each opens in this wiki. The other centers' procedures are added as the collaborations produce them.</p>
-  <div id="nb-ecosystem" data-root="./"></div>
+<section class="nb-centers" markdown="0">
+  <h2>Centers the lab works with</h2>
+  <div class="nb-centers__grid">
+    <a class="nb-center" href="centers/cnt/"><span class="nb-center__short">CNT</span><span class="nb-center__name">Center for Neuroengineering &amp; Therapeutics</span><span class="nb-center__rel">Joint epilepsy data infrastructure: servers, data, coordinators, pipelines</span></a>
+    <a class="nb-center" href="centers/ibi/"><span class="nb-center__short">IBI</span><span class="nb-center__name">Institute for Biomedical Informatics</span><span class="nb-center__rel">The lab's informatics institute: faculty, seminars, computing</span></a>
+    <a class="nb-center" href="centers/cceb/"><span class="nb-center__short">CCEB</span><span class="nb-center__name">Center for Clinical Epidemiology and Biostatistics</span><span class="nb-center__rel">Biostatistics and epidemiology training programs</span></a>
+    <a class="nb-center" href="centers/stroke/"><span class="nb-center__short">Stroke</span><span class="nb-center__name">Penn Stroke Center and LCNS</span><span class="nb-center__rel">Stroke and aphasia cohorts, lesion imaging, neuromodulation</span></a>
+    <a class="nb-center" href="centers/cbir/"><span class="nb-center__short">CBIR</span><span class="nb-center__name">Center for Brain Injury and Repair</span><span class="nb-center__rel">Traumatic brain injury cohorts and imaging</span></a>
+    <a class="nb-center" href="centers/chop/"><span class="nb-center__short">CHOP</span><span class="nb-center__name">CHOP Informatics</span><span class="nb-center__rel">Pediatric informatics collaboration</span></a>
+  </div>
 </section>
 
 <div class="nb-grid" markdown="0">
@@ -56,7 +62,7 @@ hide:
   </section>
 </div>
 
-<p class="nb-grid__note">Procedures that are the CNT's alone, such as consenting, scanner-day and participant-facing coordinator work, live in the <a href="cnt:index.md">CNT procedures manual</a>; pages here that both manuals keep say so at the top.</p>
+<p class="nb-grid__note">Procedures that are the CNT's alone, such as consenting, scanner-day and participant-facing coordinator work, live in the <a href="cnt:index.md">CNT procedures manual</a>. Pages kept in both manuals say so at the top.</p>
 
 <div class="nb-columns" markdown="0">
   <section>
@@ -70,17 +76,14 @@ hide:
       <li><a href="lab-manual/regulatory-and-privacy/">Regulatory and privacy essentials</a></li>
       <li><a href="lab-manual/glossary/">Glossary</a></li>
     </ul>
-    <p>The procedures can also be read by stage or by role: the <a href="map/">map</a>, the <a href="tags/">tags</a>, and <a href="about/roles/">what each role is expected to know</a>.</p>
   </section>
   <section>
-    <h2>Centers</h2>
+    <h2>By stage and by role</h2>
+    <p>The procedures can also be read in the order data moves through the lab, or by the role that performs them.</p>
     <ul>
-      <li><a href="centers/cnt/">Center for Neuroengineering &amp; Therapeutics</a>: joint epilepsy data infrastructure</li>
-      <li><a href="centers/ibi/">Institute for Biomedical Informatics</a>: the lab's informatics institute</li>
-      <li><a href="centers/cceb/">Center for Clinical Epidemiology and Biostatistics</a>: training programs</li>
-      <li><a href="centers/stroke/">Penn Stroke Center and LCNS</a>: stroke and aphasia cohorts, neuromodulation</li>
-      <li><a href="centers/cbir/">Center for Brain Injury and Repair</a>: traumatic brain injury cohorts</li>
-      <li><a href="centers/chop/">CHOP Informatics</a>: pediatric informatics collaboration</li>
+      <li><a href="map/">Map</a>: a graph of the procedures by system, by stage, or by role</li>
+      <li><a href="tags/">Tags</a>: every procedure listed under its stage and roles</li>
+      <li><a href="about/roles/">Roles</a>: what each role is expected to know</li>
     </ul>
     <h2>Contributing</h2>
     <p>To correct a page, use the edit button at the top of it, or edit the Markdown in Obsidian and commit. See <a href="about/contributing/">how contributing works</a>, the <a href="about/style-guide/">style guide</a> and the <a href="about/sop-template/">SOP template</a>.</p>

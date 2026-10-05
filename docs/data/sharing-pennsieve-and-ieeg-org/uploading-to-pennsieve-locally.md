@@ -14,19 +14,19 @@ source: cnt
 
 **How to upload to Pennsieve from your local computer**
 
-*   **Open terminal:** Run 'pennsieve agent'
-*   Run 'pennsieve whoami'
-    *   Make sure your profile it output
-*   **Connect to dataset:**
-    *   Open the pennsieve dataset you want to upload to
-    *   Go to 'overview'
-    *   At the top, above 'Open Dashboard' copy the Dataset node id
-    *   It should look like 'N:xxxxxxxxxxxxx'
-*   **Back in your terminal:** use the command 'pennsieve dataset use \*paste the N node id here\*' and enter
-*   It should output the correct dataset you want as an 'Active dataset' with the correct information
-*   **Create Manifest:** Use the command 'pennsieve manifest create \*path to local folder where the data exists\*' and enter
-    *   This will create a Manifest ID for the data you want to upload
-*   **Uploading data:** Use the command 'pennsieve upload manifest id #
-    *   If done correctly it should output 'Upload initiated for manifest #' and subscribe you to updates for said upload
-    *   Once the data is uploaded it will says 100.0% and unsubscribe client ID #
-*   Go back to pennsieve and check the 'Files' of the workspace to make sure the correct files were all uploaded.
+1. **Open a terminal** and run `pennsieve agent`.
+2. Run `pennsieve whoami`.
+    *   Make sure it outputs your profile.
+3. **Connect to the dataset:**
+    *   Open the Pennsieve dataset you want to upload to.
+    *   Go to 'Overview'.
+    *   At the top, above 'Open Dashboard', copy the dataset node ID.
+    *   It looks like `N:xxxxxxxxxxxxx`.
+4. **Back in your terminal,** run `pennsieve dataset use` followed by the node ID you copied, and press Enter.
+    *   It should output the dataset you want as the 'Active dataset', with the correct information.
+5. **Create a manifest:** run `pennsieve manifest create` followed by the path to the local folder where the data is, and press Enter.
+    *   This creates a manifest ID for the data you want to upload.
+6. **Upload the data:** run `pennsieve upload manifest` followed by the manifest ID.
+    *   If done correctly, it outputs 'Upload initiated for manifest #' and subscribes you to updates for that upload.
+    *   Once the data is uploaded, it says 100.0% and unsubscribes client ID #.
+7. Go back to Pennsieve and check the 'Files' of the workspace to make sure all the correct files were uploaded.

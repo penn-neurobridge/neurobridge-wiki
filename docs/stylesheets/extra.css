@@ -84,31 +84,12 @@
 @media (max-width: 44em) { .md-typeset .nb-columns { grid-template-columns: 1fr; } }
 @media (prefers-reduced-motion: reduce) { .md-typeset .nb-btn, .md-typeset .nb-card { transition: none; } }
 
-/* ---------- landing graph ---------- */
-.md-typeset .nb-eco { max-width: 68rem; margin: clamp(1.6rem, 1rem + 2vw, 2.6rem) auto 0; }
-.md-typeset .nb-eco h2 { font-size: clamp(1.25rem, 1rem + .9vw, 1.6rem); margin: 0 0 .4rem; }
-.md-typeset .nb-eco > p { font-size: .9rem; color: var(--nb-muted); max-width: 54rem; margin: 0 0 .8rem; }
-#nb-ecosystem { position: relative; width: 100%; }
-#nb-ecosystem svg { width: 100%; height: auto; display: block; overflow: visible; }
-#nb-ecosystem a { text-decoration: none; }
-#nb-ecosystem a:hover circle { stroke-width: 3.5; }
-#nb-ecosystem .eco-short { font: 700 15px/1 Inter, system-ui, sans-serif; fill: var(--nb-navy); }
-#nb-ecosystem .eco-count { font: italic 500 11px/1 Inter, system-ui, sans-serif; fill: var(--nb-muted); }
-#nb-ecosystem .eco-name { font: 500 12px/1 Inter, system-ui, sans-serif; fill: var(--nb-ink); }
-#nb-ecosystem .eco-lab { font: 700 17px/1 Inter, system-ui, sans-serif; fill: #fff; }
-#nb-ecosystem .eco-lab-sub { font: 500 11.5px/1 Inter, system-ui, sans-serif; fill: #dbe6f5; }
-#nb-ecosystem .eco-lab-sub--s { font-size: 10px; }
-#nb-ecosystem .wm-legend { margin-top: .5rem; }
-/* phone: the same information as a list */
-.md-typeset .eco-list { display: grid; gap: .6rem; }
-.md-typeset .eco-list__lab { display: flex; flex-direction: column; align-items: center; padding: 1rem; border-radius: .6rem; background: var(--nb-navy); color: #fff !important; text-align: center; }
-.md-typeset .eco-list__lab b { font-size: 1.05rem; }
-.md-typeset .eco-list__lab span { font-size: .8rem; color: #dbe6f5; }
-.md-typeset .eco-list__row { display: grid; grid-template-columns: 3.2rem 1fr; gap: .8rem; align-items: start; padding: .8rem .9rem; border: 1px solid var(--nb-line); border-radius: .6rem; background: #fff; color: var(--nb-ink) !important; }
-.md-typeset .eco-list__row:hover { border-color: var(--nb-navy); }
-.md-typeset .eco-list__short { display: grid; place-items: center; width: 3.2rem; height: 3.2rem; border: 2px solid var(--nb-navy); border-radius: 50%; font-size: .72rem; font-weight: 700; color: var(--nb-navy); text-align: center; line-height: 1.1; }
-.md-typeset .eco-list__body { display: flex; flex-direction: column; gap: .2rem; min-width: 0; }
-.md-typeset .eco-list__body b { font-size: .92rem; line-height: 1.3; }
-.md-typeset .eco-list__rel { font-size: .8rem; color: var(--nb-muted); line-height: 1.4; }
-.md-typeset .eco-list__counts { display: flex; flex-wrap: wrap; gap: .25rem .7rem; margin-top: .25rem; font-size: .74rem; color: var(--nb-muted); }
-.md-typeset .eco-list__counts i { display: inline-block; width: .55rem; height: .55rem; border-radius: 50%; margin-right: .3rem; vertical-align: middle; }
+/* ---------- centers strip ---------- */
+.md-typeset .nb-centers { max-width: 68rem; margin: clamp(1.4rem, 1rem + 1.6vw, 2.2rem) auto 1.6rem; }
+.md-typeset .nb-centers h2 { font-size: clamp(1.2rem, 1rem + .8vw, 1.5rem); margin: 0 0 .7rem; }
+.md-typeset .nb-centers__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 13.5rem), 1fr)); gap: .8rem; }
+.md-typeset a.nb-center { display: grid; grid-template-columns: 3rem 1fr; grid-template-rows: auto auto; column-gap: .7rem; row-gap: .15rem; align-items: start; padding: .8rem .9rem; border: 1px solid var(--nb-line); border-radius: .5rem; background: #fff; color: var(--nb-ink); text-decoration: none; transition: border-color var(--nb-dur) ease, box-shadow var(--nb-dur) ease; }
+.md-typeset a.nb-center:hover { border-color: var(--nb-navy); box-shadow: 0 4px 14px rgba(1, 31, 91, .08); color: var(--nb-ink); }
+.md-typeset .nb-center__short { grid-row: 1 / 3; display: grid; place-items: center; width: 3rem; height: 3rem; border: 2px solid var(--nb-navy); border-radius: 50%; font-size: .68rem; font-weight: 700; color: var(--nb-navy); line-height: 1.1; text-align: center; }
+.md-typeset .nb-center__name { font-size: .9rem; font-weight: 600; line-height: 1.3; color: var(--nb-navy); }
+.md-typeset .nb-center__rel { font-size: .78rem; line-height: 1.4; color: var(--nb-muted); }

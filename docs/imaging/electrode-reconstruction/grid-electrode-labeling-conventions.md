@@ -14,15 +14,15 @@ source: cnt
 
 #### Labeling Grids
 
-*   Based on an example of an 8X8 grid split after the 4th row. The dimensions are x: 8(contacts per row) , y :4 (rows)
-*   The X dimension represents column point (row corners : 1-8), the Y dimension represents the row points ( 1-4) 
-*   Label grid by corners: First corner is (1,1), 2nd corner is (1,8). <— you are still in the first row (#1), and you are labeling the 8th electrode of that row (#8) .
-*   When labeling the 8th electrode of the first row (aka: the 2nd corner), change the X Label number to 8 (or the Nth electrode of the row), and the Lead number to match.
-*   Labeling the 3rd corner- change the label # to the Nth electrode contact of that row  corresponding to that corder( in this case this is contact #25). And change the lead X Lead to 1, representing the Nth electrode of that row.  The Y Lead will be changed to 4, to represent you are labling in the 4th row. In this case this is the 1st point on the 4th row.  Lead coordinates will be as follows : (X: 1,Y:4)
-*   Labeling the 4th corder- change the Label to the Nth electrode contact corresponding to that corner, in this case this is the final and 32nd contact. (Label 32). The X Lead is corresponding to which electrode in the row you are selecting (x=8) in. The Y coordinate will represent the row that you located in (y=4). Your Lead coordinates will be as follows ( X: 8, Y:4)
-*   When all four corners have been labeled, you can interpolate. 
-*   If electrodes are not found with first interpolation, click interpolate again to see if it continues to find electrodes within rage (it should find the remainder of electrodes)
-*   If the interpolation misses an electrode, you can manually input the electrode you are working on by defining the x coordinate (which electrode in the row you are on), and y coordinate (which row you are located in), as well as the label number (the Nth electrode in the grid that you are labeling)
+*   This example uses an 8x8 grid split after the 4th row. The dimensions are x: 8 (contacts per row), y: 4 (rows).
+*   The X dimension is the position within a row (1-8). The Y dimension is the row (1-4).
+*   Label the grid by its corners. The first corner is (1,1). The second corner is (1,8): you are still in the first row (1), and you are labeling the 8th electrode of that row (8).
+*   When labeling the 8th electrode of the first row (the 2nd corner), change the Label number to 8 (or the Nth electrode of the row), and change the Lead number to match.
+*   For the 3rd corner, change the Label number to the Nth electrode contact of the grid that corresponds to that corner (in this case contact 25). Change the X Lead to 1, the first electrode of that row. Change the Y Lead to 4, because you are labeling in the 4th row. This is the 1st point on the 4th row. The Lead coordinates are (X: 1, Y: 4).
+*   For the 4th corner, change the Label to the Nth electrode contact that corresponds to that corner, in this case the final, 32nd contact (Label 32). The X Lead is the position of the electrode within the row (x = 8). The Y Lead is the row (y = 4). The Lead coordinates are (X: 8, Y: 4).
+*   When all four corners have been labeled, interpolate.
+*   If electrodes are not found with the first interpolation, click Interpolate again to see whether it continues to find electrodes within range. It should find the remaining electrodes.
+*   If the interpolation misses an electrode, enter it manually by defining the x coordinate (which electrode in the row), the y coordinate (which row), and the Label number (the Nth electrode in the grid).
 
 #### See tutorial below:
 <span class="attachment-note" title="Too large for the Git repository">🎬 Video: video1338425901.mp4 — kept in Dropbox › NeuroBridge › wiki-media as <code>7927-video1338425901.mp4</code></span>

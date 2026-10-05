@@ -9,117 +9,161 @@ source: cnt
 # Processing for ieeg.org (natus2mef → validate → upload)
 
 !!! abstract "What this page tells you"
-    Full ieeg.org processing commands for Intracranial, CCEPS, Gottfried, and Gold recordings: natus2mef in a screen, mefvalidate, redact PHI annotations, copy annotation and montage files to cnt-fs, delete original annotations, ieeg upload-directory to the right project, then build config folders. Notify Erin Conrad or Sarah afterward.
+    Full ieeg.org processing commands for Intracranial, CCEPS, Gottfried, and Gold recordings: natus2mef in a screen, mefvalidate, redact PHI annotations, copy annotation and montage files to cnt-fs, delete original annotations, ieeg upload-directory to the right project, then build config folders. Notify Erin Conrad or the Gottfried Lab coordinator afterward.
 
-Now that you have set up your files and exported the data from Natus, you are now ready to process the eeg files and upload them to [ieeg.org](http://ieeg.org/). **There are 5 steps in this process:**
+Process and upload the EEG files after you have set up the metadata files and exported the recordings from Natus. **There are five steps in this process:**
 
 1. Natus to mef conversion
 2. Validate the mef
 3. Redact annotations
-    1. Once you redact the PHI, copy both annotations files + montages to cnt-fs
-    2. Delete original annotations json file from mef
+    1. After you redact the PHI, copy both annotations files and the montages to cnt-fs.
+    2. Delete the original annotations JSON file from the mef.
 4. Upload to [ieeg.org](http://ieeg.org/)
 5. Make config files
 
-Below are the codes for each type of eeg file processing.
-**Replace XXX with the HUP ID in sublime text editor.**
+The commands for each type of EEG file are given below.
+**Replace XXX with the patient's HUP ID in a text editor (for example Sublime Text) before running the commands.**
 
-## **Intracranial\_EEG**
-**First, log into the VDI and enter cnt1 in Mobaxterm with this command: ssh cnt1**
+## Intracranial\_EEG
+**First, log into the VDI and enter cnt1 in MobaXterm with this command: ssh cnt1**
 
-*   if the VDI ever logs you out, the server name is: [connect.pmacs.upenn.edu](http://connect.pmacs.upenn.edu)
+*   If the VDI logs you out, the server name is [connect.pmacs.upenn.edu](http://connect.pmacs.upenn.edu).
 
-1. Natus to mef conversion
-**Make sure that the eeg file times do not overlap before you run this conversion. If they do overlap, the natus2mef conversion will fail.** In this case, you need to split the datasets into 2 separate natusdir files (labeled D01 and D02), and then process each one separately. Adjust the names of the files in the code below accordingly. **Instructions are here:** Splitting Datasets ([Splitting Datasets](splitting-datasets.md))
+1. **Natus to mef conversion**
 
-In cnt1: cd /project/eeg\_process/programs/mef/natus-latest
-scree
-First make a new screen to allow the mef conversion to run for a few hours until it is complete:
-screen -S HUPXXX\_convert
+    **Make sure that the EEG file times do not overlap before you run this conversion. If they overlap, the natus2mef conversion fails.** In that case, split the dataset into two separate natusdir files (labeled D01 and D02) and process each one separately. Adjust the file names in the commands below to match. **Instructions are here:** Splitting Datasets ([Splitting Datasets](splitting-datasets.md))
 
-Once you are in the new screen now run the code:
-./natus2mef -c /mnt/cnt-fs/eeg\_raw/ieeg\_raw/HUPXXX/Intracranial\_EEG/HUPXXX\_natusDir.txt -m /mnt/cnt-fs/eeg\_raw/ieeg\_raw/HUPXXX/Intracranial\_EEG/HUPXXX\_channelMapping.txt -o /project/eeg\_process/HUPXXX/HUPXXX\_mef >/mnt/cnt-fs/eeg\_raw/ieeg\_raw/HUPXXX/Intracranial\_EEG/HUPXXX\_convert\_log 2>&1
-~~\--no-annotation-filters~~
+    In cnt1:
 
-Hit **control + a + d** to exit the screen
+    ```
+    cd /project/eeg_process/programs/mef/natus-latest
+    ```
 
-To go back into the screen to check:
-**screen -ls** to check all the screens available
-**screen -r** **XXXX** (number of the screen)
-**control+a control+\\** terminates a screen
+    First open a new screen, so that the mef conversion can run for a few hours until it is complete:
 
-Once the conversion has run, type **exit** to terminate the screen
+    ```
+    screen -S HUPXXX_convert
+    ```
 
-In order to check that the conversion was successful, **go to the HUPXXX\_convert\_log file in cnt-fs in ieeg\_raw/HUPXXX**. Right click on the convert log, select Notepad++, and scroll all the way down to the bottom. It should say **“processing successful”**. **If the processing was not successful, you will see the error here in this file.**
+    Inside the new screen, run:
 
+    ```
+    ./natus2mef -c /mnt/cnt-fs/eeg_raw/ieeg_raw/HUPXXX/Intracranial_EEG/HUPXXX_natusDir.txt -m /mnt/cnt-fs/eeg_raw/ieeg_raw/HUPXXX/Intracranial_EEG/HUPXXX_channelMapping.txt -o /project/eeg_process/HUPXXX/HUPXXX_mef >/mnt/cnt-fs/eeg_raw/ieeg_raw/HUPXXX/Intracranial_EEG/HUPXXX_convert_log 2>&1
+    ```
 
-1. Mef Validate
-In cnt1: cd /project/eeg\_process/programs/ieeg/ieeg-latest
+    The `--no-annotation-filters` flag is not used for the intracranial conversion.
 
-./mefvalidate /project/eeg\_process/HUPXXX/HUPXXX\_mef/\*.mef | grep PASS
-./mefvalidate /project/eeg\_process/HUPXXX/HUPXXX\_mef/\*.mef | grep FAIL
+    Press **Ctrl+a, then d** to leave the screen.
 
+    To go back into the screen and check on it:
+    **screen -ls** lists all available screens.
+    **screen -r XXXX** reattaches to the screen with that number.
+    **Ctrl+a, then Ctrl+\\** terminates a screen.
 
-1. Redact annotations
-    1. Run the redact annotations script
-        1. _If you accidentally delete an annotation that should have stayed in, or if you keep an annotation that needs to be deleted, do_ **_control + C_** _to end the script, and then start over. Alternatively, you can wait until you finish the rest of the annotations and copy the file over to cnt-fs, then open the file and manually removed one that you missed._
-    2. Copy both annotations files + montages to cnt-fs when done
-    3. Delete original annotations file from mef (if it has PHI)
+    Once the conversion has finished, type **exit** to close the screen.
 
-**Anything next to the line "type" that has PHI (pronouns, names, initials of patient) you need to remove**
+    To check that the conversion succeeded, **open the HUPXXX\_convert\_log file in cnt-fs in ieeg\_raw/HUPXXX**. Right-click on the convert log, open it in Notepad++, and scroll to the bottom. It should say **“processing successful”**. **If the processing failed, the error is shown in this file.**
 
-In cnt1: cd /project/eeg\_process/programs/mef/redact\_annots
+2. **Mef validate**
 
-python redact\_annots\_python3.py /project/eeg\_process/HUPXXX/HUPXXX\_mef/annotations.iann.json /project/eeg\_process/HUPXXX/HUPXXX\_mef/annotations\_edit.iann.json
+    In cnt1:
 
+    ```
+    cd /project/eeg_process/programs/ieeg/ieeg-latest
+    ```
 
-*   If getting error message below, run:
-ssh cnt1
-module load python/3.10
-![Terminal on cnt1 running redact_annots on HUP239 paths; libpython error](../../assets/electrophysiology/processing-for-ieeg-org-natus2mef-validate-upload/processing-for-ieeg-org-natus2mef-validate-upload-01.png)
+    ```
+    ./mefvalidate /project/eeg_process/HUPXXX/HUPXXX_mef/*.mef | grep PASS
+    ./mefvalidate /project/eeg_process/HUPXXX/HUPXXX_mef/*.mef | grep FAIL
+    ```
 
-Once you redact the annotations **(any with PHI),** enter the mef file that you just created with:
-cd /project/eeg\_process/HUPXXX/HUPXXX\_mef
+3. **Redact annotations**
 
-Once you are here, copy over both annotations files and the montages, and **then delete the original annotations file from the mef** since we do not want to upload this to [ieeg.org](http://ieeg.org) because it has PHI (annotations.iann.json):
+    1. Run the redact annotations script.
+        1. _If you accidentally delete an annotation that should have stayed in, or keep an annotation that should have been deleted, press_ **_Ctrl+C_** _to end the script, and then start over. Alternatively, finish the rest of the annotations, copy the file to cnt-fs, open the file, and remove the one you missed by hand._
+    2. When done, copy both annotations files and the montages to cnt-fs.
+    3. Delete the original annotations file from the mef (if it contains PHI).
 
-cp -r annotations.iann.json /mnt/cnt-fs/eeg\_raw/ieeg\_raw/HUPXXX/Intracranial\_EEG
+    **Remove anything next to the line "type" that contains PHI, such as pronouns, names, or initials of the patient.**
 
-cp -r annotations\_edit.iann.json /mnt/cnt-fs/eeg\_raw/ieeg\_raw/HUPXXX/Intracranial\_EEG
+    In cnt1:
 
-cp -r montages.imtg.json /mnt/cnt-fs/eeg\_raw/ieeg\_raw/HUPXXX/Intracranial\_EEG
+    ```
+    cd /project/eeg_process/programs/mef/redact_annots
+    ```
 
-**Delete original annotations file if it has PHI before uploading!!**
+    ```
+    python redact_annots_python3.py /project/eeg_process/HUPXXX/HUPXXX_mef/annotations.iann.json /project/eeg_process/HUPXXX/HUPXXX_mef/annotations_edit.iann.json
+    ```
 
-*   only needed if you edited the original
-rm -r annotations.iann.json
+    If you get the error message shown below, run:
 
+    ```
+    ssh cnt1
+    module load python/3.10
+    ```
 
-1. Upload to [ieeg.org](http://ieeg.org)
-In cnt1: cd /project/eeg\_process/programs/ieeg/ieeg-latest
+    ![Terminal on cnt1 running redact_annots on HUP239 paths; libpython error](../../assets/electrophysiology/processing-for-ieeg-org-natus2mef-validate-upload/processing-for-ieeg-org-natus2mef-validate-upload-01.png)
 
-First make a new screen to allow the ieeg upload to run for a few hours until it is complete:
-screen -S HUPXXX\_ieeg\_upload
+    Once you have redacted the annotations **(any with PHI)**, enter the mef folder that you just created:
 
-**Upload to** [**ieeg.org**](http://ieeg.org) **using the code and instructions below:**
+    ```
+    cd /project/eeg_process/HUPXXX/HUPXXX_mef
+    ```
 
-1. ./ieeg upload-directory -n 'Human\_Data/Hospital of the University of Pennsylvania/HUP\_Intracranial\_Data/HUPXXX\_phaseII' '/project/eeg\_process/HUPXXX/HUPXXX\_mef'
+    From here, copy both annotations files and the montages to cnt-fs, and **then delete the original annotations file (annotations.iann.json) from the mef**. The original must not be uploaded to [ieeg.org](http://ieeg.org) because it contains PHI.
 
-1. ~~go into~~ [~~ieeg.org~~](http://ieeg.org) ~~and open the dataset you uploaded-~~ **~~Don't Upload to HUP\_SEEG ANYMORE~~**
-~~then open project you want to add it to and check off dataset you want to add to that projectnow dataset is in both projects~~
-~~./ieeg upload-directory -n 'Human\_Data/Hospital of the University of Pennsylvania/HUP\_SEEG/HUPXXX\_phaseII' '../../HUPXXX/HUPXXX\_mef'~~
+    ```
+    cp -r annotations.iann.json /mnt/cnt-fs/eeg_raw/ieeg_raw/HUPXXX/Intracranial_EEG
+    ```
 
-Hit **control + a + d** to exit the screen
+    ```
+    cp -r annotations_edit.iann.json /mnt/cnt-fs/eeg_raw/ieeg_raw/HUPXXX/Intracranial_EEG
+    ```
 
-To go back into the screen to check do:
-**screen -ls** to check all the screens available
-**screen -r** **XXXX** (number of the screen)
+    ```
+    cp -r montages.imtg.json /mnt/cnt-fs/eeg_raw/ieeg_raw/HUPXXX/Intracranial_EEG
+    ```
 
-Once the upload is complete, type **exit** to terminate the screen
+    **Delete the original annotations file before uploading if it contains PHI.** This is needed only if you edited the original.
 
+    ```
+    rm -r annotations.iann.json
+    ```
 
-1. Make config files
-    1. Once you are done with your processing, in the **eeg\_raw/ieeg\_raw/HUPXXX/Intracranial\_EEG** folder in cnt-fs, place the files below in a folder called **config\_intracranial**. When you are done with all processing for this patient, this will be placed in a master config file which will be put in **ieeg\_metadata**.
+4. **Upload to [ieeg.org](http://ieeg.org)**
+
+    In cnt1:
+
+    ```
+    cd /project/eeg_process/programs/ieeg/ieeg-latest
+    ```
+
+    First open a new screen, so that the ieeg upload can run for a few hours until it is complete:
+
+    ```
+    screen -S HUPXXX_ieeg_upload
+    ```
+
+    **Upload to** [**ieeg.org**](http://ieeg.org) **with the command below:**
+
+    ```
+    ./ieeg upload-directory -n 'Human_Data/Hospital of the University of Pennsylvania/HUP_Intracranial_Data/HUPXXX_phaseII' '/project/eeg_process/HUPXXX/HUPXXX_mef'
+    ```
+
+    Datasets are no longer uploaded to the HUP\_SEEG project.
+
+    Press **Ctrl+a, then d** to leave the screen.
+
+    To go back into the screen and check on it:
+    **screen -ls** lists all available screens.
+    **screen -r XXXX** reattaches to the screen with that number.
+
+    Once the upload is complete, type **exit** to close the screen.
+
+5. **Make config files**
+
+    1. When your processing is done, go to the **eeg\_raw/ieeg\_raw/HUPXXX/Intracranial\_EEG** folder in cnt-fs and place the files below in a folder called **config\_intracranial**. When all processing for this patient is done, this folder is placed in a master config folder in **ieeg\_metadata**.
         1. Natusdir
         2. Data Collection
         3. Convert log
@@ -128,72 +172,113 @@ Once the upload is complete, type **exit** to terminate the screen
         6. Montages
         7. channel mapping
 
-## **CCEPS**
-**First, log into the VDI and enter cnt1 in Mobaxterm with this command: ssh cnt1**
+## CCEPS
+**First, log into the VDI and enter cnt1 in MobaXterm with this command: ssh cnt1**
 
-*   if the VDI ever logs you out, the server name is: [connect.pmacs.upenn.edu](http://connect.pmacs.upenn.edu)
+*   If the VDI logs you out, the server name is [connect.pmacs.upenn.edu](http://connect.pmacs.upenn.edu).
 
-1. Natus to mef conversion
-In cnt1: cd /project/eeg\_process/programs/mef/natus-latest
+1. **Natus to mef conversion**
 
-~~NO machine annotations:~~
-~~./natus2mef -c /mnt/cnt-fs/eeg\_raw/ieeg\_raw/HUPXXX/Research/CCEPS/HUPXXX\_CCEPS\_natusDir.txt -m /mnt/cnt-fs/eeg\_raw/ieeg\_raw/HUPXXX/Research/CCEPS/HUPXXX\_channelMapping.txt -o ../../HUPXXX/HUPXXX\_CCEPS\_mef >/mnt/cnt-fs/eeg\_raw/ieeg\_raw/HUPXXX/Research/CCEPS/HUPXXX\_CCEPS\_convert\_log 2>&1~~
+    In cnt1:
 
-WITH machine annotations:
-./natus2mef --no-annotation-filters -c /mnt/cnt-fs/eeg\_raw/ieeg\_raw/HUPXXX/Research/CCEPS/HUPXXX\_CCEPS\_natusDir.txt -m /mnt/cnt-fs/eeg\_raw/ieeg\_raw/HUPXXX/Research/CCEPS/HUPXXX\_channelMapping.txt -o /project/eeg\_process/HUPXXX/HUPXXX\_CCEPS\_mef >/mnt/cnt-fs/eeg\_raw/ieeg\_raw/HUPXXX/Research/CCEPS/HUPXXX\_CCEPS\_convert\_log 2>&1
+    ```
+    cd /project/eeg_process/programs/mef/natus-latest
+    ```
 
-In order to check that the conversion was successful, **go to the HUPXXX\_CCEPS\_convert\_log file in cnt-fs in ieeg\_raw/HUPXXX/Research/CCEPS**. Right click on the convert log, select Notepad++, and scroll all the way down to the bottom. It should say **“processing successful”**. **If the processing was not successful, you will see the error here in this file.**
+    CCEPS recordings are converted with machine annotations, using the `--no-annotation-filters` flag:
 
+    ```
+    ./natus2mef --no-annotation-filters -c /mnt/cnt-fs/eeg_raw/ieeg_raw/HUPXXX/Research/CCEPS/HUPXXX_CCEPS_natusDir.txt -m /mnt/cnt-fs/eeg_raw/ieeg_raw/HUPXXX/Research/CCEPS/HUPXXX_channelMapping.txt -o /project/eeg_process/HUPXXX/HUPXXX_CCEPS_mef >/mnt/cnt-fs/eeg_raw/ieeg_raw/HUPXXX/Research/CCEPS/HUPXXX_CCEPS_convert_log 2>&1
+    ```
 
-1. Mef Validate
-In cnt1: cd /project/eeg\_process/programs/ieeg/ieeg-latest
+    To check that the conversion succeeded, **open the HUPXXX\_CCEPS\_convert\_log file in cnt-fs in ieeg\_raw/HUPXXX/Research/CCEPS**. Right-click on the convert log, open it in Notepad++, and scroll to the bottom. It should say **“processing successful”**. **If the processing failed, the error is shown in this file.**
 
-./mefvalidate /project/eeg\_process/HUPXXX/HUPXXX\_CCEPS\_mef/\*.mef | grep PASS
-./mefvalidate /project/eeg\_process/HUPXXX/HUPXXX\_CCEPS\_mef/\*.mef | grep FAIL
+2. **Mef validate**
 
+    In cnt1:
 
-1. Redact annotations
-    1. Run the redact annotations script
-        1. _If you accidentally delete an annotation that should have stayed in, or if you keep an annotation that needs to be deleted, do_ **_control + C_** _to end the script, and then start over._
-    2. Copy both annotations files + montages to cnt-fs when done
-    3. Delete original annotations file from mef
-    4. Run the "edit\_annots\_cceps.py" script to de-identify "Annotator" field and check if any channels are missing
-**Anything next to the line "type" that has PHI (pronouns, names, initials of patient, room number) you need to remove**
+    ```
+    cd /project/eeg_process/programs/ieeg/ieeg-latest
+    ```
 
-In cnt1: cd /project/eeg\_process/programs/mef/redact\_annots
+    ```
+    ./mefvalidate /project/eeg_process/HUPXXX/HUPXXX_CCEPS_mef/*.mef | grep PASS
+    ./mefvalidate /project/eeg_process/HUPXXX/HUPXXX_CCEPS_mef/*.mef | grep FAIL
+    ```
 
-python redact\_annots\_python3.py /project/eeg\_process/HUPXXX/HUPXXX\_CCEPS\_mef/annotations.iann.json /project/eeg\_process/HUPXXX/HUPXXX\_CCEPS\_mef/annotations\_edit.iann.json
+3. **Redact annotations**
 
-Once you redact the annotations **(any with PHI),** enter the mef file that you just created with:
-cd /project/eeg\_process/HUPXXX/HUPXXX\_CCEPS\_mef 
+    1. Run the redact annotations script.
+        1. _If you accidentally delete an annotation that should have stayed in, or keep an annotation that should have been deleted, press_ **_Ctrl+C_** _to end the script, and then start over._
+    2. When done, copy both annotations files and the montages to cnt-fs.
+    3. Delete the original annotations file from the mef.
+    4. Run the "edit\_annots\_cceps.py" script to de-identify the "Annotator" field and to check whether any channels are missing.
 
-Once you are here, copy over both annotations files and the montages, and **then delete the original annotations file from the mef** since we do not want to upload this to [ieeg.org](http://ieeg.org) because it has PHI (annotations.iann.json):
+    **Remove anything next to the line "type" that contains PHI, such as pronouns, names, initials of the patient, or the room number.**
 
-cp -r annotations.iann.json /mnt/cnt-fs/eeg\_raw/ieeg\_raw/HUPXXX/Research/CCEPS
+    In cnt1:
 
-cp -r annotations\_edit.iann.json /mnt/cnt-fs/eeg\_raw/ieeg\_raw/HUPXXX/Research/CCEPS
+    ```
+    cd /project/eeg_process/programs/mef/redact_annots
+    ```
 
-cp -r montages.imtg.json /mnt/cnt-fs/eeg\_raw/ieeg\_raw/HUPXXX/Research/CCEPS
+    ```
+    python redact_annots_python3.py /project/eeg_process/HUPXXX/HUPXXX_CCEPS_mef/annotations.iann.json /project/eeg_process/HUPXXX/HUPXXX_CCEPS_mef/annotations_edit.iann.json
+    ```
 
-**Delete original annotations file if it has PHI before uploading!!**
-rm -r annotations.iann.json
+    Once you have redacted the annotations **(any with PHI)**, enter the mef folder that you just created:
 
-In cnt1: cd /project/eeg\_process/programs/mef
+    ```
+    cd /project/eeg_process/HUPXXX/HUPXXX_CCEPS_mef
+    ```
 
-python edit\_annots\_cceps.py /mnt/cnt-fs/eeg\_raw/ieeg\_raw/HUPXXX/Research/CCEPS/annotations\_edit.iann.json /mnt/cnt-fs/eeg\_raw/ieeg\_raw/HUPXXX/Research/CCEPS/HUPXXX\_channelMapping.txt
+    From here, copy both annotations files and the montages to cnt-fs, and **then delete the original annotations file (annotations.iann.json) from the mef**. The original must not be uploaded to [ieeg.org](http://ieeg.org) because it contains PHI.
 
-This script will remove any entries in the "Annotator" header in the annotations .json file and replace them with "null". In addition, this script will cross-check the "Closed relay to ...." annotations in the annotations .json file with the channel mapping file, and it will alert you if there are any missing channels from the channel mapping.
+    ```
+    cp -r annotations.iann.json /mnt/cnt-fs/eeg_raw/ieeg_raw/HUPXXX/Research/CCEPS
+    ```
 
+    ```
+    cp -r annotations_edit.iann.json /mnt/cnt-fs/eeg_raw/ieeg_raw/HUPXXX/Research/CCEPS
+    ```
 
-1. Upload to [ieeg.org](http://ieeg.org)
+    ```
+    cp -r montages.imtg.json /mnt/cnt-fs/eeg_raw/ieeg_raw/HUPXXX/Research/CCEPS
+    ```
 
-In cnt1: cd /project/eeg\_process/programs/ieeg/ieeg-latest
+    **Delete the original annotations file before uploading if it contains PHI.**
 
-./ieeg upload-directory -n 'Human\_Data/Hospital of the University of Pennsylvania/HUP\_CCEPs/HUPXXX\_CCEP' '/project/eeg\_process/HUPXXX/HUPXXX\_CCEPS\_mef'
+    ```
+    rm -r annotations.iann.json
+    ```
 
+    In cnt1:
 
-1. Make config files
-    1. Once you are done with your processing, in the **eeg\_raw/ieeg\_raw/HUPXXX/Research/CCEPS** folder in cnt-fs, place the files below in a folder called **config\_CCEPS**. When you are done with all processing for this patient, this will be placed in a master config file which will be put in **ieeg\_metadata**.
+    ```
+    cd /project/eeg_process/programs/mef
+    ```
+
+    ```
+    python edit_annots_cceps.py /mnt/cnt-fs/eeg_raw/ieeg_raw/HUPXXX/Research/CCEPS/annotations_edit.iann.json /mnt/cnt-fs/eeg_raw/ieeg_raw/HUPXXX/Research/CCEPS/HUPXXX_channelMapping.txt
+    ```
+
+    This script removes every entry in the "Annotator" header of the annotations JSON file and replaces it with "null". It also cross-checks the "Closed relay to ...." annotations in the annotations JSON file against the channel mapping file, and it alerts you if any channels are missing from the channel mapping.
+
+4. **Upload to [ieeg.org](http://ieeg.org)**
+
+    In cnt1:
+
+    ```
+    cd /project/eeg_process/programs/ieeg/ieeg-latest
+    ```
+
+    ```
+    ./ieeg upload-directory -n 'Human_Data/Hospital of the University of Pennsylvania/HUP_CCEPs/HUPXXX_CCEP' '/project/eeg_process/HUPXXX/HUPXXX_CCEPS_mef'
+    ```
+
+5. **Make config files**
+
+    1. When your processing is done, go to the **eeg\_raw/ieeg\_raw/HUPXXX/Research/CCEPS** folder in cnt-fs and place the files below in a folder called **config\_CCEPS**. When all processing for this patient is done, this folder is placed in a master config folder in **ieeg\_metadata**.
         1. Natusdir
         2. Data Collection
         3. Convert log
@@ -201,75 +286,116 @@ In cnt1: cd /project/eeg\_process/programs/ieeg/ieeg-latest
         5. annotations\_edit.iann.json
         6. Montages
 
-1. Let Erin Conrad know that the file is uploaded.
+6. **Tell Erin Conrad that the file is uploaded.**
 
-## **Gottfried**
-**First, log into the VDI and enter cnt1 in Mobaxterm with this command: ssh cnt1**
+## Gottfried
+**First, log into the VDI and enter cnt1 in MobaXterm with this command: ssh cnt1**
 
-*   if the VDI ever logs you out, the server name is: [connect.pmacs.upenn.edu](http://connect.pmacs.upenn.edu)
-*   you will login with your pmacs username and password to login to the VDI
+*   If the VDI logs you out, the server name is [connect.pmacs.upenn.edu](http://connect.pmacs.upenn.edu).
+*   Log into the VDI with your PMACS username and password.
 
-1. Natus to mef conversion
-ssh cnt1
+1. **Natus to mef conversion**
 
-In cnt1: cd /project/eeg\_process/programs/mef/natus-latest
+    ```
+    ssh cnt1
+    ```
 
-./natus2mef -c /mnt/cnt-fs/eeg\_raw/ieeg\_raw/HUPXXX/Research/Gottfried/HUPXXX\_Gottfried\_natusDir.txt -m /mnt/cnt-fs/eeg\_raw/ieeg\_raw/HUPXXX/Research/Gottfried/HUPXXX\_Gottfried\_channelMapping.txt -o /project/eeg\_process/HUPXXX/HUPXXX\_Gottfried\_mef >/mnt/cnt-fs/eeg\_raw/ieeg\_raw/HUPXXX/Research/Gottfried/HUPXXX\_Gottfried\_convert\_log 2>&1
+    In cnt1:
 
-In order to check that the conversion was successful, **go to the HUPXXX\_Gottfried\_convert\_log file in cnt-fs in ieeg\_raw/HUPXXX/Research/Gottfried**. Right click on the convert log, select Notepad++, and scroll all the way down to the bottom. It should say **“processing successful”**. **If the processing was not successful, you will see the error here in this file.**
+    ```
+    cd /project/eeg_process/programs/mef/natus-latest
+    ```
 
-_Work arounds: can try processing with only one RESP channel if the convert log is failing with both of them_
+    ```
+    ./natus2mef -c /mnt/cnt-fs/eeg_raw/ieeg_raw/HUPXXX/Research/Gottfried/HUPXXX_Gottfried_natusDir.txt -m /mnt/cnt-fs/eeg_raw/ieeg_raw/HUPXXX/Research/Gottfried/HUPXXX_Gottfried_channelMapping.txt -o /project/eeg_process/HUPXXX/HUPXXX_Gottfried_mef >/mnt/cnt-fs/eeg_raw/ieeg_raw/HUPXXX/Research/Gottfried/HUPXXX_Gottfried_convert_log 2>&1
+    ```
 
+    To check that the conversion succeeded, **open the HUPXXX\_Gottfried\_convert\_log file in cnt-fs in ieeg\_raw/HUPXXX/Research/Gottfried**. Right-click on the convert log, open it in Notepad++, and scroll to the bottom. It should say **“processing successful”**. **If the processing failed, the error is shown in this file.**
 
-1. Mef Validate
+    _Workaround: if the convert log fails with both RESP channels, try processing with only one RESP channel._
 
-In cnt1: cd /project/eeg\_process/programs/ieeg/ieeg-latest
+2. **Mef validate**
 
-./mefvalidate /project/eeg\_process/HUPXXX/HUPXXX\_Gottfried\_mef/\*.mef | grep PASS
+    In cnt1:
 
-*   this should show a bunch of lines with \[PASS\]; this means it worked
-./mefvalidate /project/eeg\_process/HUPXXX/HUPXXX\_Gottfried\_mef/\*.mef | grep FAIL
+    ```
+    cd /project/eeg_process/programs/ieeg/ieeg-latest
+    ```
 
-*   there should be no lines if it worked
+    ```
+    ./mefvalidate /project/eeg_process/HUPXXX/HUPXXX_Gottfried_mef/*.mef | grep PASS
+    ```
 
-1. Redact annotations
-    1. Run the redact annotations script
-        1. _If you accidentally delete an annotation that should have stayed in, or if you keep an annotation that needs to be deleted, do_ **_control + C_** _to end the script_
-    2. Copy both annotations files + montages to cnt-fs when done
-    3. Delete original annotations file from mef
+    This should print many lines containing \[PASS\], which means the validation worked.
 
-In cnt1: cd /project/eeg\_process/programs/mef/redact\_annots
+    ```
+    ./mefvalidate /project/eeg_process/HUPXXX/HUPXXX_Gottfried_mef/*.mef | grep FAIL
+    ```
 
-python redact\_annots\_python3.py /project/eeg\_process//HUPXXX/HUPXXX\_Gottfried\_mef/annotations.iann.json /project/eeg\_process/HUPXXX/HUPXXX\_Gottfried\_mef/annotations\_edit.iann.json
+    This should print no lines if the validation worked.
 
-**Anything next to the line "type" that has PHI (pronouns, names, initials of patient) you need to remove**
+3. **Redact annotations**
 
-Once you redact the annotations **(any with PHI),** enter the mef file that you just created with:
-cd /project/eeg\_process/HUPXXX/HUPXXX\_Gottfried\_mef 
+    1. Run the redact annotations script.
+        1. _If you accidentally delete an annotation that should have stayed in, or keep an annotation that should have been deleted, press_ **_Ctrl+C_** _to end the script._
+    2. When done, copy both annotations files and the montages to cnt-fs.
+    3. Delete the original annotations file from the mef.
 
-Once you are here, copy over both annotations files and the montages, and **then delete the original annotations file from the mef** since we do not want to upload this to [ieeg.org](http://ieeg.org) because it has PHI (annotations.iann.json):
+    In cnt1:
 
-cp -r annotations.iann.json /mnt/cnt-fs/eeg\_raw/ieeg\_raw/HUPXXX/Research/Gottfried
+    ```
+    cd /project/eeg_process/programs/mef/redact_annots
+    ```
 
-cp -r annotations\_edit.iann.json /mnt/cnt-fs/eeg\_raw/ieeg\_raw/HUPXXX/Research/Gottfried
+    ```
+    python redact_annots_python3.py /project/eeg_process//HUPXXX/HUPXXX_Gottfried_mef/annotations.iann.json /project/eeg_process/HUPXXX/HUPXXX_Gottfried_mef/annotations_edit.iann.json
+    ```
 
-*   _this file wont exist if you didnt delete any annotations_
+    **Remove anything next to the line "type" that contains PHI, such as pronouns, names, or initials of the patient.**
 
-cp -r montages.imtg.json /mnt/cnt-fs/eeg\_raw/ieeg\_raw/HUPXXX/Research/Gottfried
+    Once you have redacted the annotations **(any with PHI)**, enter the mef folder that you just created:
 
-**Delete original annotations file ONLY if it has PHI before uploading!!**
-rm -r annotations.iann.json
+    ```
+    cd /project/eeg_process/HUPXXX/HUPXXX_Gottfried_mef
+    ```
 
+    From here, copy both annotations files and the montages to cnt-fs, and **then delete the original annotations file (annotations.iann.json) from the mef**. The original must not be uploaded to [ieeg.org](http://ieeg.org) because it contains PHI.
 
-1. Upload to [ieeg.org](http://ieeg.org)
+    ```
+    cp -r annotations.iann.json /mnt/cnt-fs/eeg_raw/ieeg_raw/HUPXXX/Research/Gottfried
+    ```
 
-In cnt1: cd /project/eeg\_process/programs/ieeg/ieeg-latest
+    ```
+    cp -r annotations_edit.iann.json /mnt/cnt-fs/eeg_raw/ieeg_raw/HUPXXX/Research/Gottfried
+    ```
 
-./ieeg upload-directory -n 'Human\_Data/Hospital of the University of Pennsylvania/Yarko\_the\_Great/HUPXXX\_Gottfried\_Odor\_Features' '/project/eeg\_process/HUPXXX/HUPXXX\_Gottfried\_mef'
+    _The annotations\_edit file does not exist if you did not delete any annotations._
 
+    ```
+    cp -r montages.imtg.json /mnt/cnt-fs/eeg_raw/ieeg_raw/HUPXXX/Research/Gottfried
+    ```
 
-1. Make config files
-    1. Once you are done with your processing, in the **eeg\_raw/ieeg\_raw/HUPXXX/Research/Gottfried** folder in cnt-fs, place the files below in a folder called **config\_Gottfried**. When you are done with all processing for this patient, this will be placed in a master config file which will be put in **ieeg\_metadata**.
+    **Delete the original annotations file before uploading only if it contains PHI.**
+
+    ```
+    rm -r annotations.iann.json
+    ```
+
+4. **Upload to [ieeg.org](http://ieeg.org)**
+
+    In cnt1:
+
+    ```
+    cd /project/eeg_process/programs/ieeg/ieeg-latest
+    ```
+
+    ```
+    ./ieeg upload-directory -n 'Human_Data/Hospital of the University of Pennsylvania/Yarko_the_Great/HUPXXX_Gottfried_Odor_Features' '/project/eeg_process/HUPXXX/HUPXXX_Gottfried_mef'
+    ```
+
+5. **Make config files**
+
+    1. When your processing is done, go to the **eeg\_raw/ieeg\_raw/HUPXXX/Research/Gottfried** folder in cnt-fs and place the files below in a folder called **config\_Gottfried**. When all processing for this patient is done, this folder is placed in a master config folder in **ieeg\_metadata**.
         1. Natusdir
         2. Data Collection
         3. Convert log
@@ -277,69 +403,107 @@ In cnt1: cd /project/eeg\_process/programs/ieeg/ieeg-latest
         5. annotations\_edit.iann.json
         6. Montages
 
-1. Let Sarah from the Gottfried Lab know that the file is uploaded.
+6. **Tell the Gottfried Lab coordinator that the file is uploaded.**
 
-## **Gold Lab Audio Task (need to update with new scripts)**
-**First, log into the VDI and enter cnt1 in Mobaxterm with this command: ssh cnt1**
+## Gold Lab Audio Task
+**First, log into the VDI and enter cnt1 in MobaXterm with this command: ssh cnt1**
 
-*   if the VDI ever logs you out, the server name is: [connect.pmacs.upenn.edu](http://connect.pmacs.upenn.edu)
+The commands in this section have not yet been updated for the newer scripts.
 
-1. Natus to mef conversion
-ssh cnt1
+*   If the VDI logs you out, the server name is [connect.pmacs.upenn.edu](http://connect.pmacs.upenn.edu).
 
-In cnt1: cd /project/eeg\_process/programs/mef/natus-latest
+1. **Natus to mef conversion**
 
-./natus2mef -c /mnt/cnt-fs/eeg\_raw/ieeg\_raw/HUPXXX/Research/Gold\_Audio/HUPXXX\_Gold\_natusDir.txt -m /mnt/cnt-fs/eeg\_raw/ieeg\_raw/HUPXXX/Research/Gold\_Audio/HUPXXX\_Gold\_channelMapping.txt -o /project/eeg\_process/HUPXXX/HUPXXX\_Gold\_mef >/mnt/cnt-fs/eeg\_raw/ieeg\_raw/HUPXXX/Research/Gold\_Audio/HUPXXX\_Gold\_convert\_log 2>&1
+    ```
+    ssh cnt1
+    ```
 
-In order to check that the conversion was successful, **go to the HUPXXX\_Gold\_convert\_log file in cnt-fs in ieeg\_raw/HUPXXX/Research/Gold\_Audio**. Right click on the convert log, select Notepad++, and scroll all the way down to the bottom. It should say **“processing successful”**. **If the processing was not successful, you will see the error here in this file.**
+    In cnt1:
 
+    ```
+    cd /project/eeg_process/programs/mef/natus-latest
+    ```
 
-1. Mef Validate
+    ```
+    ./natus2mef -c /mnt/cnt-fs/eeg_raw/ieeg_raw/HUPXXX/Research/Gold_Audio/HUPXXX_Gold_natusDir.txt -m /mnt/cnt-fs/eeg_raw/ieeg_raw/HUPXXX/Research/Gold_Audio/HUPXXX_Gold_channelMapping.txt -o /project/eeg_process/HUPXXX/HUPXXX_Gold_mef >/mnt/cnt-fs/eeg_raw/ieeg_raw/HUPXXX/Research/Gold_Audio/HUPXXX_Gold_convert_log 2>&1
+    ```
 
-In cnt1: cd /project/eeg\_process/programs/ieeg/ieeg-latest
+    To check that the conversion succeeded, **open the HUPXXX\_Gold\_convert\_log file in cnt-fs in ieeg\_raw/HUPXXX/Research/Gold\_Audio**. Right-click on the convert log, open it in Notepad++, and scroll to the bottom. It should say **“processing successful”**. **If the processing failed, the error is shown in this file.**
 
-./mefvalidate /project/eeg\_process/HUPXXX/HUPXXX\_Gold\_mef/\*.mef | grep PASS
-./mefvalidate /project/eeg\_process/HUPXXX/HUPXXX\_Gold\_mef/\*.mef | grep FAIL
+2. **Mef validate**
 
+    In cnt1:
 
-1. Redact annotations
-    1. Run the redact annotations script
-        1. _If you accidentally delete an annotation that should have stayed in, or if you keep an annotation that needs to be deleted, do_ **_control + C_** _to end the script, and then start over._
-    2. Copy both annotations files + montages to cnt-fs when done
-    3. Delete original annotations file from mef
-    4. **Usually the Gold Task does not have any annotations that need to be redacted. In this case, you would just copy over the original annotations file and the montages to cnt-fs, and DO NOT DELETE the original annotations file from the mef.**
+    ```
+    cd /project/eeg_process/programs/ieeg/ieeg-latest
+    ```
 
-In cnt1: cd /project/eeg\_process/programs/mef/redact\_annots
+    ```
+    ./mefvalidate /project/eeg_process/HUPXXX/HUPXXX_Gold_mef/*.mef | grep PASS
+    ./mefvalidate /project/eeg_process/HUPXXX/HUPXXX_Gold_mef/*.mef | grep FAIL
+    ```
 
-python redact\_annots\_python3.py /project/eeg\_process/HUPXXX/HUPXXX\_Gold\_mef/annotations.iann.json /project/eeg\_process/HUPXXX/HUPXXX\_Gold\_mef/annotations\_edit.iann.json
+3. **Redact annotations**
 
-Once you redact the annotations **(any with PHI),** enter the mef file that you just created with:
-cd /project/eeg\_process/HUPXXX/HUPXXX\_Gold\_mef
+    1. Run the redact annotations script.
+        1. _If you accidentally delete an annotation that should have stayed in, or keep an annotation that should have been deleted, press_ **_Ctrl+C_** _to end the script, and then start over._
+    2. When done, copy both annotations files and the montages to cnt-fs.
+    3. Delete the original annotations file from the mef.
+    4. **The Gold task usually has no annotations that need to be redacted. In that case, copy only the original annotations file and the montages to cnt-fs, and do not delete the original annotations file from the mef.**
 
-Once you are here, copy over both annotations files and the montages, and **then delete the original annotations file from the mef** since we do not want to upload this to [ieeg.org](http://ieeg.org) because it has PHI (annotations.iann.json):
+    In cnt1:
 
-cp -r annotations.iann.json /mnt/cnt-fs/eeg\_raw/ieeg\_raw/HUPXXX/Research/Gold\_Audio
+    ```
+    cd /project/eeg_process/programs/mef/redact_annots
+    ```
 
-cp -r annotations\_edit.iann.json /mnt/cnt-fs/eeg\_raw/ieeg\_raw/HUPXXX/Research/Gold\_Audio
-(only if you redacted annotations)
+    ```
+    python redact_annots_python3.py /project/eeg_process/HUPXXX/HUPXXX_Gold_mef/annotations.iann.json /project/eeg_process/HUPXXX/HUPXXX_Gold_mef/annotations_edit.iann.json
+    ```
 
-cp -r montages.imtg.json /mnt/cnt-fs/eeg\_raw/ieeg\_raw/HUPXXX/Research/Gold\_Audio
+    Once you have redacted the annotations **(any with PHI)**, enter the mef folder that you just created:
 
-**Delete original annotations file if it has PHI before uploading!!**
+    ```
+    cd /project/eeg_process/HUPXXX/HUPXXX_Gold_mef
+    ```
 
-*   only if there is an edited vs non-edited (usually not needed for Gold testing)
-rm -r annotations.iann.json
+    From here, copy both annotations files and the montages to cnt-fs, and **then delete the original annotations file (annotations.iann.json) from the mef**. The original must not be uploaded to [ieeg.org](http://ieeg.org) because it contains PHI.
 
+    ```
+    cp -r annotations.iann.json /mnt/cnt-fs/eeg_raw/ieeg_raw/HUPXXX/Research/Gold_Audio
+    ```
 
-1. Upload to [ieeg.org](http://ieeg.org)
+    ```
+    cp -r annotations_edit.iann.json /mnt/cnt-fs/eeg_raw/ieeg_raw/HUPXXX/Research/Gold_Audio
+    ```
 
-In cnt1: cd /project/eeg\_process/programs/ieeg/ieeg-latest
+    Copy the annotations\_edit file only if you redacted annotations.
 
-./ieeg upload-directory -n 'Human\_Data/Hospital of the University of Pennsylvania/Gold\_Lab\_Audio/HUPXXX\_Audio\_Task' '/project/eeg\_process/HUPXXX/HUPXXX\_Gold\_mef'
+    ```
+    cp -r montages.imtg.json /mnt/cnt-fs/eeg_raw/ieeg_raw/HUPXXX/Research/Gold_Audio
+    ```
 
+    **Delete the original annotations file before uploading if it contains PHI.** This is needed only when there is an edited file as well as the original, which is usually not the case for Gold testing.
 
-1. Make config files
-    1. Once you are done with your processing, in the **eeg\_raw/ieeg\_raw/HUPXXX/Research/Gold\_Audio** folder in cnt-fs, place the files below in a folder called **config\_Gold**. When you are done with all processing for this patient, this will be placed in a master config file which will be put in **ieeg\_metadata**.
+    ```
+    rm -r annotations.iann.json
+    ```
+
+4. **Upload to [ieeg.org](http://ieeg.org)**
+
+    In cnt1:
+
+    ```
+    cd /project/eeg_process/programs/ieeg/ieeg-latest
+    ```
+
+    ```
+    ./ieeg upload-directory -n 'Human_Data/Hospital of the University of Pennsylvania/Gold_Lab_Audio/HUPXXX_Audio_Task' '/project/eeg_process/HUPXXX/HUPXXX_Gold_mef'
+    ```
+
+5. **Make config files**
+
+    1. When your processing is done, go to the **eeg\_raw/ieeg\_raw/HUPXXX/Research/Gold\_Audio** folder in cnt-fs and place the files below in a folder called **config\_Gold**. When all processing for this patient is done, this folder is placed in a master config folder in **ieeg\_metadata**.
         1. Natusdir
         2. Data Collection
         3. Convert log

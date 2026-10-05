@@ -12,7 +12,9 @@ source: cnt
     Overview of the stereoEEG (phase II) pipeline: CNT collects, processes, and uploads implant patients' EEG so others can use it. Processed and uploaded data are due within one week after the patient is explanted from the EMU.
 
 #### Introduction
-Some refractory epilepsy patients may also be candidates for stereoEEG (also known as an intracranial implant) to better localize their epileptic onset zone. This is considered **phase II** of testing. They will get implanted with depth electrodes, stay in the EMU for about a week or two, and have their seizures recorded. As part of the staff and research team for the CNT, we collect this EEG data, process it, and upload it so other researchers and clinicians can use the data for their own projects. 
+The CNT staff and research team collect, process, and upload each implant patient's EEG so that other researchers and clinicians can use it. The processed data must be uploaded within one week after the patient is explanted from the EMU.
+
+Some patients with refractory epilepsy are candidates for stereoEEG, also called an intracranial implant, to better localize the epileptic onset zone. This is phase II of testing. The patient is implanted with depth electrodes, stays in the EMU for about one to two weeks, and has seizures recorded during the stay.
 
 #### Timeline
-Expected to be processed correctly and uploaded **WITHIN A WEEK** **post-explant from the EMU**
+Each patient's data must be processed correctly and uploaded **within one week after explant from the EMU**.

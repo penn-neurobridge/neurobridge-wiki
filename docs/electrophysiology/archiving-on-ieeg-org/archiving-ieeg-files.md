@@ -70,5 +70,5 @@ nohup bash upload\_azcli.sh HUPXXX.tar.gz &> /project/eeg\_process/azure\_archiv
 
 
 1. Check the log file **/project/eeg\_process/azure\_archive/logs\_azure/HUPXXX\_azure\_archive.log** for process on uploading the tarball to Azure. Check that the upload is finished and check that the size of the remote tarball file **\=** size of the local tarball file
-**Josh's SOP**
+**the data research coordinator's SOP**
 KNOWLEDGE BASE (a page *(retired page)*)

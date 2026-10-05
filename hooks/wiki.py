@@ -217,19 +217,19 @@ def on_page_markdown(markdown, page, config, files):
             mine = [n for n in own if n["center"] == cid]
             ext = (c or {}).get("shared") or []
             if not mine and not ext:
-                return "*No procedures yet. They are added here as the collaboration produces them.*"
+                return "*In preparation.*"
             out = []
             by_theme = {}
             for n in mine:
                 by_theme.setdefault(n["theme"], []).append(n)
             for theme, items in by_theme.items():
-                out.append(f"**{theme}** ({len(items)})\n")
+                out.append(f"**{theme}**\n")
                 out.append("\n".join(f"- [{n['title']}](../{n['id']})" + (f" · {n['section']}" if n.get("section") else "") for n in items) + "\n")
             by_theme = {}
             for sp in ext:
                 by_theme.setdefault(sp["theme"], []).append(sp)
             for theme, items in by_theme.items():
-                out.append(f"**{theme}** ({len(items)}), in the CNT manual only\n")
+                out.append(f"**{theme}**, in the CNT manual only\n")
                 out.append("\n".join(f"- [{i['title']}](cnt:{i['path']}) · {i['section']}" if i.get("section") else f"- [{i['title']}](cnt:{i['path']})" for i in items) + "\n")
             return "\n".join(out)
         markdown = re.sub(r"%%SHARED:([a-z0-9\-]+)%%", shared_list, markdown)

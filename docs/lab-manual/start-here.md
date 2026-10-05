@@ -5,7 +5,7 @@ order: 0
 
 # 0. Start here
 
-This wiki holds the procedures of the NeuroBridge Lab, the data coordinating center of a network of Penn and CHOP centers. Much of the lab's infrastructure is run jointly with the Center for Neuroengineering and Therapeutics (CNT), so procedures that both use are kept in both manuals and maintained together, and say so at the top. The CNT's own clinical work, and the systems the lab only depends on, are linked below into the [CNT procedures manual](cnt:index.md). Read in the order below for your role, then use the [map](../map/index.md) to see where a page sits.
+This wiki holds the lab's procedures. Much of the lab's infrastructure is run jointly with the Center for Neuroengineering and Therapeutics (CNT), so procedures that both use are kept in both manuals and maintained together, and say so at the top. The CNT's own clinical work, and the systems the lab only depends on, are linked below into the [CNT procedures manual](cnt:index.md). Read in the order below for your role, then use the [map](../map/index.md) to see where a page sits.
 
 !!! danger "Five things you must never do"
     1. Put data with patient identifiers anywhere except the PMACS systems (cnt1, cnt-fs, the BSC cluster) or Penn+Box. SEAS servers, laptops, GitHub, Slack and this wiki never hold identified data.

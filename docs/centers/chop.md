@@ -6,8 +6,7 @@ center: chop
 
 # CHOP Informatics
 
-!!! warning "Draft"
-    This page needs the PI's description of the collaboration with the informatics groups at the Children's Hospital of Philadelphia: which group, which cohorts or data, and under which agreements.
+The lab's collaboration with the informatics groups at the Children's Hospital of Philadelphia. A description of the collaboration, the cohorts and the agreements it works under is in preparation.
 
 ## Procedures that involve this center
 

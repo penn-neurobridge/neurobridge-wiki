@@ -5,9 +5,6 @@ order: 5
 
 # 5. Sites, centers and collaborators
 
-!!! warning "Draft"
-    This section still needs the PI's pass. Edit it directly; the structure is a proposal.
-
 ## Partner centers
 
 The lab's data and much of its day-to-day operation come from clinical partners. For each, the wiki should eventually answer the same five questions: who our contacts are, what data flows in which direction, which systems hold it, under which agreement, and which procedures apply. Today only the CNT column is complete.
@@ -42,4 +39,4 @@ This is the two-year goal from the data-coordinator role made into a checklist. 
 
 ## Contacts by site
 
-*(Add: one line per site — PI, data contact, agreement reference.)*
+*The site table is in preparation.*

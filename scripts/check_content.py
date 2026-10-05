@@ -16,7 +16,7 @@ this they them it its a an as at by be been can do does done each every here int
 old once only over per plus then there these those through under until upon used very what where
 while who why yes yet first last next later before after sent email link page tab click enter type
 temporary expired expiry current previous resets pretty fields my_password your_password yourpassword
-xxxxxxxx placeholder""".split())
+xxxxxxxx placeholder entered typed""" .split())
 
 def password_value(line):
     """Return a suspicious password-like value from a line, or None."""

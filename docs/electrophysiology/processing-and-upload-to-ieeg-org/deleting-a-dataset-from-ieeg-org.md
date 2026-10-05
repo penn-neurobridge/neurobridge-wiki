@@ -12,12 +12,12 @@ source: cnt
     To delete an ieeg.org dataset: in the project, uncheck the dataset and copy its name first, then in cnt1 go to /project/eeg_process/programs/ieeg/ieeg-latest and run ./ieeg delete nameofdataset, confirming with Y.
 
 1. In [ieeg.org](http://ieeg.org):
-    1. hit projects
-    2. go to the project folder where you need to delete a file
-    3. hit open project
-    4. uncheck the database you want to delete; **COPY THE NAME BEFORE DOING SO**
-2. In the VDI➝mobaXterm
+    1. Click Projects.
+    2. Go to the project folder that holds the file you need to delete.
+    3. Click Open Project.
+    4. Uncheck the dataset you want to delete. **Copy its name before you uncheck it.**
+2. In the VDI, open MobaXterm.
 3. ssh cnt1
 4. cd /project/eeg\_process/programs/ieeg/ieeg-latest
 5. ./ieeg delete nameofdataset
-6. Type “Y” for yes to delete
+6. Type “Y” to confirm the deletion.

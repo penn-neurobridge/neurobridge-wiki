@@ -9,113 +9,58 @@ source: cnt
 # Onboarding & Offboarding Checklist
 
 !!! abstract "What this page tells you"
-    Master checklist of every account, server, listserv, and IRB access a new CNT member needs, who owns each step (Gloria, Josh, Neurology, etc.), how it is requested, and what is removed at offboarding. Ends with Josh's IT responsibilities by system.
+    Every account, server, listserv and protocol a new member may need, who requests it, how, and what is removed when the person leaves. Owners are roles, not people; the current holder of each role is in the lab's people directory.
 
-| **Manger/PI/Neurology** | **Administrative** | **Received notice of hire** | **Onboarding Steps (Manual)** | **Received notice of dismissal** |  |
-| ---| ---| ---| ---| ---| --- |
-| Gloria | Administrative | Onboarding survey (welcome form) |  | Offboarding survey |  |
-| Gloria | Administrative | Confirmation of onboarding logistics - pennkey, @seas email, |  | Automatic removal based on end date |  |
-| Neurology | Administrative | Neurology Department - AnnMarie, Naseem |  | Neurology Department - AnnMarie, Naseem |  |
-| Gloria, Labs | Administrative | Update Websites |  | Update Websites |  |
-| Gloria, Mariam, Nina | Administrative | Add to email listservs, CNTlab, CNTworkgroup, Pioneer, Davislab |  | email listservs removal |  |
-| Gloria | Administrative | Order Computer & periphials |  | Retrieve computer, if applicable |  |
-| Gloria | Administrative/IT | Contact CETS, PMAC |  | Update CETS, PMACS |  |
-| Gloria | Administrative/IT | Order office supplies |  |  |  |
-| Carolyn, Mariam, Nina, Brandon | Administrative | Add to IRBs\* |  | IRB Protocol removal |  |
-| Josh | IT | SEAS Littlab server system access (Borel, Pioneer, Sauce, Finkel) | <br>Data Manager emails CETS<br><br><br> | Removal from servers (automatic); user data |  |
-| Josh | IT | SEAS sponsored research account | <br><br> | Expires after maximum one year |  |
-| Josh | IT | SEAS email | Can be requested as standalone (i.e. email and no server access)<br><br>Data Manager emails CETS<br><br> | Deactivated after leaving Penn |  |
-| UPenn | IT | SEAS alumni account and email | https://cets.seas.upenn.edu/answers/account-deletion.html<br> | N/A |  |
-| ISC, CETS | IT | PennKey |  | N/A |  |
-| ISC, CETS | IT | ISC Global Protect VPN |  | N/A |  |
-| Josh | IT | Matlab License (CETS) | Faculty or user reaches out to Data Manager for Matlab license<br><br><br>Data Manager emails CETS (Chris N) and fills out CNT Matlab Sheet<br><br> | Expires after next renewal period |  |
-| Josh | IT | PMACS account | <br>Data Manager submits ticket to PMACS HelpDesk<br><br> | Deactivated after leaving Penn |  |
-| Josh | IT | PMACS BSC Cluster access | <br>Data Manager submits ticket to PMACS HelpDesk<br><br><br> | Removal from servers; organize and document leftover user data |  |
-| Josh | IT | PMACS VDI access | <br>Data Manager submits ticket to PMACS HelpDesk<br><br> | N/A |  |
-| Josh | IT | PMACS cnt1 and cnt-fs server system access (HIPAA) | <br><br>Afterward, Data Manager submits ticket to PMACS HelpDesk<br><br><br> | Removal from servers; organize and document leftover user data |  |
-| Josh | IT | PMACS cntgpu1 server access | <br><br>Data Manager submits ticket to PMACS HelpDesk<br><br> | Removal from servers; organize and document leftover user data |  |
-| Josh | IT | PMACS Ivanti Secure VPN | <br> | N/A |  |
-| Josh | IT | PMACS REDCap access | <br><br><br><br><br><br> | N/A |  |
-| Josh, Mariam, Nina ,Gloria |  | CNT REDCap projects access | <br><br><br> | Removal |  |
-| Josh |  | PMACS HelpDesk System ticketing | <br><br> | Removal |  |
-| Josh |  | PMACS Azure Littlab and Davislab account | <br>Data Manager submits ticket to PMACS HelpDesk<br><br> | Removal |  |
-| Josh, Naseem Kerr |  | PennMedicine account | <br><br> | N/A |  |
-| Josh, Naseem Kerr |  | PennMedicine email | <br> | N/A |  |
-| Josh, Naseem Kerr |  | PennChart access | <br> | N/A |  |
-| Josh |  | UPHS Isilon-neurology folder | <br>Data Manager submits ticket to UPHS IS Service HelpDesk<br><br> | Removal |  |
-| Josh |  | UPHS F5 Access VPN | <br><br> | N/A |  |
-| Josh |  | Citrix Remote Desktop Application | <br>Data Manager submits ticket to UPHS IS Service HelpDesk<br><br><br> | N/A |  |
-| Josh |  | UPHS Hayden Hall Desktop | <br><br> | Removal |  |
-| Brandon, Brian, Josh |  | Pennsieve CNT Workspace access | <br>Research staff grants access<br><br> | Removal |  |
-| CNT Research Staff |  | [ieeg.org](http://ieeg.org) projects | <br>ieeg.org<br><br><br>ieeg.org<br><br> | N/A |  |
-| Brian |  | AWS CNT account |  | Removal |  |
-| Josh, Brian, John Frommeyer |  | AWS upenn-ieeg account (S3, Elastic Beanstalk, prod-pipe) | <br> | Removal |  |
-| CNT Staff |  | PennBox folders | <br><br> | Removal |  |
-| Josh, Brian |  | GitHub penn-cnt repository | <br> | N/A |  |
+The PI confirms the start date and which systems the person needs; the data research coordinator requests the technical accounts; the regulatory coordinator handles the IRB protocols; the lab administrator handles logistics. Nobody needs every line. Students and postdocs working only with de-identified data stop at the SEAS servers and GitHub; hospital systems are requested only for people who will work with identified data or in the clinic. The step-by-step request procedures are linked from [Getting set up](../../lab-manual/getting-set-up.md).
 
-#### Josh:
+## Logistics (lab administrator and PI)
 
-**CETS**
+| Item | At onboarding | At offboarding |
+|---|---|---|
+| Onboarding and offboarding forms | Welcome form sent before day one | Exit form; end date recorded |
+| PennKey, department email | Confirmed with the department business office | Removed by the department on the end date |
+| Lab and department websites | Person added | Person removed |
+| Listservs and Slack | Added to the lab list, the shared CNT lists if applicable, and Slack | Removed |
+| Computer and peripherals | Ordered or assigned; office supplies | Computer returned and wiped |
 
-*   Littlab servers
-    *   communications, maintenance
-        *   CETS helpdesk
-    *   Usergroups
-*   SEAS accounts
-    *   Sponsored research accounts
-    *   SEAS email
-    *   account renewals
-*   PennKey
-*   Global Protect VPN
-*   Matlab
+## Protocols (regulatory coordinator)
 
-**PMACS**
+| Item | At onboarding | At offboarding |
+|---|---|---|
+| IRB protocols | Added to each protocol the person will work under, after CITI and HIPAA training: [Adding Personnel to an IRB Study](../regulatory-irb-and-reporting/adding-personnel-to-an-irb-study.md) or [Adding a Non-Penn / New Hire](../regulatory-irb-and-reporting/adding-a-non-penn-new-hire-to-a-study.md) | Removed from each protocol at the next modification |
+| Study personnel list | Updated | Updated |
 
-*   BSC Davis project folders
-    *   communications
-*   VDI
-*   cnt1, cnt-fs
-    *   IRB access, usergroups
-*   cntgpu1
-*   Ivanti Secure VPN
-*   REDCap
-    *   projects
-*   HelpDesk
-    *   PMACS Client Group tickets
-    *   Systems tickets
-*   Azure
-    *   littlab
-    *   davislab
+## Compute and data systems (data research coordinator)
 
-**UPHS**
+Requested through the CETS or PMACS helpdesk as described in [Submitting CETS & PMACS Helpdesk Tickets](../../compute/support-and-tickets/submitting-cets-and-pmacs-helpdesk-tickets.md); a person must be on the relevant IRB before access to systems that hold identified data is requested.
 
-*   Desktops
-    *   MJ0HKNDA
-        *   admin account
-    *   MJ09PSLQ
-*   PennMedicine account
-    *   PennChart
-    *   PennMedicine email
-    *   Naseem Kerr
-*   isilon neurology folder
-*   F5 Access VPN
-*   IS HelpDesk
-*   Citrix App Remote Desktop
+| System | How it is requested | At offboarding |
+|---|---|---|
+| SEAS servers (Borel, Pioneer, Leif, Finkel) and user groups | Data research coordinator emails CETS | Removed from the servers and groups |
+| SEAS sponsored research account and SEAS email | Data research coordinator emails CETS; email can be requested on its own | Expires after at most one year unless renewed |
+| GlobalProtect VPN | Comes with the SEAS account | Expires with the account |
+| MATLAB licence (CETS) | Faculty or the user asks the data research coordinator, who emails CETS | Released |
+| PMACS account, VDI, Ivanti Secure VPN | Data research coordinator submits a PMACS helpdesk ticket: [PMACS VPN](../../compute/pmacs-psom-systems/pmacs-vpn.md) | Deactivated when the person leaves Penn |
+| BSC cluster project folders | PMACS helpdesk ticket | Removed from the project groups |
+| cnt1 and cnt-fs (identified data) | After IRB membership, PMACS helpdesk ticket for the matching user groups | Removed from the groups |
+| cntgpu1 | PMACS helpdesk ticket | Removed |
+| REDCap account and project access | [Requesting a REDCap Account](../access-and-accounts/requesting-a-redcap-account.md); project access granted by the project owner | Removed from each project |
+| PMACS helpdesk ticketing rights | PMACS helpdesk ticket, for staff who will file tickets themselves | Removed |
+| Azure archive accounts | PMACS helpdesk ticket | Removed |
+| Pennsieve workspace | Granted by a workspace administrator: [Pennsieve Data Access Rules](../../data/sharing-pennsieve-and-ieeg-org/pennsieve-data-access-rules.md) | Removed |
+| ieeg.org projects | Added by an existing project member: [Adding Users to the ieeg.org Portal](../access-and-accounts/adding-users-to-the-ieeg-org-portal.md) | Removed from the projects |
+| Penn+Box folders | Shared by the folder owner | Removed |
+| GitHub organisation | Added by an organisation owner | Removed |
+| AWS accounts (ieeg.org infrastructure) | Granted by the account owner, only for people who maintain it | Removed |
 
-**CNT**
+## Hospital systems (only for people who need them)
 
-*   IRBs
-*   Pennsieve
-    *   projects
-*   [ieeg.org](http://ieeg.org/)
-    *   projects
-*   AWS
-    *   S3
-    *   Elastic Beanstalk
-    *   prod-pipe
-    *   billing
-*   PennBox
-    *   folders
-*   GitHub
-    *   Penn CNT
-*   data on various CNT servers
+| System | How it is requested | At offboarding |
+|---|---|---|
+| PennMedicine account and email, PennChart | Through the department's PennMedicine sponsor; [PennChart training](cnt:operations/onboarding-and-offboarding/pennchart-training.md) first | Deactivated by the hospital |
+| UPHS F5 VPN, Citrix remote desktop, UPHS desktops | UPHS IS helpdesk ticket: [UPHS F5 VPN Access](cnt:operations/access-and-accounts/uphs-f5-vpn-access.md), [Citrix Remote Desktop Access](cnt:operations/access-and-accounts/citrix-remote-desktop-access.md) | Removed |
+| Isilon neurology share, EMU shared drive | UPHS IS helpdesk ticket: [Requesting Shared Drive Access](cnt:operations/access-and-accounts/requesting-shared-drive-access-penn-medicine-ticket.md) | Removed |
+
+## When someone leaves
+
+Set the end date with the department and the data research coordinator a month ahead where possible. Before the last day: data and code handed over to a named person and documented ([Leaving the lab](../../lab-manual/leaving-the-lab.md)); personal copies of identified data deleted and confirmed; accounts above removed in the order listed, hospital systems first; computer returned. Shared credentials the person knew are rotated.
