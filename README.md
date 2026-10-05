@@ -6,6 +6,7 @@ Standard operating procedures of the Penn NeuroBridge Lab, as Markdown, built in
 - `hooks/wiki.py` — builds the navigation from the folders and writes `map/graph.json` + `_reports/stale.json` at build time. No hand-maintained nav.
 - `docs/about/` — how to contribute, style guide, SOP template, roles.
 - `design-system/` — the visual direction the landing page follows (tokens, pattern, checklist), generated with the UI/UX Pro Max skill.
+- `HOSTING.md` — how the website is published (AWS S3 + CloudFront via `infra/terraform/` and GitHub Actions) and edited in the browser.
 - `MIGRATION-TODO.md` — what still needs a human pass after the import from the previous knowledge base.
 
 ## Preview locally
