@@ -1,17 +1,10 @@
 ---
-title: "Pedro \u2192 cnt-fs (7T)"
-theme: "Imaging"
-section: "Post-scan Transfer"
+title: "Pedro → cnt-fs (7T)"
 stage: "Data Collection"
 roles: [crc, data-rc]
 scope: shared
 audit: merge
-kind: how-to
-status: migrated
 order: 2
-owner: ""
-last_reviewed: ""
-tags: ["Data Collection", "Clinical research coordinator / clinical RA", "Data research coordinator / data RA"]
 ---
 
 # Pedro → cnt-fs (7T)

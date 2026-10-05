@@ -1,10 +1,6 @@
 ---
 title: "9. Leaving the lab"
-kind: explanation
-status: draft
 order: 9
-owner: ""
-last_reviewed: ""
 ---
 
 # 9. Leaving the lab

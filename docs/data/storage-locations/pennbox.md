@@ -1,16 +1,9 @@
 ---
 title: "PennBox"
-theme: "Data"
-section: "Storage Locations"
 stage: "Data Governance"
 roles: [data-rc, analyst, pi-manager]
 scope: shared
-kind: how-to
-status: migrated
 order: 3
-owner: ""
-last_reviewed: ""
-tags: ["Data Governance", "Data research coordinator / data RA", "Trainee / analyst (postdoc, PhD, master's, undergraduate)", "PI / lab manager"]
 ---
 
 # PennBox

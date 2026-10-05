@@ -1,7 +1,5 @@
 ---
 title: "PMACS (PSOM) Systems"
-theme: "Compute"
-kind: index
 ---
 
 # PMACS (PSOM) Systems

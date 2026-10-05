@@ -1,16 +1,9 @@
 ---
 title: "AWS @ Penn: Getting Started"
-theme: "Compute"
-section: "Cloud (AWS)"
 stage: "Data Analytics"
 roles: [pipeline]
 scope: reference
-kind: how-to
-status: migrated
 order: 1
-owner: ""
-last_reviewed: ""
-tags: ["Data Analytics", "Pipeline & systems maintainer"]
 ---
 
 # AWS @ Penn: Getting Started

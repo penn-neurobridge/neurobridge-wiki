@@ -1,16 +1,9 @@
 ---
 title: "Exporting Files from Natus"
-theme: "Electrophysiology"
-section: "Exporting from Natus"
 stage: "Data Collection"
 roles: [data-rc, crc]
 scope: core
-kind: how-to
-status: migrated
 order: 1
-owner: ""
-last_reviewed: ""
-tags: ["Data Collection", "Data research coordinator / data RA", "Clinical research coordinator / clinical RA"]
 ---
 
 # Exporting Files from Natus

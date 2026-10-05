@@ -1,16 +1,27 @@
 #!/usr/bin/env python3
-"""List pages whose last_reviewed is missing or older than 365 days (same logic as hooks/wiki.py)."""
-import re, yaml, pathlib, datetime
-today = datetime.date.today(); rows = []
-for p in sorted(pathlib.Path("docs").rglob("*.md")):
-    m = re.match(r"\A---\s*\n(.*?)\n---", p.read_text(encoding="utf-8"), re.S)
-    fm = yaml.safe_load(m.group(1)) if m else {}
-    if not fm or fm.get("kind") == "index" or not fm.get("theme"): continue
-    lr = str(fm.get("last_reviewed") or "")
-    try: d = datetime.date.fromisoformat(lr)
-    except ValueError: d = None
-    age = (today - d).days if d else None
-    if age is None or age > 365: rows.append((age if age is not None else 99999, str(p), fm.get("owner") or "-", lr or "never"))
-for age, path, owner, lr in sorted(rows, reverse=True):
-    print(f"{lr:>10}  {owner:<14} {path}")
-print(f"\n{len(rows)} page(s) need review")
+"""List procedures by last change (from git), oldest first; pages untouched for a year are marked stale.
+
+Same data as _reports/stale.json in the built site. Nothing is kept by hand: git knows who last
+changed a page and when.
+"""
+import os, sys, datetime
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "hooks"))
+import yaml, wiki  # noqa: E402
+
+root = os.path.join(os.path.dirname(__file__), "..")
+config = yaml.safe_load(open(os.path.join(root, "mkdocs.yml")).read().replace("!!python/name:", ""))
+config["docs_dir"] = os.path.join(root, "docs")
+today = datetime.date.today()
+hist = wiki.git_history(root)
+rows = []
+for n in wiki._procedures(config):
+    date, author, commits = hist.get(os.path.join("docs", n["id"]), ("", "", 0))
+    age = (today - datetime.date.fromisoformat(date)).days if date else None
+    rows.append((date or "0000-00-00", author or "-", commits, age, n["id"]))
+rows.sort()
+stale = 0
+for date, author, commits, age, path in rows:
+    flag = "STALE" if age is None or age > 365 else "     "
+    stale += flag.strip() == "STALE"
+    print(f"{flag} {date:>10}  {commits:>3} change(s)  {author:<18} {path}")
+print(f"\n{len(rows)} procedure(s); {stale} not changed in a year")

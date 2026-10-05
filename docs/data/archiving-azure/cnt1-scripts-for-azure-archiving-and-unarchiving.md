@@ -1,16 +1,9 @@
 ---
 title: "cnt1 Scripts for Azure Archiving & Unarchiving"
-theme: "Data"
-section: "Archiving (Azure)"
 stage: "Data Governance"
 roles: [pipeline, data-rc]
 scope: core
-kind: how-to
-status: migrated
 order: 2
-owner: ""
-last_reviewed: ""
-tags: ["Data Governance", "Pipeline & systems maintainer", "Data research coordinator / data RA"]
 ---
 
 # cnt1 Scripts for Azure Archiving & Unarchiving

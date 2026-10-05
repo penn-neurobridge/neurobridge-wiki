@@ -1,16 +1,9 @@
 ---
 title: "Archiving EEG Data to Azure"
-theme: "Data"
-section: "Archiving (Azure)"
 stage: "Data Governance"
 roles: [pipeline, data-rc]
 scope: core
-kind: how-to
-status: migrated
 order: 1
-owner: ""
-last_reviewed: ""
-tags: ["Data Governance", "Pipeline & systems maintainer", "Data research coordinator / data RA"]
 ---
 
 # Archiving EEG Data to Azure

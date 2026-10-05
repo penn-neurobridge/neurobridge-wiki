@@ -1,16 +1,9 @@
 ---
 title: "Clipping Gold Audio Task Files in Natus"
-theme: "Electrophysiology"
-section: "Exporting from Natus"
 stage: "Data Collection"
 roles: [data-rc, crc]
 scope: clinical-coverage
-kind: how-to
-status: migrated
 order: 3
-owner: ""
-last_reviewed: ""
-tags: ["Data Collection", "Data research coordinator / data RA", "Clinical research coordinator / clinical RA"]
 ---
 
 # Clipping Gold Audio Task Files in Natus

@@ -1,16 +1,9 @@
 ---
 title: "Accessing Borel over SSH"
-theme: "Compute"
-section: "SEAS (CETS) Servers"
 stage: "Data Analytics"
 roles: [analyst, pipeline]
 scope: core
-kind: how-to
-status: migrated
 order: 2
-owner: ""
-last_reviewed: ""
-tags: ["Data Analytics", "Trainee / analyst (postdoc, PhD, master's, undergraduate)", "Pipeline & systems maintainer"]
 ---
 
 # Accessing Borel over SSH

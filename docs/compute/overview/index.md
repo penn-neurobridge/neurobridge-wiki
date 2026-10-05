@@ -1,7 +1,5 @@
 ---
 title: "Overview"
-theme: "Compute"
-kind: index
 ---
 
 # Overview

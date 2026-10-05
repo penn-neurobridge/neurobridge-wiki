@@ -1,5 +1,5 @@
 ---
-title: Contributing
+title: "Contributing"
 order: 1
 ---
 
@@ -27,27 +27,23 @@ Copy [the SOP template](sop-template.md) into the right theme and section folder
 
 ## Front matter, explained
 
+A page carries only what cannot be read from its folder or from git. Five fields, two of them optional:
+
 ```yaml
 ---
-title: "Exporting Files from Natus"          # shown in navigation and search
-theme: "Electrophysiology"                   # one of the six (matches the folder)
-section: "Exporting from Natus"              # the sub-folder's name
-stage: "Data Collection"                     # one of four lifecycle stages
-roles: [data-rc, crc]                        # who needs this page (see Roles)
-kind: how-to                                 # how-to | tutorial | reference | explanation
-status: current                              # current | draft | migrated | deprecated
-order: 2                                     # position within the section
-owner: "mariam"                              # GitHub handle of the person who keeps it right
-last_reviewed: "2026-10-04"                  # bump when you confirm it still works
-tags: ["Data Collection", "Data research coordinator", "Clinical research coordinator"]
+title: "Exporting Files from Natus"   # shown in navigation and search
+stage: "Data Collection"              # one of four lifecycle stages (drives the map and the tags)
+roles: [data-rc, crc]                 # who needs this page; see Roles
+scope: core                           # core | shared | reference | clinical-coverage (see below)
+order: 2                              # optional: position within the section
 ---
 ```
 
-`status: migrated` marks a page imported from the lab's previous knowledge base that nobody has re-checked yet. When you follow one and it works, change it to `current` and set `last_reviewed`. Pages not reviewed within a year show up in the stale report (`make stale`, or `_reports/stale.json` in the built site).
+`scope` says whom the page is for and puts a banner on it: `core` is work our own people do (no banner); `shared` is a CNT or Penn system we depend on but do not run; `reference` is background to read once; `clinical-coverage` is participant-facing CNT work we only cover. The theme and section come from the folder the file sits in; the tags on the Tags page are generated from `stage` and `roles`. Who last changed a page, and when, is what git records, so there is no owner or review-date field to keep up: the page history on GitHub is the record, `CODEOWNERS` names who reviews each theme, and `make stale` (or `_reports/stale.json` in the built site) lists every procedure by its last change and marks those untouched for a year. While the October 2026 audit is being worked through, some pages also carry `audit: merge` or `audit: retire`; delete the line once the page has been dealt with.
 
 ## Reviewing
 
-Small fixes (typos, a changed path, a new contact) can be merged by anyone with write access. Changes to how something is done should be reviewed by the page's owner or the theme's code owner (see `CODEOWNERS`). Say in the pull request what you tested.
+Small fixes (typos, a changed path, a new contact) can be merged by anyone with write access. Changes to how something is done should be reviewed by the theme's code owner (see `CODEOWNERS`). Say in the pull request what you tested.
 
 ## Images and attachments
 

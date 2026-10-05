@@ -1,16 +1,9 @@
 ---
 title: "All Consent Forms (Box links)"
-theme: "Operations"
-section: "Consenting"
 stage: "Data Collection"
 roles: [crc]
 scope: clinical-coverage
-kind: how-to
-status: migrated
 order: 4
-owner: ""
-last_reviewed: ""
-tags: ["Data Collection", "Clinical research coordinator / clinical RA"]
 ---
 
 # All Consent Forms (Box links)

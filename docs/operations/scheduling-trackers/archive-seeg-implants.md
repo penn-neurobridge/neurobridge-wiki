@@ -1,16 +1,9 @@
 ---
 title: "Archive: sEEG Implants"
-theme: "Operations"
-section: "Scheduling Trackers"
 stage: "Data Collection"
 roles: [crc]
 scope: flagged
-kind: how-to
-status: phi-stub
 order: 4
-owner: ""
-last_reviewed: ""
-tags: ["Data Collection", "Clinical research coordinator / clinical RA"]
 ---
 
 # Archive: sEEG Implants

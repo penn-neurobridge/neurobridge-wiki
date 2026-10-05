@@ -1,16 +1,9 @@
 ---
 title: "Where 3T and 7T Scans Are Stored"
-theme: "Data"
-section: "Storage Locations"
 stage: "Data Governance"
 roles: [data-rc, analyst, pi-manager]
 scope: flagged
-kind: how-to
-status: migrated
 order: 2
-owner: ""
-last_reviewed: ""
-tags: ["Data Governance", "Data research coordinator / data RA", "Trainee / analyst (postdoc, PhD, master's, undergraduate)", "PI / lab manager"]
 ---
 
 # Where 3T and 7T Scans Are Stored

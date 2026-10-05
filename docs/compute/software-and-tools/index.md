@@ -1,7 +1,5 @@
 ---
 title: "Software & Tools"
-theme: "Compute"
-kind: index
 ---
 
 # Software & Tools

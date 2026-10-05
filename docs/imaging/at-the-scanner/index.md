@@ -1,7 +1,5 @@
 ---
 title: "At the Scanner"
-theme: "Imaging"
-kind: index
 ---
 
 # At the Scanner

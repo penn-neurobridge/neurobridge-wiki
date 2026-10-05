@@ -1,7 +1,5 @@
 ---
 title: "Storage Locations"
-theme: "Data"
-kind: index
 ---
 
 # Storage Locations

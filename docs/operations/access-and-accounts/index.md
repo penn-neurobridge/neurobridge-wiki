@@ -1,7 +1,5 @@
 ---
 title: "Access & Accounts"
-theme: "Operations"
-kind: index
 ---
 
 # Access & Accounts

@@ -1,16 +1,9 @@
 ---
 title: "Bedside Testing: Gold Audio Task"
-theme: "Electrophysiology"
-section: "EMU Acquisition"
 stage: "Data Collection"
 roles: [crc]
 scope: clinical-coverage
-kind: how-to
-status: migrated
 order: 2
-owner: ""
-last_reviewed: ""
-tags: ["Data Collection", "Clinical research coordinator / clinical RA"]
 ---
 
 # Bedside Testing: Gold Audio Task

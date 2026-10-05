@@ -1,7 +1,5 @@
 ---
 title: "Consenting"
-theme: "Operations"
-kind: index
 ---
 
 # Consenting

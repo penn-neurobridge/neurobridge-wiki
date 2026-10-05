@@ -1,16 +1,9 @@
 ---
-title: "EMU Interictal Scalp EEG Pipeline (duplicate \u2014 merge)"
-theme: "Electrophysiology"
-section: "Scalp EEG"
+title: "EMU Interictal Scalp EEG Pipeline (duplicate — merge)"
 stage: "Data Analytics"
 roles: [analyst, pipeline]
 scope: flagged
-kind: how-to
-status: migrated
 order: 2
-owner: ""
-last_reviewed: ""
-tags: ["Data Analytics", "Trainee / analyst (postdoc, PhD, master's, undergraduate)", "Pipeline & systems maintainer"]
 ---
 
 # EMU Interictal Scalp EEG Pipeline (duplicate — merge)

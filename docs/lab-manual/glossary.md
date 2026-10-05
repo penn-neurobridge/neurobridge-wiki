@@ -1,10 +1,6 @@
 ---
 title: "8. Glossary"
-kind: explanation
-status: current
 order: 8
-owner: ""
-last_reviewed: ""
 ---
 
 # 8. Glossary

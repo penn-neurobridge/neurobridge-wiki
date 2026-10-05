@@ -1,5 +1,5 @@
 ---
-title: SOP template
+title: "SOP template"
 order: 3
 ---
 
@@ -10,16 +10,10 @@ Copy the block below into a new file in the right theme and section folder (for 
 ````markdown
 ---
 title: "Verb + object, e.g. Exporting EEG from Natus"
-theme: "Electrophysiology"
-section: "Exporting from Natus"
 stage: "Data Collection"
 roles: [data-rc]
-kind: how-to
-status: draft
+scope: core
 order: 99
-owner: "your-github-handle"
-last_reviewed: "2026-10-04"
-tags: ["Data Collection", "Data research coordinator"]
 ---
 
 # Verb + object

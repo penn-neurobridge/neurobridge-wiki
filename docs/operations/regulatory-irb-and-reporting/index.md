@@ -1,7 +1,5 @@
 ---
 title: "Regulatory, IRB & Reporting"
-theme: "Operations"
-kind: index
 ---
 
 # Regulatory, IRB & Reporting

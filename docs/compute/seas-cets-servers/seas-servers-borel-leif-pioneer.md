@@ -1,16 +1,9 @@
 ---
 title: "SEAS Servers: Borel, Leif, Pioneer"
-theme: "Compute"
-section: "SEAS (CETS) Servers"
 stage: "Data Analytics"
 roles: [analyst, pipeline]
 scope: core
-kind: how-to
-status: migrated
 order: 1
-owner: ""
-last_reviewed: ""
-tags: ["Data Analytics", "Trainee / analyst (postdoc, PhD, master's, undergraduate)", "Pipeline & systems maintainer"]
 ---
 
 # SEAS Servers: Borel, Leif, Pioneer

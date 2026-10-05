@@ -1,7 +1,5 @@
 ---
 title: "Scalp EEG"
-theme: "Electrophysiology"
-kind: index
 ---
 
 # Scalp EEG

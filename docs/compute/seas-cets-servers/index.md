@@ -1,7 +1,5 @@
 ---
 title: "SEAS (CETS) Servers"
-theme: "Compute"
-kind: index
 ---
 
 # SEAS (CETS) Servers

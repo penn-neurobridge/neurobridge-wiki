@@ -1,17 +1,10 @@
 ---
 title: "3T Consent Script"
-theme: "Operations"
-section: "Consenting"
 stage: "Data Collection"
 roles: [crc]
 scope: clinical-coverage
 audit: merge
-kind: how-to
-status: migrated
 order: 2
-owner: ""
-last_reviewed: ""
-tags: ["Data Collection", "Clinical research coordinator / clinical RA"]
 ---
 
 # 3T Consent Script

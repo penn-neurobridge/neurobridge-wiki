@@ -1,7 +1,5 @@
 ---
 title: "Participant Reimbursement (Greenphire)"
-theme: "Operations"
-kind: index
 ---
 
 # Participant Reimbursement (Greenphire)

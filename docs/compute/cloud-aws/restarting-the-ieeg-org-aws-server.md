@@ -1,16 +1,9 @@
 ---
 title: "Restarting the ieeg.org AWS Server"
-theme: "Compute"
-section: "Cloud (AWS)"
 stage: "Data Standardization & Integration"
 roles: [pipeline]
 scope: shared
-kind: how-to
-status: migrated
 order: 2
-owner: ""
-last_reviewed: ""
-tags: ["Data Standardization & Integration", "Pipeline & systems maintainer"]
 ---
 
 # Restarting the ieeg.org AWS Server

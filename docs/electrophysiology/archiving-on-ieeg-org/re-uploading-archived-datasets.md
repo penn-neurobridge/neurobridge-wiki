@@ -1,16 +1,9 @@
 ---
 title: "Re-uploading Archived Datasets"
-theme: "Electrophysiology"
-section: "Archiving on ieeg.org"
 stage: "Data Governance"
 roles: [pipeline]
 scope: core
-kind: how-to
-status: migrated
 order: 3
-owner: ""
-last_reviewed: ""
-tags: ["Data Governance", "Pipeline & systems maintainer"]
 ---
 
 # Re-uploading Archived Datasets

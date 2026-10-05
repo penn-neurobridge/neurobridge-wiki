@@ -1,16 +1,9 @@
 ---
 title: "Setup for Processing"
-theme: "Electrophysiology"
-section: "Overview & Setup"
 stage: "Data Standardization & Integration"
 roles: [data-rc, pipeline]
 scope: core
-kind: how-to
-status: migrated
 order: 2
-owner: ""
-last_reviewed: ""
-tags: ["Data Standardization & Integration", "Data research coordinator / data RA", "Pipeline & systems maintainer"]
 ---
 
 # Setup for Processing

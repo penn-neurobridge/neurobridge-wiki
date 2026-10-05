@@ -1,17 +1,10 @@
 ---
 title: "SLURM on Finkel: Configuration & Limits"
-theme: "Compute"
-section: "SEAS (CETS) Servers"
 stage: "Data Analytics"
 roles: [analyst, pipeline]
 scope: core
 audit: merge
-kind: how-to
-status: migrated
 order: 5
-owner: ""
-last_reviewed: ""
-tags: ["Data Analytics", "Trainee / analyst (postdoc, PhD, master's, undergraduate)", "Pipeline & systems maintainer"]
 ---
 
 # SLURM on Finkel: Configuration & Limits

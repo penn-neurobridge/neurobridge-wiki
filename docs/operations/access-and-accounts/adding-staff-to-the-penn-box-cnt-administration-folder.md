@@ -1,17 +1,10 @@
 ---
 title: "Adding Staff to the Penn+Box CNT Administration Folder"
-theme: "Operations"
-section: "Access & Accounts"
 stage: "Data Governance"
 roles: [crc, data-rc, analyst, pipeline, pi-manager]
 scope: shared
 audit: merge
-kind: how-to
-status: migrated
 order: 9
-owner: ""
-last_reviewed: ""
-tags: ["Data Governance", "Clinical research coordinator / clinical RA", "Data research coordinator / data RA", "Trainee / analyst (postdoc, PhD, master's, undergraduate)", "Pipeline & systems maintainer", "PI / lab manager"]
 ---
 
 # Adding Staff to the Penn+Box CNT Administration Folder

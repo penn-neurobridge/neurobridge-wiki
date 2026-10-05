@@ -1,7 +1,5 @@
 ---
 title: "Post-scan Transfer"
-theme: "Imaging"
-kind: index
 ---
 
 # Post-scan Transfer

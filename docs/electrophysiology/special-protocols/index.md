@@ -1,7 +1,5 @@
 ---
 title: "Special Protocols"
-theme: "Electrophysiology"
-kind: index
 ---
 
 # Special Protocols

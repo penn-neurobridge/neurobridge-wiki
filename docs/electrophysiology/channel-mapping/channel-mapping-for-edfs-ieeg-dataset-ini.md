@@ -1,17 +1,10 @@
 ---
 title: "Channel Mapping for EDFs (ieeg-dataset.ini)"
-theme: "Electrophysiology"
-section: "Channel Mapping"
 stage: "Data Standardization & Integration"
 roles: [data-rc, pipeline]
 scope: core
 audit: merge
-kind: how-to
-status: migrated
 order: 4
-owner: ""
-last_reviewed: ""
-tags: ["Data Standardization & Integration", "Data research coordinator / data RA", "Pipeline & systems maintainer"]
 ---
 
 # Channel Mapping for EDFs (ieeg-dataset.ini)

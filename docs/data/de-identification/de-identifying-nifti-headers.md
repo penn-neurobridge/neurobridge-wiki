@@ -1,16 +1,9 @@
 ---
 title: "De-identifying NIfTI Headers"
-theme: "Data"
-section: "De-identification"
 stage: "Data Governance"
 roles: [data-rc, pipeline]
 scope: core
-kind: how-to
-status: migrated
 order: 3
-owner: ""
-last_reviewed: ""
-tags: ["Data Governance", "Data research coordinator / data RA", "Pipeline & systems maintainer"]
 ---
 
 # De-identifying NIfTI Headers

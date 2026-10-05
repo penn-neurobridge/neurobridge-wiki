@@ -1,16 +1,9 @@
 ---
 title: "Pennsieve Downloader"
-theme: "Data"
-section: "Sharing (Pennsieve & ieeg.org)"
 stage: "Data Standardization & Integration"
 roles: [data-rc, analyst, collaborator]
 scope: core
-kind: how-to
-status: migrated
 order: 4
-owner: ""
-last_reviewed: ""
-tags: ["Data Standardization & Integration", "Data research coordinator / data RA", "Trainee / analyst (postdoc, PhD, master's, undergraduate)", "External collaborator"]
 ---
 
 # Pennsieve Downloader

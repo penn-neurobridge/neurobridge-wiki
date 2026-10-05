@@ -21,7 +21,7 @@ All attachments were downloaded and reviewed for patient identifiers; 153 were c
 
 ## Pages that need a human pass
 
-- [ ] Reshape migrated pages into the house template (Purpose / Scope / Prerequisites / Procedure / Troubleshooting / Notes), one theme at a time; set `status: current` and `last_reviewed` as each is verified.
+- [ ] Reshape migrated pages into the house template (Purpose / Scope / Prerequisites / Procedure / Troubleshooting / Notes), one theme at a time; a page counts as verified once someone has followed it and committed the fixes (git keeps the date and the name).
 - [ ] Merge the duplicate scalp-EEG pipeline page and delete the copy.
 - [ ] Pages whose original held a password (now removed): confirm the credential is in the password manager, then remove the warning box.
 - [ ] Lab Manual sections 1, 2, 5, 6, 7 and 9 are drafts awaiting the PI's pass; §1 and §5 need the stroke/LCNS/brainSTIM and CBIR columns filled in; §2 needs each role's expectations confirmed.

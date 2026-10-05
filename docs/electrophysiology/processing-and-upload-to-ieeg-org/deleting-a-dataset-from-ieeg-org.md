@@ -1,16 +1,9 @@
 ---
 title: "Deleting a Dataset from ieeg.org"
-theme: "Electrophysiology"
-section: "Processing & Upload to ieeg.org"
 stage: "Data Governance"
 roles: [data-rc, pipeline]
 scope: core
-kind: how-to
-status: migrated
 order: 8
-owner: ""
-last_reviewed: ""
-tags: ["Data Governance", "Data research coordinator / data RA", "Pipeline & systems maintainer"]
 ---
 
 # Deleting a Dataset from ieeg.org

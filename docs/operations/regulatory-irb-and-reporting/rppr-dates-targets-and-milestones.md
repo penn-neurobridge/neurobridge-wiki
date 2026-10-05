@@ -1,16 +1,9 @@
 ---
 title: "RPPR: Dates, Targets & Milestones"
-theme: "Operations"
-section: "Regulatory, IRB & Reporting"
 stage: "Data Governance"
 roles: [crc, pi-manager]
 scope: flagged
-kind: how-to
-status: migrated
 order: 7
-owner: ""
-last_reviewed: ""
-tags: ["Data Governance", "Clinical research coordinator / clinical RA", "PI / lab manager"]
 ---
 
 # RPPR: Dates, Targets & Milestones

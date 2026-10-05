@@ -1,16 +1,9 @@
 ---
-title: "RADAR Pull \u2192 REDCap Entry"
-theme: "REDCap & Clinical Metadata"
-section: "Clinical Data Pulls (EHR \u2192 REDCap)"
+title: "RADAR Pull → REDCap Entry"
 stage: "Data Collection"
 roles: [data-rc]
 scope: core
-kind: how-to
-status: migrated
 order: 1
-owner: ""
-last_reviewed: ""
-tags: ["Data Collection", "Data research coordinator / data RA"]
 ---
 
 # RADAR Pull → REDCap Entry

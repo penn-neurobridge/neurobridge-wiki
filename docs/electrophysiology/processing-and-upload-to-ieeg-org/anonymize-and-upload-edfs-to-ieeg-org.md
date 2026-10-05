@@ -1,16 +1,9 @@
 ---
 title: "Anonymize & Upload EDFs to ieeg.org"
-theme: "Electrophysiology"
-section: "Processing & Upload to ieeg.org"
 stage: "Data Standardization & Integration"
 roles: [data-rc, pipeline]
 scope: core
-kind: how-to
-status: migrated
 order: 4
-owner: ""
-last_reviewed: ""
-tags: ["Data Standardization & Integration", "Data research coordinator / data RA", "Pipeline & systems maintainer"]
 ---
 
 # Anonymize & Upload EDFs to ieeg.org

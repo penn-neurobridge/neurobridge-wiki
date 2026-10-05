@@ -1,7 +1,5 @@
 ---
 title: "Moving Data"
-theme: "Data"
-kind: index
 ---
 
 # Moving Data

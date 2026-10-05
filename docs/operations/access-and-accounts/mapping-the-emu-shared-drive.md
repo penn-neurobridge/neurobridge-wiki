@@ -1,17 +1,10 @@
 ---
 title: "Mapping the EMU Shared Drive"
-theme: "Operations"
-section: "Access & Accounts"
 stage: "Data Governance"
 roles: [crc, data-rc, analyst, pipeline, pi-manager]
 scope: shared
 audit: merge
-kind: how-to
-status: migrated
 order: 6
-owner: ""
-last_reviewed: ""
-tags: ["Data Governance", "Clinical research coordinator / clinical RA", "Data research coordinator / data RA", "Trainee / analyst (postdoc, PhD, master's, undergraduate)", "Pipeline & systems maintainer", "PI / lab manager"]
 ---
 
 # Mapping the EMU Shared Drive

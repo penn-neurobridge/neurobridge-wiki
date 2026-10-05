@@ -1,7 +1,5 @@
 ---
 title: "EMU Acquisition"
-theme: "Electrophysiology"
-kind: index
 ---
 
 # EMU Acquisition

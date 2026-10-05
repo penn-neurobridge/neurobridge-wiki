@@ -1,16 +1,9 @@
 ---
 title: "Surgical Outcomes REDCap Project"
-theme: "REDCap & Clinical Metadata"
-section: "Projects & Data Entry"
 stage: "Data Collection"
 roles: [crc, data-rc]
 scope: core
-kind: how-to
-status: migrated
 order: 1
-owner: ""
-last_reviewed: ""
-tags: ["Data Collection", "Clinical research coordinator / clinical RA", "Data research coordinator / data RA"]
 ---
 
 # Surgical Outcomes REDCap Project

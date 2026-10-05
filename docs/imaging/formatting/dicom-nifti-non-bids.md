@@ -1,16 +1,9 @@
 ---
-title: "DICOM \u2192 NIfTI (non-BIDS)"
-theme: "Imaging"
-section: "Formatting"
+title: "DICOM → NIfTI (non-BIDS)"
 stage: "Data Standardization & Integration"
 roles: [data-rc, analyst]
 scope: core
-kind: how-to
-status: migrated
 order: 1
-owner: ""
-last_reviewed: ""
-tags: ["Data Standardization & Integration", "Data research coordinator / data RA", "Trainee / analyst (postdoc, PhD, master's, undergraduate)"]
 ---
 
 # DICOM → NIfTI (non-BIDS)

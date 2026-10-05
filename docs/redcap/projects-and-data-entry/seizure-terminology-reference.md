@@ -1,16 +1,9 @@
 ---
 title: "Seizure Terminology Reference"
-theme: "REDCap & Clinical Metadata"
-section: "Projects & Data Entry"
 stage: "Data Standardization & Integration"
 roles: [crc, data-rc]
 scope: core
-kind: how-to
-status: migrated
 order: 3
-owner: ""
-last_reviewed: ""
-tags: ["Data Standardization & Integration", "Clinical research coordinator / clinical RA", "Data research coordinator / data RA"]
 ---
 
 # Seizure Terminology Reference

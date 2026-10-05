@@ -1,16 +1,9 @@
 ---
 title: "Control Scan Neuroradiologist Check"
-theme: "Imaging"
-section: "At the Scanner"
 stage: "Data Collection"
 roles: [crc]
 scope: clinical-coverage
-kind: how-to
-status: migrated
 order: 6
-owner: ""
-last_reviewed: ""
-tags: ["Data Collection", "Clinical research coordinator / clinical RA"]
 ---
 
 # Control Scan Neuroradiologist Check

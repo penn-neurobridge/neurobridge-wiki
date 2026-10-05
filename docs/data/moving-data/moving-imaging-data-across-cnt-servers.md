@@ -1,16 +1,9 @@
 ---
 title: "Moving Imaging Data Across CNT Servers"
-theme: "Data"
-section: "Moving Data"
 stage: "Data Standardization & Integration"
 roles: [data-rc, analyst, pipeline]
 scope: flagged
-kind: how-to
-status: migrated
 order: 2
-owner: ""
-last_reviewed: ""
-tags: ["Data Standardization & Integration", "Data research coordinator / data RA", "Trainee / analyst (postdoc, PhD, master's, undergraduate)", "Pipeline & systems maintainer"]
 ---
 
 # Moving Imaging Data Across CNT Servers

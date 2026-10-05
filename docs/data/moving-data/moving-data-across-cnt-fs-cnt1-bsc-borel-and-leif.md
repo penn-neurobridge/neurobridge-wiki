@@ -1,17 +1,10 @@
 ---
 title: "Moving Data Across cnt-fs, cnt1, BSC, Borel & Leif"
-theme: "Data"
-section: "Moving Data"
 stage: "Data Standardization & Integration"
 roles: [data-rc, analyst, pipeline]
 scope: core
 audit: merge
-kind: how-to
-status: migrated
 order: 1
-owner: ""
-last_reviewed: ""
-tags: ["Data Standardization & Integration", "Data research coordinator / data RA", "Trainee / analyst (postdoc, PhD, master's, undergraduate)", "Pipeline & systems maintainer"]
 ---
 
 # Moving Data Across cnt-fs, cnt1, BSC, Borel & Leif

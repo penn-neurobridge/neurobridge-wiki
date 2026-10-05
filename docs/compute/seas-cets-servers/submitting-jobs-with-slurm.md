@@ -1,16 +1,9 @@
 ---
 title: "Submitting Jobs with SLURM"
-theme: "Compute"
-section: "SEAS (CETS) Servers"
 stage: "Data Analytics"
 roles: [analyst, pipeline]
 scope: core
-kind: how-to
-status: migrated
 order: 4
-owner: ""
-last_reviewed: ""
-tags: ["Data Analytics", "Trainee / analyst (postdoc, PhD, master's, undergraduate)", "Pipeline & systems maintainer"]
 ---
 
 # Submitting Jobs with SLURM

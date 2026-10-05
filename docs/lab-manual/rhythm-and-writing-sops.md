@@ -1,10 +1,6 @@
 ---
 title: "7. Rhythm, communication and writing SOPs"
-kind: explanation
-status: draft
 order: 7
-owner: ""
-last_reviewed: ""
 ---
 
 # 7. Rhythm, communication and writing SOPs
@@ -40,5 +36,5 @@ Use the house template:
 3. **Prerequisites** — accounts, access, tools.
 4. **Procedure** — numbered steps; one action per step; commands in code blocks.
 5. **Troubleshooting** — the errors people actually hit.
-6. **Notes** — caveats, owners, last verified date.
+6. **Notes**: caveats and known limits. Git records who changed the page and when; do not keep dates by hand.
 Put it in the theme whose question it answers. Never include a password or a patient identifier. Link to related pages rather than repeating them. Write new and revised SOPs in American English.

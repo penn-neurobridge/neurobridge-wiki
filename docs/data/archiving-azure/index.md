@@ -1,7 +1,5 @@
 ---
 title: "Archiving (Azure)"
-theme: "Data"
-kind: index
 ---
 
 # Archiving (Azure)

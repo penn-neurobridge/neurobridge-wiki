@@ -1,17 +1,10 @@
 ---
 title: "Messaging in PennChart"
-theme: "REDCap & Clinical Metadata"
-section: "Projects & Data Entry"
 stage: "Data Collection"
 roles: [crc, data-rc]
 scope: clinical-coverage
 audit: merge
-kind: how-to
-status: migrated
 order: 2
-owner: ""
-last_reviewed: ""
-tags: ["Data Collection", "Clinical research coordinator / clinical RA", "Data research coordinator / data RA"]
 ---
 
 # Messaging in PennChart

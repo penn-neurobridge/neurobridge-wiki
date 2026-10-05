@@ -1,16 +1,9 @@
 ---
 title: "Troubleshooting Processing Errors"
-theme: "Electrophysiology"
-section: "Processing & Upload to ieeg.org"
 stage: "Data Standardization & Integration"
 roles: [data-rc, pipeline]
 scope: core
-kind: how-to
-status: migrated
 order: 2
-owner: ""
-last_reviewed: ""
-tags: ["Data Standardization & Integration", "Data research coordinator / data RA", "Pipeline & systems maintainer"]
 ---
 
 # Troubleshooting Processing Errors

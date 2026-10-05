@@ -1,17 +1,10 @@
 ---
 title: "Uploading MRI CDs to cnt-fs"
-theme: "Imaging"
-section: "Post-scan Transfer"
 stage: "Data Collection"
 roles: [crc, data-rc]
 scope: shared
 audit: merge
-kind: how-to
-status: migrated
 order: 3
-owner: ""
-last_reviewed: ""
-tags: ["Data Collection", "Clinical research coordinator / clinical RA", "Data research coordinator / data RA"]
 ---
 
 # Uploading MRI CDs to cnt-fs

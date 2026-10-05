@@ -1,16 +1,9 @@
 ---
 title: "Opening ITK-SNAP Files from PennBox"
-theme: "Imaging"
-section: "Electrode Reconstruction"
 stage: "Data Standardization & Integration"
 roles: [data-rc, analyst]
 scope: reference
-kind: how-to
-status: migrated
 order: 4
-owner: ""
-last_reviewed: ""
-tags: ["Data Standardization & Integration", "Data research coordinator / data RA", "Trainee / analyst (postdoc, PhD, master's, undergraduate)"]
 ---
 
 # Opening ITK-SNAP Files from PennBox

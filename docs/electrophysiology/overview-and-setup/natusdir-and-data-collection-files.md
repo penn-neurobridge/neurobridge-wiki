@@ -1,16 +1,9 @@
 ---
 title: "natusdir & Data Collection Files"
-theme: "Electrophysiology"
-section: "Overview & Setup"
 stage: "Data Collection"
 roles: [data-rc, pipeline]
 scope: core
-kind: how-to
-status: migrated
 order: 4
-owner: ""
-last_reviewed: ""
-tags: ["Data Collection", "Data research coordinator / data RA", "Pipeline & systems maintainer"]
 ---
 
 # natusdir & Data Collection Files

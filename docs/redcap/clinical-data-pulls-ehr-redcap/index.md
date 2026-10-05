@@ -1,7 +1,5 @@
 ---
-title: "Clinical Data Pulls (EHR \u2192 REDCap)"
-theme: "REDCap & Clinical Metadata"
-kind: index
+title: "Clinical Data Pulls (EHR → REDCap)"
 ---
 
 # Clinical Data Pulls (EHR → REDCap)

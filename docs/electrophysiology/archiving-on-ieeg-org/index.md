@@ -1,7 +1,5 @@
 ---
 title: "Archiving on ieeg.org"
-theme: "Electrophysiology"
-kind: index
 ---
 
 # Archiving on ieeg.org

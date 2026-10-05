@@ -1,17 +1,10 @@
 ---
 title: "Final Step: Delete mef Folders"
-theme: "Electrophysiology"
-section: "Processing & Upload to ieeg.org"
 stage: "Data Standardization & Integration"
 roles: [data-rc, pipeline]
 scope: core
 audit: merge
-kind: how-to
-status: migrated
 order: 7
-owner: ""
-last_reviewed: ""
-tags: ["Data Standardization & Integration", "Data research coordinator / data RA", "Pipeline & systems maintainer"]
 ---
 
 # Final Step: Delete mef Folders

@@ -1,7 +1,5 @@
 ---
 title: "Overview & Setup"
-theme: "Electrophysiology"
-kind: index
 ---
 
 # Overview & Setup

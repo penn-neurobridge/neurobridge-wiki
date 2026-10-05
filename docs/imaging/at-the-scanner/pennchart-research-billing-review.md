@@ -1,16 +1,9 @@
 ---
 title: "PennChart Research Billing Review"
-theme: "Imaging"
-section: "At the Scanner"
 stage: "Data Collection"
 roles: [crc]
 scope: clinical-coverage
-kind: how-to
-status: migrated
 order: 5
-owner: ""
-last_reviewed: ""
-tags: ["Data Collection", "Clinical research coordinator / clinical RA"]
 ---
 
 # PennChart Research Billing Review

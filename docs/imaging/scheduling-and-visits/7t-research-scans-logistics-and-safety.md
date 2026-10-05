@@ -1,17 +1,10 @@
 ---
 title: "7T Research Scans: Logistics & Safety"
-theme: "Imaging"
-section: "Scheduling & Visits"
 stage: "Data Collection"
 roles: [crc]
 scope: clinical-coverage
 audit: merge
-kind: how-to
-status: migrated
 order: 5
-owner: ""
-last_reviewed: ""
-tags: ["Data Collection", "Clinical research coordinator / clinical RA"]
 ---
 
 # 7T Research Scans: Logistics & Safety

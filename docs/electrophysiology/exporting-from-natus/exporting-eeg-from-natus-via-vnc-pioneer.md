@@ -1,16 +1,9 @@
 ---
 title: "Exporting EEG from Natus via VNC (Pioneer)"
-theme: "Electrophysiology"
-section: "Exporting from Natus"
 stage: "Data Collection"
 roles: [data-rc, crc]
 scope: flagged
-kind: how-to
-status: migrated
 order: 2
-owner: ""
-last_reviewed: ""
-tags: ["Data Collection", "Data research coordinator / data RA", "Clinical research coordinator / clinical RA"]
 ---
 
 # Exporting EEG from Natus via VNC (Pioneer)

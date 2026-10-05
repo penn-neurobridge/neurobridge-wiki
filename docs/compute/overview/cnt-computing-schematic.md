@@ -1,16 +1,9 @@
 ---
 title: "CNT Computing Schematic"
-theme: "Compute"
-section: "Overview"
 stage: "Data Analytics"
 roles: [data-rc, analyst, pipeline]
 scope: reference
-kind: how-to
-status: migrated
 order: 2
-owner: ""
-last_reviewed: ""
-tags: ["Data Analytics", "Data research coordinator / data RA", "Trainee / analyst (postdoc, PhD, master's, undergraduate)", "Pipeline & systems maintainer"]
 ---
 
 # CNT Computing Schematic

@@ -1,17 +1,10 @@
 ---
 title: "Email Template: Scheduling a Research 3T with Radiology"
-theme: "Imaging"
-section: "Scheduling & Visits"
 stage: "Data Collection"
 roles: [crc]
 scope: clinical-coverage
 audit: merge
-kind: how-to
-status: migrated
 order: 3
-owner: ""
-last_reviewed: ""
-tags: ["Data Collection", "Clinical research coordinator / clinical RA"]
 ---
 
 # Email Template: Scheduling a Research 3T with Radiology

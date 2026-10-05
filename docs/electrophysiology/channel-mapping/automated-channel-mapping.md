@@ -1,16 +1,9 @@
 ---
 title: "Automated Channel Mapping"
-theme: "Electrophysiology"
-section: "Channel Mapping"
 stage: "Data Standardization & Integration"
 roles: [data-rc, pipeline]
 scope: core
-kind: how-to
-status: migrated
 order: 1
-owner: ""
-last_reviewed: ""
-tags: ["Data Standardization & Integration", "Data research coordinator / data RA", "Pipeline & systems maintainer"]
 ---
 
 # Automated Channel Mapping

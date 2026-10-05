@@ -1,5 +1,5 @@
 ---
-title: Style guide
+title: "Style guide"
 order: 2
 ---
 

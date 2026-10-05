@@ -1,7 +1,5 @@
 ---
 title: "Onboarding & Offboarding"
-theme: "Operations"
-kind: index
 ---
 
 # Onboarding & Offboarding

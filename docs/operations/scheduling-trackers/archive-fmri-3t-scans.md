@@ -1,16 +1,9 @@
 ---
 title: "Archive: fMRI/3T Scans"
-theme: "Operations"
-section: "Scheduling Trackers"
 stage: "Data Collection"
 roles: [crc]
 scope: flagged
-kind: how-to
-status: phi-stub
 order: 2
-owner: ""
-last_reviewed: ""
-tags: ["Data Collection", "Clinical research coordinator / clinical RA"]
 ---
 
 # Archive: fMRI/3T Scans

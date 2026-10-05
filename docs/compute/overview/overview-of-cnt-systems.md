@@ -1,16 +1,9 @@
 ---
 title: "Overview of CNT Systems"
-theme: "Compute"
-section: "Overview"
 stage: "Data Analytics"
 roles: [data-rc, analyst, pipeline]
 scope: core
-kind: how-to
-status: migrated
 order: 1
-owner: ""
-last_reviewed: ""
-tags: ["Data Analytics", "Data research coordinator / data RA", "Trainee / analyst (postdoc, PhD, master's, undergraduate)", "Pipeline & systems maintainer"]
 ---
 
 # Overview of CNT Systems

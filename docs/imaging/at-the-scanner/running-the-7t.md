@@ -1,17 +1,10 @@
 ---
 title: "Running the 7T"
-theme: "Imaging"
-section: "At the Scanner"
 stage: "Data Collection"
 roles: [crc]
 scope: clinical-coverage
 audit: retire
-kind: how-to
-status: migrated
 order: 1
-owner: ""
-last_reviewed: ""
-tags: ["Data Collection", "Clinical research coordinator / clinical RA"]
 ---
 
 # Running the 7T

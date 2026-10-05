@@ -1,17 +1,10 @@
 ---
 title: "Visit Checklist: 7T Study"
-theme: "Imaging"
-section: "Scheduling & Visits"
 stage: "Data Collection"
 roles: [crc]
 scope: clinical-coverage
 audit: merge
-kind: how-to
-status: migrated
 order: 2
-owner: ""
-last_reviewed: ""
-tags: ["Data Collection", "Clinical research coordinator / clinical RA"]
 ---
 
 # Visit Checklist: 7T Study

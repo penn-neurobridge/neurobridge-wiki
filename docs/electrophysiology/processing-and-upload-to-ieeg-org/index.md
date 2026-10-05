@@ -1,7 +1,5 @@
 ---
 title: "Processing & Upload to ieeg.org"
-theme: "Electrophysiology"
-kind: index
 ---
 
 # Processing & Upload to ieeg.org

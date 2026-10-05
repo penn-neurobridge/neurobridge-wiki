@@ -1,16 +1,9 @@
 ---
 title: "PMACS VPN"
-theme: "Compute"
-section: "PMACS (PSOM) Systems"
 stage: "Data Analytics"
 roles: [analyst, pipeline, data-rc]
 scope: core
-kind: how-to
-status: migrated
 order: 5
-owner: ""
-last_reviewed: ""
-tags: ["Data Analytics", "Trainee / analyst (postdoc, PhD, master's, undergraduate)", "Pipeline & systems maintainer", "Data research coordinator / data RA"]
 ---
 
 # PMACS VPN

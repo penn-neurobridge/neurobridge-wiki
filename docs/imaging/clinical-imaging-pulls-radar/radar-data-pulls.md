@@ -1,16 +1,9 @@
 ---
 title: "RADAR Data Pulls"
-theme: "Imaging"
-section: "Clinical Imaging Pulls (RADAR)"
 stage: "Data Collection"
 roles: [data-rc]
 scope: core
-kind: how-to
-status: migrated
 order: 1
-owner: ""
-last_reviewed: ""
-tags: ["Data Collection", "Data research coordinator / data RA"]
 ---
 
 # RADAR Data Pulls

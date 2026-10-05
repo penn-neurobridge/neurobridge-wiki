@@ -1,16 +1,9 @@
 ---
-title: "Flywheel \u2192 cnt-fs (3T)"
-theme: "Imaging"
-section: "Post-scan Transfer"
+title: "Flywheel → cnt-fs (3T)"
 stage: "Data Collection"
 roles: [crc, data-rc]
 scope: shared
-kind: how-to
-status: migrated
 order: 1
-owner: ""
-last_reviewed: ""
-tags: ["Data Collection", "Clinical research coordinator / clinical RA", "Data research coordinator / data RA"]
 ---
 
 # Flywheel → cnt-fs (3T)

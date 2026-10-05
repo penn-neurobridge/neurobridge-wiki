@@ -1,16 +1,9 @@
 ---
 title: "Important Contacts & Emergency Numbers"
-theme: "Operations"
-section: "Contacts"
 stage: "Data Governance"
 roles: [crc, data-rc, analyst, pipeline, pi-manager, collaborator]
 scope: shared
-kind: how-to
-status: migrated
 order: 1
-owner: ""
-last_reviewed: ""
-tags: ["Data Governance", "Clinical research coordinator / clinical RA", "Data research coordinator / data RA", "Trainee / analyst (postdoc, PhD, master's, undergraduate)", "Pipeline & systems maintainer", "PI / lab manager", "External collaborator"]
 ---
 
 # Important Contacts & Emergency Numbers

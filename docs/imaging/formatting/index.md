@@ -1,7 +1,5 @@
 ---
 title: "Formatting"
-theme: "Imaging"
-kind: index
 ---
 
 # Formatting

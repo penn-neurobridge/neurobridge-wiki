@@ -1,17 +1,10 @@
 ---
 title: "Greenphire ClinCard: Overview"
-theme: "Operations"
-section: "Participant Reimbursement (Greenphire)"
 stage: "Data Collection"
 roles: [crc, pi-manager]
 scope: clinical-coverage
 audit: merge
-kind: how-to
-status: migrated
 order: 1
-owner: ""
-last_reviewed: ""
-tags: ["Data Collection", "Clinical research coordinator / clinical RA", "PI / lab manager"]
 ---
 
 # Greenphire ClinCard: Overview

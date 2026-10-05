@@ -1,7 +1,5 @@
 ---
 title: "Contacts"
-theme: "Operations"
-kind: index
 ---
 
 # Contacts

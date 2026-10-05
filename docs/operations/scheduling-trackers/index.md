@@ -1,7 +1,5 @@
 ---
 title: "Scheduling Trackers"
-theme: "Operations"
-kind: index
 ---
 
 # Scheduling Trackers

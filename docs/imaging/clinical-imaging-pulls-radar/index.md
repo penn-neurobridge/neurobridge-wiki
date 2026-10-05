@@ -1,7 +1,5 @@
 ---
 title: "Clinical Imaging Pulls (RADAR)"
-theme: "Imaging"
-kind: index
 ---
 
 # Clinical Imaging Pulls (RADAR)

@@ -1,16 +1,9 @@
 ---
 title: "eDOA REDCap Entry"
-theme: "Operations"
-section: "Regulatory, IRB & Reporting"
 stage: "Data Governance"
 roles: [crc, pi-manager]
 scope: clinical-coverage
-kind: how-to
-status: migrated
 order: 4
-owner: ""
-last_reviewed: ""
-tags: ["Data Governance", "Clinical research coordinator / clinical RA", "PI / lab manager"]
 ---
 
 # eDOA REDCap Entry

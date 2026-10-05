@@ -1,16 +1,9 @@
 ---
-title: "Processing for ieeg.org (natus2mef \u2192 validate \u2192 upload)"
-theme: "Electrophysiology"
-section: "Processing & Upload to ieeg.org"
+title: "Processing for ieeg.org (natus2mef → validate → upload)"
 stage: "Data Standardization & Integration"
 roles: [data-rc, pipeline]
 scope: core
-kind: how-to
-status: migrated
 order: 1
-owner: ""
-last_reviewed: ""
-tags: ["Data Standardization & Integration", "Data research coordinator / data RA", "Pipeline & systems maintainer"]
 ---
 
 # Processing for ieeg.org (natus2mef → validate → upload)

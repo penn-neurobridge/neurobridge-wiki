@@ -1,7 +1,5 @@
 ---
 title: "Cloud (AWS)"
-theme: "Compute"
-kind: index
 ---
 
 # Cloud (AWS)

@@ -1,7 +1,5 @@
 ---
 title: "De-identification"
-theme: "Data"
-kind: index
 ---
 
 # De-identification

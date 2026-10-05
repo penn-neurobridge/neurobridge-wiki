@@ -1,16 +1,9 @@
 ---
 title: "CNT Data & Computing Orientation"
-theme: "Operations"
-section: "Onboarding & Offboarding"
 stage: "Data Governance"
 roles: [pi-manager, crc, data-rc]
 scope: reference
-kind: how-to
-status: migrated
 order: 2
-owner: ""
-last_reviewed: ""
-tags: ["Data Governance", "PI / lab manager", "Clinical research coordinator / clinical RA", "Data research coordinator / data RA"]
 ---
 
 # CNT Data & Computing Orientation

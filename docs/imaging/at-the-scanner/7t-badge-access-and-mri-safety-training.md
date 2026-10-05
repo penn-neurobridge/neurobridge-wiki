@@ -1,17 +1,10 @@
 ---
 title: "7T Badge Access & MRI Safety Training"
-theme: "Imaging"
-section: "At the Scanner"
 stage: "Data Governance"
 roles: [crc]
 scope: clinical-coverage
 audit: retire
-kind: how-to
-status: migrated
 order: 2
-owner: ""
-last_reviewed: ""
-tags: ["Data Governance", "Clinical research coordinator / clinical RA"]
 ---
 
 # 7T Badge Access & MRI Safety Training

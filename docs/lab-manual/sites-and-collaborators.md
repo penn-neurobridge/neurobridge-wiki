@@ -1,10 +1,6 @@
 ---
 title: "5. Sites, centers and collaborators"
-kind: explanation
-status: draft
 order: 5
-owner: ""
-last_reviewed: ""
 ---
 
 # 5. Sites, centers and collaborators

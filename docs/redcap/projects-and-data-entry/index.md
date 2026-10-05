@@ -1,7 +1,5 @@
 ---
 title: "Projects & Data Entry"
-theme: "REDCap & Clinical Metadata"
-kind: index
 ---
 
 # Projects & Data Entry

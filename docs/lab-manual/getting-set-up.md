@@ -1,10 +1,6 @@
 ---
 title: "3. Getting set up: accounts and access"
-kind: tutorial
-status: current
 order: 3
-owner: ""
-last_reviewed: ""
 ---
 
 # 3. Getting set up: accounts and access

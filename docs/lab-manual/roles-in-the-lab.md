@@ -1,15 +1,14 @@
 ---
 title: "2. Roles in the lab"
-kind: explanation
-status: draft
 order: 2
-owner: ""
-last_reviewed: ""
 ---
 
 # 2. Roles in the lab
 
-Everyone in the lab leverages the same data infrastructure, so the roles differ in **what they own**, not in which systems they may use. Each role below lists what you do, what success looks like, which wiki *reader roles* to follow (these drive the [Map](../map/index.md) and the [Tags](../tags.md) page), and your first-month checklist. The onboarding steps common to everyone are in [§3](getting-set-up.md).
+!!! warning "Draft"
+    This section still needs the PI's pass. Edit it directly; the structure is a proposal.
+
+Everyone in the lab touches the same data infrastructure, so the roles differ in **what they own**, not in which systems they may use. Each role below lists what you own, what success looks like, which wiki *reader roles* to follow (these drive the [Map](../map/index.md) and the [Tags](../tags.md) page), and your first-month checklist. The onboarding steps common to everyone are in [§3](getting-set-up.md).
 
 ## Research coordinator — data (informatics RC)
 
@@ -31,7 +30,7 @@ Everyone in the lab leverages the same data infrastructure, so the roles differ 
 
 ## Research assistant (RA)
 
-**What you own.** Defined pieces of the data work alongside a coordinator or under a postdoc: running an established pipeline on new cases, quality-checking outputs, entering and reconciling metadata, maintaining an inventory, preparing figures and tables. Some RAs also cover clinical tasks after the relevant trainings.
+**What you own.** Defined pieces of the data work under a coordinator or postdoc: running an established pipeline on new cases, quality-checking outputs, entering and reconciling metadata, maintaining an inventory, preparing figures and tables. Some RAs also cover clinical tasks after the relevant trainings.
 
 **Success.** You can run the pipelines you have been given end to end without supervision, you log what you did, and you flag anything that looks wrong rather than fixing it silently.
 
@@ -49,7 +48,7 @@ Everyone in the lab leverages the same data infrastructure, so the roles differ 
 
 **What you own.** Your dissertation project, with the same reproducibility expectations as a postdoc, scaled to your stage. Coursework and the program's milestones (DBEI/CCEB or the relevant graduate group) run in parallel; tell the PI early when they collide with lab deadlines.
 
-**Success, by year.** Year 1: fluent with the data you will use, one analysis reproduced from scratch, committee formed. Years 2–3: a first-author paper and a candidacy exam. Years 4–5: the dissertation studies, with each dataset and pipeline documented as you go. Each PhD student is expected to graduate with at least 3 first author journal publications.
+**Success, by year.** Year 1: fluent with the data you will use, one analysis reproduced from scratch, committee formed. Years 2–3: a first-author paper and a candidacy exam. Years 4–5: the dissertation studies, with each dataset and pipeline documented as you go.
 
 **Reader roles:** `analyst`; add `pipeline` once you maintain anything others depend on.
 
@@ -74,3 +73,7 @@ Everyone in the lab leverages the same data infrastructure, so the roles differ 
 **What you own.** Nothing in the lab's infrastructure; you receive data through an agreed channel (Pennsieve, Box, a DUA) and follow the sharing rules in Data › Sharing.
 
 **Reader roles:** `collaborator`.
+
+## Rhythm, for everyone
+
+Weekly lab meeting; the imaging and PIER meetings when you cover clinical work; the data-request queue for incoming asks. See [§7](rhythm-and-writing-sops.md).

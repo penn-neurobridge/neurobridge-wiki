@@ -1,16 +1,9 @@
 ---
 title: "Unarchiving an ieeg Dataset"
-theme: "Electrophysiology"
-section: "Archiving on ieeg.org"
 stage: "Data Governance"
 roles: [pipeline]
 scope: core
-kind: how-to
-status: migrated
 order: 2
-owner: ""
-last_reviewed: ""
-tags: ["Data Governance", "Pipeline & systems maintainer"]
 ---
 
 # Unarchiving an ieeg Dataset

@@ -1,17 +1,10 @@
 ---
 title: "Remote e-Consent Procedure"
-theme: "Operations"
-section: "Consenting"
 stage: "Data Collection"
 roles: [crc]
 scope: clinical-coverage
 audit: merge
-kind: how-to
-status: migrated
 order: 7
-owner: ""
-last_reviewed: ""
-tags: ["Data Collection", "Clinical research coordinator / clinical RA"]
 ---
 
 # Remote e-Consent Procedure

@@ -1,16 +1,9 @@
 ---
 title: "Implant Coordinator Email & EMU Testing Slots"
-theme: "Electrophysiology"
-section: "EMU Acquisition"
 stage: "Data Collection"
 roles: [crc]
 scope: clinical-coverage
-kind: how-to
-status: migrated
 order: 1
-owner: ""
-last_reviewed: ""
-tags: ["Data Collection", "Clinical research coordinator / clinical RA"]
 ---
 
 # Implant Coordinator Email & EMU Testing Slots

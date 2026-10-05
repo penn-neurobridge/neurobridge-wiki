@@ -1,16 +1,9 @@
 ---
-title: "Old \u2192 New REDCap Field Mapping"
-theme: "REDCap & Clinical Metadata"
-section: "Projects & Data Entry"
+title: "Old → New REDCap Field Mapping"
 stage: "Data Standardization & Integration"
 roles: [crc, data-rc]
 scope: reference
-kind: how-to
-status: migrated
 order: 5
-owner: ""
-last_reviewed: ""
-tags: ["Data Standardization & Integration", "Clinical research coordinator / clinical RA", "Data research coordinator / data RA"]
 ---
 
 # Old → New REDCap Field Mapping

@@ -1,16 +1,9 @@
 ---
 title: "Visit Checklist: 3T Study"
-theme: "Imaging"
-section: "Scheduling & Visits"
 stage: "Data Collection"
 roles: [crc]
 scope: clinical-coverage
-kind: how-to
-status: migrated
 order: 1
-owner: ""
-last_reviewed: ""
-tags: ["Data Collection", "Clinical research coordinator / clinical RA"]
 ---
 
 # Visit Checklist: 3T Study

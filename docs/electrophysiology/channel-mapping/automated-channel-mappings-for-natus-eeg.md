@@ -1,16 +1,9 @@
 ---
 title: "Automated Channel Mappings for Natus EEG"
-theme: "Electrophysiology"
-section: "Channel Mapping"
 stage: "Data Standardization & Integration"
 roles: [data-rc, pipeline]
 scope: flagged
-kind: how-to
-status: migrated
 order: 2
-owner: ""
-last_reviewed: ""
-tags: ["Data Standardization & Integration", "Data research coordinator / data RA", "Pipeline & systems maintainer"]
 ---
 
 # Automated Channel Mappings for Natus EEG

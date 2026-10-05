@@ -1,16 +1,9 @@
 ---
 title: "REDCap Documentation at the Scanner"
-theme: "Imaging"
-section: "At the Scanner"
 stage: "Data Collection"
 roles: [crc]
 scope: clinical-coverage
-kind: how-to
-status: migrated
 order: 4
-owner: ""
-last_reviewed: ""
-tags: ["Data Collection", "Clinical research coordinator / clinical RA"]
 ---
 
 # REDCap Documentation at the Scanner

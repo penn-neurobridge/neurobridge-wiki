@@ -1,16 +1,9 @@
 ---
 title: "3T Research Scans: Scheduling & Billing"
-theme: "Imaging"
-section: "Scheduling & Visits"
 stage: "Data Collection"
 roles: [crc]
 scope: clinical-coverage
-kind: how-to
-status: migrated
 order: 4
-owner: ""
-last_reviewed: ""
-tags: ["Data Collection", "Clinical research coordinator / clinical RA"]
 ---
 
 # 3T Research Scans: Scheduling & Billing

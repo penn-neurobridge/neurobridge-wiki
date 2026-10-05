@@ -1,16 +1,9 @@
 ---
 title: "Restarting ieeg.org"
-theme: "Electrophysiology"
-section: "Processing & Upload to ieeg.org"
 stage: "Data Standardization & Integration"
 roles: [data-rc, pipeline]
 scope: flagged
-kind: how-to
-status: migrated
 order: 9
-owner: ""
-last_reviewed: ""
-tags: ["Data Standardization & Integration", "Data research coordinator / data RA", "Pipeline & systems maintainer"]
 ---
 
 # Restarting ieeg.org

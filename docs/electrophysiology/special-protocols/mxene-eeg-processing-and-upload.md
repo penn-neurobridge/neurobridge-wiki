@@ -1,17 +1,10 @@
 ---
 title: "Mxene EEG Processing & Upload"
-theme: "Electrophysiology"
-section: "Special Protocols"
 stage: "Data Standardization & Integration"
 roles: [data-rc, pipeline]
 scope: reference
 audit: merge
-kind: how-to
-status: migrated
 order: 1
-owner: ""
-last_reviewed: ""
-tags: ["Data Standardization & Integration", "Data research coordinator / data RA", "Pipeline & systems maintainer"]
 ---
 
 # Mxene EEG Processing & Upload

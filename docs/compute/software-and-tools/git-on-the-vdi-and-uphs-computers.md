@@ -1,16 +1,9 @@
 ---
 title: "Git on the VDI & UPHS Computers"
-theme: "Compute"
-section: "Software & Tools"
 stage: "Data Analytics"
 roles: [analyst, data-rc]
 scope: shared
-kind: how-to
-status: migrated
 order: 1
-owner: ""
-last_reviewed: ""
-tags: ["Data Analytics", "Trainee / analyst (postdoc, PhD, master's, undergraduate)", "Data research coordinator / data RA"]
 ---
 
 # Git on the VDI & UPHS Computers

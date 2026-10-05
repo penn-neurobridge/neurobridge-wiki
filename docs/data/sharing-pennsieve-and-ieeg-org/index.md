@@ -1,7 +1,5 @@
 ---
 title: "Sharing (Pennsieve & ieeg.org)"
-theme: "Data"
-kind: index
 ---
 
 # Sharing (Pennsieve & ieeg.org)

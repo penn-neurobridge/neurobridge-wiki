@@ -1,16 +1,9 @@
 ---
 title: "GUI/Docker Reconstruction Workflow"
-theme: "Imaging"
-section: "Electrode Reconstruction"
 stage: "Data Standardization & Integration"
 roles: [data-rc, analyst]
 scope: core
-kind: how-to
-status: migrated
 order: 2
-owner: ""
-last_reviewed: ""
-tags: ["Data Standardization & Integration", "Data research coordinator / data RA", "Trainee / analyst (postdoc, PhD, master's, undergraduate)"]
 ---
 
 # GUI/Docker Reconstruction Workflow

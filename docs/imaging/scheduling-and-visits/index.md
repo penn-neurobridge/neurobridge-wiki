@@ -1,7 +1,5 @@
 ---
 title: "Scheduling & Visits"
-theme: "Imaging"
-kind: index
 ---
 
 # Scheduling & Visits

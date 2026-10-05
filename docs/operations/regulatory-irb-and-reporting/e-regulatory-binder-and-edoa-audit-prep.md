@@ -1,16 +1,9 @@
 ---
 title: "e-Regulatory Binder & eDoA (Audit Prep)"
-theme: "Operations"
-section: "Regulatory, IRB & Reporting"
 stage: "Data Governance"
 roles: [crc, pi-manager]
 scope: shared
-kind: how-to
-status: migrated
 order: 5
-owner: ""
-last_reviewed: ""
-tags: ["Data Governance", "Clinical research coordinator / clinical RA", "PI / lab manager"]
 ---
 
 # e-Regulatory Binder & eDoA (Audit Prep)

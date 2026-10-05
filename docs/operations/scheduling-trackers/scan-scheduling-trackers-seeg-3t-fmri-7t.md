@@ -1,16 +1,9 @@
 ---
 title: "Scan Scheduling Trackers (sEEG, 3T/fMRI, 7T)"
-theme: "Operations"
-section: "Scheduling Trackers"
 stage: "Data Collection"
 roles: [crc]
 scope: clinical-coverage
-kind: how-to
-status: phi-stub
 order: 1
-owner: ""
-last_reviewed: ""
-tags: ["Data Collection", "Clinical research coordinator / clinical RA"]
 ---
 
 # Scan Scheduling Trackers (sEEG, 3T/fMRI, 7T)

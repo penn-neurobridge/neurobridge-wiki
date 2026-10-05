@@ -1,7 +1,5 @@
 ---
 title: "Exporting from Natus"
-theme: "Electrophysiology"
-kind: index
 ---
 
 # Exporting from Natus

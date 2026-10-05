@@ -1,16 +1,9 @@
 ---
 title: "Software Tools Index"
-theme: "Compute"
-section: "Software & Tools"
 stage: "Data Analytics"
 roles: [analyst, data-rc]
 scope: flagged
-kind: how-to
-status: migrated
 order: 4
-owner: ""
-last_reviewed: ""
-tags: ["Data Analytics", "Trainee / analyst (postdoc, PhD, master's, undergraduate)", "Data research coordinator / data RA"]
 ---
 
 # Software Tools Index

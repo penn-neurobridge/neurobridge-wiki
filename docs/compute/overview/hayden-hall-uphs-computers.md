@@ -1,17 +1,10 @@
 ---
 title: "Hayden Hall UPHS Computers"
-theme: "Compute"
-section: "Overview"
 stage: "Data Analytics"
 roles: [data-rc, analyst, pipeline]
 scope: shared
 audit: merge
-kind: how-to
-status: migrated
 order: 4
-owner: ""
-last_reviewed: ""
-tags: ["Data Analytics", "Data research coordinator / data RA", "Trainee / analyst (postdoc, PhD, master's, undergraduate)", "Pipeline & systems maintainer"]
 ---
 
 # Hayden Hall UPHS Computers

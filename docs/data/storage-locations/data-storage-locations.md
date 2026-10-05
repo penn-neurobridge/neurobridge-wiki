@@ -1,16 +1,9 @@
 ---
 title: "Data Storage Locations"
-theme: "Data"
-section: "Storage Locations"
 stage: "Data Governance"
 roles: [data-rc, analyst, pi-manager]
 scope: core
-kind: how-to
-status: migrated
 order: 1
-owner: ""
-last_reviewed: ""
-tags: ["Data Governance", "Data research coordinator / data RA", "Trainee / analyst (postdoc, PhD, master's, undergraduate)", "PI / lab manager"]
 ---
 
 # Data Storage Locations

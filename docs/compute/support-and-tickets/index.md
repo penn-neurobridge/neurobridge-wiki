@@ -1,7 +1,5 @@
 ---
 title: "Support & Tickets"
-theme: "Compute"
-kind: index
 ---
 
 # Support & Tickets

@@ -1,17 +1,10 @@
 ---
 title: "Closing an IRB Study"
-theme: "Operations"
-section: "Regulatory, IRB & Reporting"
 stage: "Data Governance"
 roles: [crc, pi-manager]
 scope: reference
 audit: retire
-kind: how-to
-status: migrated
 order: 3
-owner: ""
-last_reviewed: ""
-tags: ["Data Governance", "Clinical research coordinator / clinical RA", "PI / lab manager"]
 ---
 
 # Closing an IRB Study

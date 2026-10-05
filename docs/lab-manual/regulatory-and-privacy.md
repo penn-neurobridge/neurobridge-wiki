@@ -1,10 +1,6 @@
 ---
 title: "6. Regulatory and privacy essentials"
-kind: explanation
-status: draft
 order: 6
-owner: ""
-last_reviewed: ""
 ---
 
 # 6. Regulatory and privacy essentials

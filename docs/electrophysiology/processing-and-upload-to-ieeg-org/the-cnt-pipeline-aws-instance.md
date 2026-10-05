@@ -1,16 +1,9 @@
 ---
 title: "The cnt-pipeline AWS Instance"
-theme: "Electrophysiology"
-section: "Processing & Upload to ieeg.org"
 stage: "Data Standardization & Integration"
 roles: [data-rc, pipeline]
 scope: shared
-kind: how-to
-status: migrated
 order: 3
-owner: ""
-last_reviewed: ""
-tags: ["Data Standardization & Integration", "Data research coordinator / data RA", "Pipeline & systems maintainer"]
 ---
 
 # The cnt-pipeline AWS Instance

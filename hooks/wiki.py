@@ -1,12 +1,18 @@
 """MkDocs hooks for the NeuroBridge wiki.
 
-on_config      builds the navigation from the docs/ tree (no hand-maintained nav)
-on_post_build  writes map/graph.json (pages x theme/stage/roles) for the map page
-               and _reports/stale.json (pages past their review window)
+A page carries only what cannot be derived: title, stage, roles, scope, and
+optionally order (and audit while the 2026 audit is being worked through).
+Everything else comes from the folder it sits in or from git.
+
+on_config         builds the navigation from the docs/ tree (no hand-maintained nav)
+on_page_markdown  injects tags (stage + roles), the scope banner, and the landing-page counts
+on_post_build     writes map/graph.json (pages x theme/stage/roles/scope) for the map page
+                  and _reports/stale.json (every procedure's last change from git; stale = untouched for a year)
 
 Pure Python + PyYAML (already a MkDocs dependency); no extra plugins needed.
 """
-import os, re, json, datetime, yaml
+import os, re, json, datetime, subprocess, yaml
+from mkdocs.plugins import event_priority
 
 FM = re.compile(r"\A---\s*\n(.*?)\n---\s*\n", re.S)
 
@@ -27,9 +33,12 @@ def title_of(path, fallback):
     fm = front_matter(path)
     if fm.get("title"):
         return str(fm["title"])
-    for line in open(path, encoding="utf-8"):
-        if line.startswith("# "):
-            return line[2:].strip()
+    try:
+        for line in open(path, encoding="utf-8"):
+            if line.startswith("# "):
+                return line[2:].strip()
+    except OSError:
+        pass
     return fallback
 
 def sort_key(path):
@@ -41,14 +50,18 @@ def pages_in(dirpath, docs_dir):
     files.sort(key=lambda f: sort_key(os.path.join(dirpath, f)))
     return [{title_of(os.path.join(dirpath, f), f): os.path.relpath(os.path.join(dirpath, f), docs_dir)} for f in files]
 
+def section_order_hint(theme_index):
+    """The theme index lists its sections in a table; use that row order."""
+    hint = {}
+    if not os.path.exists(theme_index):
+        return hint
+    for i, m in enumerate(re.finditer(r"\]\(([a-z0-9\-]+)/index\.md\)", open(theme_index, encoding="utf-8").read())):
+        hint.setdefault(m.group(1), i)
+    return hint
+
 def theme_nav(theme_dir, docs_dir, title):
     items = [os.path.relpath(os.path.join(theme_dir, "index.md"), docs_dir)]
     sections = [d for d in sorted(os.listdir(theme_dir)) if os.path.isdir(os.path.join(theme_dir, d))]
-    def sec_key(d):
-        idx = os.path.join(theme_dir, d, "index.md")
-        fm = front_matter(idx) if os.path.exists(idx) else {}
-        return (int(fm.get("order", 9999)), d)
-    # section order: by the minimum `order` of the theme index table if present, else alphabetical
     order_hint = section_order_hint(os.path.join(theme_dir, "index.md"))
     sections.sort(key=lambda d: (order_hint.get(d, 9999), d))
     for d in sections:
@@ -58,15 +71,6 @@ def theme_nav(theme_dir, docs_dir, title):
         entries = ([os.path.relpath(idx, docs_dir)] if os.path.exists(idx) else []) + pages_in(sdir, docs_dir)
         items.append({stitle: entries})
     return {title: items}
-
-def section_order_hint(theme_index):
-    """The theme index lists its sections in a table; use that row order."""
-    hint = {}
-    if not os.path.exists(theme_index):
-        return hint
-    for i, m in enumerate(re.finditer(r"\]\(([a-z0-9\-]+)/index\.md\)", open(theme_index, encoding="utf-8").read())):
-        hint.setdefault(m.group(1), i)
-    return hint
 
 def on_config(config):
     docs = config["docs_dir"]
@@ -89,17 +93,43 @@ def on_config(config):
     config["nav"] = nav
     return config
 
-# ------------------------------------------------------------------ landing-page counts
-def _collect(docs):
+# ------------------------------------------------------------------ derived page facts
+def _theme_dirs(config):
+    return {t["dir"]: t["title"] for t in config["extra"]["wiki"]["themes"]}
+
+def _roles(config):
+    path = os.path.join(os.path.dirname(config["docs_dir"]), "roles.json")
+    return json.load(open(path)) if os.path.exists(path) else {}
+
+def _procedures(config):
+    """Every procedure page: a .md that is not an index, inside a theme folder, with a stage."""
+    docs = config["docs_dir"]
+    themes = _theme_dirs(config)
     nodes = []
-    for root, _, files in os.walk(docs):
-        for f in files:
-            if f.endswith(".md"):
-                fm = front_matter(os.path.join(root, f))
-                if fm.get("theme") and fm.get("stage") and fm.get("kind") != "index":
-                    nodes.append(fm)
+    for tdir, ttitle in themes.items():
+        root = os.path.join(docs, tdir)
+        if not os.path.isdir(root):
+            continue
+        for dirpath, _, files in os.walk(root):
+            for f in files:
+                if not f.endswith(".md") or f == "index.md":
+                    continue
+                p = os.path.join(dirpath, f)
+                fm = front_matter(p)
+                if not fm.get("stage"):
+                    continue
+                rel = os.path.relpath(p, docs)
+                sidx = os.path.join(dirpath, "index.md")
+                section = title_of(sidx, os.path.basename(dirpath)) if dirpath != root and os.path.exists(sidx) else ""
+                nodes.append({
+                    "id": rel, "title": str(fm.get("title") or title_of(p, f)),
+                    "url": re.sub(r"\.md$", "/", rel),
+                    "theme": ttitle, "section": section, "stage": str(fm["stage"]),
+                    "roles": list(fm.get("roles") or []), "scope": fm.get("scope", ""), "audit": fm.get("audit", ""),
+                })
     return nodes
 
+# ------------------------------------------------------------------ per-page markdown
 SCOPE_BANNERS = {
     "clinical-coverage": ("note", "Clinical coverage only",
         "This is participant-facing work done by the CNT clinical research coordinators. NeuroBridge members need it "
@@ -123,8 +153,15 @@ AUDIT_NOTE = {
 def _banner(kind, title, text):
     return f'!!! {kind} "{title}"\n    {text}\n\n'
 
+@event_priority(50)   # before the Material tags plugin reads page.meta["tags"]
 def on_page_markdown(markdown, page, config, files):
     meta = page.meta or {}
+
+    # tags = stage + role labels, so the Tags page needs no hand-written list
+    if meta.get("stage") and "tags" not in meta:
+        roles = _roles(config)
+        meta["tags"] = [str(meta["stage"])] + [roles[r][0] if r in roles else r for r in (meta.get("roles") or [])]
+
     scope = meta.get("scope")
     banners = ""
     if scope in SCOPE_BANNERS:
@@ -137,10 +174,11 @@ def on_page_markdown(markdown, page, config, files):
             markdown = lines[0] + "\n\n" + banners + (lines[1] if len(lines) > 1 else "")
         else:
             markdown = banners + markdown
+
     if page.file.src_path != "index.md" or "%%" not in markdown:
         return markdown
+    nodes = _procedures(config)
     docs = config["docs_dir"]
-    nodes = _collect(docs)
     manual = len([f for f in os.listdir(os.path.join(docs, "lab-manual")) if f.endswith(".md")]) if os.path.isdir(os.path.join(docs, "lab-manual")) else 0
     def repl(m):
         key = m.group(1)
@@ -152,50 +190,48 @@ def on_page_markdown(markdown, page, config, files):
     return re.sub(r"%%([^%]+)%%", repl, markdown)
 
 # ------------------------------------------------------------------ graph + reports
+def git_history(repo_root, docs_rel="docs"):
+    """{path relative to repo: (last_date, last_author, number_of_commits)} from git, or {} if no git."""
+    try:
+        out = subprocess.run(["git", "log", "--format=%x01%cs%x09%an", "--name-only", "--", docs_rel],
+                             cwd=repo_root, capture_output=True, text=True, check=True).stdout
+    except (subprocess.CalledProcessError, FileNotFoundError):
+        return {}
+    hist, date, author = {}, None, None
+    for line in out.splitlines():
+        if line.startswith("\x01"):
+            date, author = line[1:].split("\t", 1)
+        elif line.strip():
+            d = hist.setdefault(line.strip(), [date, author, 0])
+            d[2] += 1
+    return {k: tuple(v) for k, v in hist.items()}
+
 def on_post_build(config):
     docs = config["docs_dir"]
-    themes = config["extra"]["wiki"]["themes"]
-    theme_titles = [t["title"] for t in themes]
-    nodes = []
-    for root, _, files in os.walk(docs):
-        for f in files:
-            if not f.endswith(".md"):
-                continue
-            p = os.path.join(root, f)
-            fm = front_matter(p)
-            if fm.get("kind") in ("index",) or not fm.get("theme") or not fm.get("stage"):
-                continue
-            rel = os.path.relpath(p, docs)
-            url = re.sub(r"(index)?\.md$", "", rel)
-            if not url.endswith("/"):
-                url = url + "/"
-            nodes.append({
-                "id": rel, "title": str(fm.get("title") or title_of(p, f)), "url": url,
-                "theme": fm["theme"], "section": fm.get("section", ""), "stage": fm["stage"],
-                "roles": list(fm.get("roles") or []), "status": fm.get("status", ""),
-                "owner": fm.get("owner") or "", "last_reviewed": str(fm.get("last_reviewed") or ""),
-                "scope": fm.get("scope", ""), "audit": fm.get("audit", ""),
-            })
-    roles_path = os.path.join(os.path.dirname(docs), "roles.json")
-    roles = json.load(open(roles_path)) if os.path.exists(roles_path) else {}
+    repo = os.path.dirname(docs)
+    nodes = _procedures(config)
     scopes = {"core": "Core: our people do this", "shared": "Shared infrastructure", "reference": "Background reading",
               "clinical-coverage": "Clinical coverage only", "flagged": "Flagged: retire or merge"}
-    out = {"generated": datetime.date.today().isoformat(), "themes": theme_titles,
-           "stages": config["extra"]["wiki"]["stages"], "roles": roles, "scopes": scopes, "nodes": nodes}
+    out = {"generated": datetime.date.today().isoformat(), "themes": list(_theme_dirs(config).values()),
+           "stages": config["extra"]["wiki"]["stages"], "roles": _roles(config), "scopes": scopes, "nodes": nodes}
     os.makedirs(os.path.join(config["site_dir"], "map"), exist_ok=True)
     json.dump(out, open(os.path.join(config["site_dir"], "map", "graph.json"), "w"), indent=0)
 
-    # stale report: no last_reviewed, or older than 365 days
+    # review report, from git: every procedure with its last change; stale = untouched for a year
     today = datetime.date.today()
-    stale = []
+    hist = git_history(repo)
+    report = []
     for n in nodes:
-        lr = n["last_reviewed"]
+        rel = os.path.join(os.path.basename(docs), n["id"])
+        date, author, commits = hist.get(rel, (None, None, 0))
         try:
-            d = datetime.date.fromisoformat(lr) if lr else None
+            age = (today - datetime.date.fromisoformat(date)).days if date else None
         except ValueError:
-            d = None
-        if d is None or (today - d).days > 365:
-            stale.append({"page": n["id"], "title": n["title"], "last_reviewed": lr, "owner": n["owner"]})
+            age = None
+        report.append({"page": n["id"], "title": n["title"], "last_changed": date or "", "last_author": author or "",
+                       "commits": commits, "stale": age is None or age > 365})
+    report.sort(key=lambda r: r["last_changed"])
+    stale = [r for r in report if r["stale"]]
     os.makedirs(os.path.join(config["site_dir"], "_reports"), exist_ok=True)
-    json.dump({"generated": today.isoformat(), "count": len(stale), "pages": stale},
+    json.dump({"generated": today.isoformat(), "stale_count": len(stale), "pages": report},
               open(os.path.join(config["site_dir"], "_reports", "stale.json"), "w"), indent=1)

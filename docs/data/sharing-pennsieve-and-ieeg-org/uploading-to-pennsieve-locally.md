@@ -1,17 +1,10 @@
 ---
 title: "Uploading to Pennsieve Locally"
-theme: "Data"
-section: "Sharing (Pennsieve & ieeg.org)"
 stage: "Data Standardization & Integration"
 roles: [data-rc, analyst, collaborator]
 scope: core
 audit: merge
-kind: how-to
-status: migrated
 order: 2
-owner: ""
-last_reviewed: ""
-tags: ["Data Standardization & Integration", "Data research coordinator / data RA", "Trainee / analyst (postdoc, PhD, master's, undergraduate)", "External collaborator"]
 ---
 
 # Uploading to Pennsieve Locally

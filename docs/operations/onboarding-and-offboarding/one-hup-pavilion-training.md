@@ -1,17 +1,10 @@
 ---
 title: "One HUP Pavilion Training"
-theme: "Operations"
-section: "Onboarding & Offboarding"
 stage: "Data Governance"
 roles: [pi-manager, crc, data-rc]
 scope: clinical-coverage
 audit: merge
-kind: how-to
-status: migrated
 order: 3
-owner: ""
-last_reviewed: ""
-tags: ["Data Governance", "PI / lab manager", "Clinical research coordinator / clinical RA", "Data research coordinator / data RA"]
 ---
 
 # One HUP Pavilion Training

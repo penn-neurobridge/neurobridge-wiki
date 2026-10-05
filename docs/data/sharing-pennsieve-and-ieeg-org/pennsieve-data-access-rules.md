@@ -1,16 +1,9 @@
 ---
 title: "Pennsieve Data Access Rules"
-theme: "Data"
-section: "Sharing (Pennsieve & ieeg.org)"
 stage: "Data Standardization & Integration"
 roles: [pi-manager, data-rc, collaborator]
 scope: core
-kind: how-to
-status: migrated
 order: 1
-owner: ""
-last_reviewed: ""
-tags: ["Data Standardization & Integration", "PI / lab manager", "Data research coordinator / data RA", "External collaborator"]
 ---
 
 # Pennsieve Data Access Rules

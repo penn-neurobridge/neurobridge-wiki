@@ -1,17 +1,10 @@
 ---
 title: "De-Identifying EDF Headers"
-theme: "Data"
-section: "De-identification"
 stage: "Data Governance"
 roles: [data-rc, pipeline]
 scope: core
 audit: merge
-kind: how-to
-status: migrated
 order: 2
-owner: ""
-last_reviewed: ""
-tags: ["Data Governance", "Data research coordinator / data RA", "Pipeline & systems maintainer"]
 ---
 
 # De-Identifying EDF Headers

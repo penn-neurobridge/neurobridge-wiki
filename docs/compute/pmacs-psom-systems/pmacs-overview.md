@@ -1,16 +1,9 @@
 ---
 title: "PMACS Overview"
-theme: "Compute"
-section: "PMACS (PSOM) Systems"
 stage: "Data Analytics"
 roles: [analyst, pipeline, data-rc]
 scope: shared
-kind: how-to
-status: migrated
 order: 1
-owner: ""
-last_reviewed: ""
-tags: ["Data Analytics", "Trainee / analyst (postdoc, PhD, master's, undergraduate)", "Pipeline & systems maintainer", "Data research coordinator / data RA"]
 ---
 
 # PMACS Overview

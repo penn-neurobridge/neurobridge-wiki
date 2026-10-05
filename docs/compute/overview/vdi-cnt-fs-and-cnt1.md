@@ -1,16 +1,9 @@
 ---
 title: "VDI, cnt-fs and cnt1"
-theme: "Compute"
-section: "Overview"
 stage: "Data Analytics"
 roles: [data-rc, analyst, pipeline]
 scope: shared
-kind: how-to
-status: migrated
 order: 3
-owner: ""
-last_reviewed: ""
-tags: ["Data Analytics", "Data research coordinator / data RA", "Trainee / analyst (postdoc, PhD, master's, undergraduate)", "Pipeline & systems maintainer"]
 ---
 
 # VDI, cnt-fs and cnt1

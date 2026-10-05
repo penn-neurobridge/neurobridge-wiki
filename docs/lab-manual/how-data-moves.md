@@ -1,10 +1,6 @@
 ---
 title: "4. How data moves through the lab"
-kind: explanation
-status: current
 order: 4
-owner: ""
-last_reviewed: ""
 ---
 
 # 4. How data moves through the lab

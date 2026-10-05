@@ -1,16 +1,9 @@
 ---
 title: "Running the Test"
-theme: "Operations"
-section: "Postop Neuropsych Testing"
 stage: "Data Collection"
 roles: [crc]
 scope: clinical-coverage
-kind: how-to
-status: migrated
 order: 5
-owner: ""
-last_reviewed: ""
-tags: ["Data Collection", "Clinical research coordinator / clinical RA"]
 ---
 
 # Running the Test

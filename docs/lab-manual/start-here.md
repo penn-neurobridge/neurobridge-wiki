@@ -1,10 +1,6 @@
 ---
 title: "0. Start here"
-kind: explanation
-status: current
 order: 0
-owner: ""
-last_reviewed: "2026-10-05"
 ---
 
 # 0. Start here

@@ -1,7 +1,5 @@
 ---
 title: "Postop Neuropsych Testing"
-theme: "Operations"
-kind: index
 ---
 
 # Postop Neuropsych Testing

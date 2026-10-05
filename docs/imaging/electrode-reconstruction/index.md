@@ -1,7 +1,5 @@
 ---
 title: "Electrode Reconstruction"
-theme: "Imaging"
-kind: index
 ---
 
 # Electrode Reconstruction

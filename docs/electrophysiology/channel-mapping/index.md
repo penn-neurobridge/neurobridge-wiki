@@ -1,7 +1,5 @@
 ---
 title: "Channel Mapping"
-theme: "Electrophysiology"
-kind: index
 ---
 
 # Channel Mapping

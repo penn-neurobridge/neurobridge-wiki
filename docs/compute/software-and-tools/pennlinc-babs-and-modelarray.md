@@ -1,16 +1,9 @@
 ---
 title: "PennLINC BABS & ModelArray"
-theme: "Compute"
-section: "Software & Tools"
 stage: "Data Analytics"
 roles: [analyst, data-rc]
 scope: reference
-kind: how-to
-status: migrated
 order: 3
-owner: ""
-last_reviewed: ""
-tags: ["Data Analytics", "Trainee / analyst (postdoc, PhD, master's, undergraduate)", "Data research coordinator / data RA"]
 ---
 
 # PennLINC BABS & ModelArray
