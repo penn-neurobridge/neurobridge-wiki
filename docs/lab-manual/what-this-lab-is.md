@@ -1,16 +1,14 @@
 ---
-title: "1. What this lab is"
+title: 1. What this lab is
 kind: explanation
 status: draft
 order: 1
 owner: ""
-last_reviewed: ""
+last_reviewed: 2026-10-05
 ---
 
 # 1. What this lab is
 
-!!! warning "Draft"
-    This section still needs the PI's pass. Edit it directly; the structure is a proposal.
 
 ## Mission
 
@@ -36,13 +34,7 @@ The data comes from clinical partners. Each partnership brings its own patients,
 | **IBI / DBEI / CCEB** | The methods institutes (not data sources) | Compute allocations, biostatistics and informatics collaborators, training programs, seminars | Compute (PMACS), Operations › Onboarding |
 
 !!! note "Why the wiki looks epilepsy-heavy today"
-    The 150 procedures imported in October 2026 came from the CNT knowledge base, so the Electrophysiology, Imaging and REDCap themes describe epilepsy workflows. The structure is deliberately generic: a stroke MRI follows the same Imaging stages (book → scan → transfer → format → derive), and a TBI cohort enters through the same Data › Site intake protocol. As the stroke and TBI collaborations produce their own procedures, they are added to the same themes with a `program` tag rather than to a separate section.
-
-## Who's who
-
-- **PI** — Nishant Sinha.
-- **Collaborating PIs** — Erin Conrad and Kate Davis (Penn Epilepsy Center); Brian Litt (CNT); the Penn Stroke Center / LCNS / brainSTIM and CBIR investigators the lab works with. *(Add names as collaborations are formalised.)*
-- **Team** — research coordinators (data and clinical), research assistants, postdocs, PhD students, master's and undergraduate students, and a cloud-infrastructure project manager. Roles are described in [§2](roles-in-the-lab.md). *(Add a People table: name · role · program · start date.)*
+    The SOPs imported in October 2026 came from the CNT knowledge base, so the Electrophysiology, Imaging and REDCap themes describe epilepsy workflows. The structure is deliberately generic: a stroke MRI follows the same Imaging stages (book → scan → transfer → format → derive), and a TBI cohort enters through the same Data › Site intake protocol. As the stroke and TBI collaborations produce their own procedures, they are added to the same themes with a `program` tag rather than to a separate section.
 
 ## How we work
 
