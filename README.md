@@ -28,3 +28,7 @@ Dependencies are declared in `pyproject.toml` and pinned in `uv.lock`; `uv run m
 ## Rules
 
 No patient identifiers. No credentials. One procedure per page. See `docs/about/contributing.md`.
+
+## Audit
+
+`AUDIT.md` records the October 2026 page-by-page audit: a scope for every procedure (core, shared, clinical coverage, reference, retire), stale-risk and newcomer scores, the recommended action, and the questions only the lab can answer. Each page's `scope` and `audit` front-matter fields come from it and drive the banners on the site.

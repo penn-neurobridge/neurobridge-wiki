@@ -4,6 +4,7 @@ theme: "Operations"
 section: "Participant Reimbursement (Greenphire)"
 stage: "Data Collection"
 roles: [crc, pi-manager]
+scope: clinical-coverage
 kind: how-to
 status: migrated
 order: 7

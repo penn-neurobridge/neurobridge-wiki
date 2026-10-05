@@ -1,13 +1,13 @@
 ---
-title: "9. Glossary"
+title: "8. Glossary"
 kind: explanation
 status: current
-order: 9
+order: 8
 owner: ""
 last_reviewed: ""
 ---
 
-# 9. Glossary
+# 8. Glossary
 
 | Term | Meaning |
 |---|---|
@@ -27,7 +27,7 @@ last_reviewed: ""
 | Natus | The clinical EEG recording system; recordings are exported from it |
 | natusdir, mef | The exported Natus directory; the compressed format (MEF) produced by natus2mef for [ieeg.org](http://ieeg.org) |
 | RID / HUP-number | Research ID used in REDCap and internal study records / CNT subject number (HUPXXX) used in the data-sharing workflow. The CNT SOP specifies HUP numbers rather than RID numbers for shared outputs; follow its identifier mapping and de-identification steps in [Overview of CNT Systems](../compute/overview/overview-of-cnt-systems.md). |
-| BIDS | Brain Imaging Data Structure — a data organization standard. **Data Structure v1.0 (Data › Sites)** *(not yet in the wiki)* defines the curated layout for Dataset 49; pipeline-specific input and session names may differ and require an explicit mapping. |
+| BIDS | Brain Imaging Data Structure — a data organization standard. The lab's Data Structure v1.0 specification (being written into Data › Standards) defines the curated layout for Dataset 49; pipeline-specific input and session names may differ and require an explicit mapping. |
 | FAIR | Findable, Accessible, Interoperable, Reusable — the standard the lab's data is held to |
 | REDCap | The clinical research database; holds clinical variables and outcomes |
 | eDOA | Electronic Delegation of Authority log — who may do what on a protocol |

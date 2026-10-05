@@ -4,6 +4,7 @@ theme: "Compute"
 section: "SEAS (CETS) Servers"
 stage: "Data Analytics"
 roles: [analyst, pipeline]
+scope: core
 kind: how-to
 status: migrated
 order: 4

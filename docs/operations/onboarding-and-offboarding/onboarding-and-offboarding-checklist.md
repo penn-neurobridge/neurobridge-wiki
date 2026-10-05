@@ -4,6 +4,7 @@ theme: "Operations"
 section: "Onboarding & Offboarding"
 stage: "Data Governance"
 roles: [crc, data-rc, analyst, pipeline, pi-manager]
+scope: core
 kind: how-to
 status: migrated
 order: 1

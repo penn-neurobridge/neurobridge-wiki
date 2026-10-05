@@ -4,6 +4,7 @@ theme: "Operations"
 section: "Scheduling Trackers"
 stage: "Data Collection"
 roles: [crc]
+scope: clinical-coverage
 kind: how-to
 status: phi-stub
 order: 1

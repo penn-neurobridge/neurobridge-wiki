@@ -1,5 +1,5 @@
 ---
-title: "3. Your first two weeks"
+title: "3. Getting set up: accounts and access"
 kind: tutorial
 status: current
 order: 3
@@ -7,9 +7,9 @@ owner: ""
 last_reviewed: ""
 ---
 
-# 3. Your first two weeks
+# 3. Getting set up: accounts and access
 
-Work down this list in order — each item unlocks the next. Every link goes to the request procedure in Operations › Access & Accounts. Tick items off on your own copy of this page.
+Work down this list in order; each item unlocks the next. Every link goes to the request procedure. Most people finish it in two weeks; the hospital accounts take the longest, so request those first. Students and postdocs working only with de-identified data stop after the SEAS servers and GitHub.
 
 ## Before day one (HR and the data manager start these)
 
@@ -30,14 +30,14 @@ Work down this list in order — each item unlocks the next. Every link goes to 
 
 ## Week 2 — servers, data systems, tools
 
-- [ ] cnt1 and cnt-fs access confirmed — **Access CNT1 and CNT-fs** *(not yet in the wiki)*, then [VDI, cnt-fs and cnt1](../compute/overview/vdi-cnt-fs-and-cnt1.md)
+- [ ] cnt1 and cnt-fs access confirmed (the data research coordinator requests it; the procedure page is still to be written), then [VDI, cnt-fs and cnt1](../compute/overview/vdi-cnt-fs-and-cnt1.md)
 - [ ] SEAS servers — [Accessing Borel over SSH](../compute/seas-cets-servers/accessing-borel-over-ssh.md), [Mounting Leif over SMB](../compute/seas-cets-servers/mounting-leif-over-smb.md)
 - [ ] [Requesting a REDCap Account](../operations/access-and-accounts/requesting-a-redcap-account.md)
 - [ ] [Adding Users to the ieeg.org Portal](../operations/access-and-accounts/adding-users-to-the-ieeg-org-portal.md) — ask an existing user to add you
 - [ ] Pennsieve workspace access — [Pennsieve Data Access Rules](../data/sharing-pennsieve-and-ieeg-org/pennsieve-data-access-rules.md)
 - [ ] [Adding Staff to the Penn+Box CNT Administration Folder](../operations/access-and-accounts/adding-staff-to-the-penn-box-cnt-administration-folder.md)
 - [ ] GitHub: added to the penn-cnt organization — [Git on the VDI & UPHS Computers](../compute/software-and-tools/git-on-the-vdi-and-uphs-computers.md)
-- [ ] Read [Data Storage Locations](../data/storage-locations/data-storage-locations.md) and **Data Structure v1.0 (Data › Sites)** *(not yet in the wiki)* — the two pages that define your job
+- [ ] Read [Data Storage Locations](../data/storage-locations/data-storage-locations.md) and the Data Structure v1.0 specification (ask the data research coordinator for it until it is on the wiki); the two documents that define your job
 
 ## If you will cover clinical workflows
 
@@ -47,7 +47,7 @@ Work down this list in order — each item unlocks the next. Every link goes to 
 
 ## Meet
 
-- [ ] The PI — goals for your first six months (section 2)
+- [ ] The PI, about goals for your first six months ([Roles in the lab](roles-in-the-lab.md))
 - [ ] The data manager — who owns most of the access steps above
 - [ ] The regulatory coordinator — IRB protocols and the e-regulatory binder
 - [ ] Everyone on [Important Contacts & Emergency Numbers](../operations/contacts/important-contacts-and-emergency-numbers.md)

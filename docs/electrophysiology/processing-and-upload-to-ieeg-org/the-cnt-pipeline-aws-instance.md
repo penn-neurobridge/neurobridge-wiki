@@ -4,6 +4,7 @@ theme: "Electrophysiology"
 section: "Processing & Upload to ieeg.org"
 stage: "Data Standardization & Integration"
 roles: [data-rc, pipeline]
+scope: shared
 kind: how-to
 status: migrated
 order: 3

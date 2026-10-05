@@ -12,7 +12,7 @@ last_reviewed: ""
 !!! warning "Draft"
     This section still needs the PI's pass. Edit it directly; the structure is a proposal.
 
-Everyone in the lab touches the same data infrastructure, so the roles differ in **what they own**, not in which systems they may use. Each role below lists what you own, what success looks like, which wiki *reader roles* to follow (these drive the [Map](../map/index.md) and the [Tags](../tags.md) page), and your first-month checklist. The onboarding steps common to everyone are in [§3](first-two-weeks.md).
+Everyone in the lab touches the same data infrastructure, so the roles differ in **what they own**, not in which systems they may use. Each role below lists what you own, what success looks like, which wiki *reader roles* to follow (these drive the [Map](../map/index.md) and the [Tags](../tags.md) page), and your first-month checklist. The onboarding steps common to everyone are in [§3](getting-set-up.md).
 
 ## Research coordinator — data (informatics RC)
 
@@ -38,7 +38,7 @@ Everyone in the lab touches the same data infrastructure, so the roles differ in
 
 **Success.** You can run the pipelines you have been given end to end without supervision, you log what you did, and you flag anything that looks wrong rather than fixing it silently.
 
-**Reader roles:** `data-rc` for data RAs, `crc` for clinical RAs, `analyst` for anyone running analyses. **First month:** [§3](first-two-weeks.md) weeks 1–2, then shadow one full run of the pipeline you will own.
+**Reader roles:** `data-rc` for data RAs, `crc` for clinical RAs, `analyst` for anyone running analyses. **First month:** [§3](getting-set-up.md), then shadow one full run of the pipeline you will own.
 
 ## Postdoctoral researcher
 
@@ -80,4 +80,4 @@ Everyone in the lab touches the same data infrastructure, so the roles differ in
 
 ## Rhythm, for everyone
 
-Weekly lab meeting; the imaging and PIER meetings when you cover clinical work; the data-request queue for incoming asks. See [§8](rhythm-and-writing-sops.md).
+Weekly lab meeting; the imaging and PIER meetings when you cover clinical work; the data-request queue for incoming asks. See [§7](rhythm-and-writing-sops.md).

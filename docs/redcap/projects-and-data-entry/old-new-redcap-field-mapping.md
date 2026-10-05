@@ -4,6 +4,7 @@ theme: "REDCap & Clinical Metadata"
 section: "Projects & Data Entry"
 stage: "Data Standardization & Integration"
 roles: [crc, data-rc]
+scope: reference
 kind: how-to
 status: migrated
 order: 5

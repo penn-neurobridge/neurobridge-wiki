@@ -1,13 +1,13 @@
 ---
-title: "6. Sites, centers and collaborators"
+title: "5. Sites, centers and collaborators"
 kind: explanation
 status: draft
-order: 6
+order: 5
 owner: ""
 last_reviewed: ""
 ---
 
-# 6. Sites, centers and collaborators
+# 5. Sites, centers and collaborators
 
 !!! warning "Draft"
     This section still needs the PI's pass. Edit it directly; the structure is a proposal.
@@ -39,7 +39,7 @@ This is the two-year goal from the data-coordinator role made into a checklist. 
 1. **Agreement** — confirm whether the data needs a protocol, reliance agreement or DUA; record the decision and the document on the site's page.
 2. **Transfer channel** — agree the route (Pennsieve, Box, SFTP, drive) and who sends. Identified data may land only on approved PMACS systems (cnt1, cnt-fs, BSC). Use the agreed project destination and access controls.
 3. **Intake** — log the delivery: date, contents, counts, sender. Check against what was promised.
-4. **Conformance** — restructure to the lab's data structure specification (*Data Structure v1.0*, not yet in the wiki); record what could not be mapped.
+4. **Conformance** — restructure to the lab's data structure specification (Data Structure v1.0, being written into Data › Standards); record what could not be mapped.
 5. **De-identification** — run the Data › De-identification scripts; verify headers.
 6. **Registration** — add or update the site in the inventory; note derivatives available.
 7. **Feedback to the site** — what was missing (the current inventory already flags gaps such as missing outcomes or iEEG reconstruction).

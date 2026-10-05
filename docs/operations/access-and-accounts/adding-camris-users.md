@@ -4,6 +4,8 @@ theme: "Operations"
 section: "Access & Accounts"
 stage: "Data Governance"
 roles: [crc, data-rc, analyst, pipeline, pi-manager]
+scope: clinical-coverage
+audit: merge
 kind: how-to
 status: migrated
 order: 12

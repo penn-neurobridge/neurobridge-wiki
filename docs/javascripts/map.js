@@ -19,6 +19,8 @@
       stage: { label: "Stage", hubs: data.stages, of: n => [n.stage] },
       role:  { label: "Role",  hubs: Object.keys(data.roles), of: n => n.roles,
                name: k => (data.roles[k] ? data.roles[k][0] : k) },
+      scope: { label: "Scope", hubs: Object.keys(data.scopes || {}), of: n => [n.scope || "core"],
+               name: k => (data.scopes && data.scopes[k]) || k },
     };
     let view = (location.hash.replace("#", "") in views) ? location.hash.replace("#", "") : "theme";
     let query = "";
@@ -94,7 +96,7 @@
         .on("click", (e, d) => { location.href = root + d.url; })
         .on("mousemove", (e, d) => {
           tip.hidden = false;
-          tip.innerHTML = `<b>${d.title}</b><br>${d.theme} › ${d.section}<br><span>${d.stage}</span><br><span>${d.roles.map(r => (data.roles[r] || [r])[0]).join(" · ")}</span>`;
+          tip.innerHTML = `<b>${d.title}</b><br>${d.theme} › ${d.section}<br><span>${d.stage}</span><br><span>${d.roles.map(r => (data.roles[r] || [r])[0]).join(" · ")}</span>${d.scope ? `<br><span>${(data.scopes && data.scopes[d.scope]) || d.scope}</span>` : ""}`;
           const r = host.querySelector(".wm-canvas").getBoundingClientRect();
           tip.style.left = (e.clientX - r.left + 14) + "px"; tip.style.top = (e.clientY - r.top + 14) + "px";
         })

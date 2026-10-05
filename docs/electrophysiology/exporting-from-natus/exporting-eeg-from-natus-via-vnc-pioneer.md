@@ -4,6 +4,7 @@ theme: "Electrophysiology"
 section: "Exporting from Natus"
 stage: "Data Collection"
 roles: [data-rc, crc]
+scope: flagged
 kind: how-to
 status: migrated
 order: 2

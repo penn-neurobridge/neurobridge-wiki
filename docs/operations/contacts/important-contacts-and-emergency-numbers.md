@@ -4,6 +4,7 @@ theme: "Operations"
 section: "Contacts"
 stage: "Data Governance"
 roles: [crc, data-rc, analyst, pipeline, pi-manager, collaborator]
+scope: shared
 kind: how-to
 status: migrated
 order: 1

@@ -4,6 +4,8 @@ theme: "Operations"
 section: "Onboarding & Offboarding"
 stage: "Data Governance"
 roles: [pi-manager, crc, data-rc]
+scope: clinical-coverage
+audit: merge
 kind: how-to
 status: migrated
 order: 3

@@ -4,6 +4,7 @@ theme: "Compute"
 section: "Support & Tickets"
 stage: "Data Analytics"
 roles: [analyst, pipeline, data-rc]
+scope: core
 kind: how-to
 status: migrated
 order: 1

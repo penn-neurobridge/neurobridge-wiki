@@ -4,6 +4,7 @@ theme: "Compute"
 section: "Software & Tools"
 stage: "Data Analytics"
 roles: [analyst, data-rc]
+scope: reference
 kind: how-to
 status: migrated
 order: 3

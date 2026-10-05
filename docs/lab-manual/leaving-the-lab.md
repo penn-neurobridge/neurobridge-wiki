@@ -1,13 +1,13 @@
 ---
-title: "10. Leaving the lab"
+title: "9. Leaving the lab"
 kind: explanation
 status: draft
-order: 10
+order: 9
 owner: ""
 last_reviewed: ""
 ---
 
-# 10. Leaving the lab
+# 9. Leaving the lab
 
 !!! warning "Draft"
     This section still needs the PI's pass. Edit it directly; the structure is a proposal.

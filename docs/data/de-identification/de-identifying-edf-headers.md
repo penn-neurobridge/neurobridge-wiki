@@ -4,6 +4,8 @@ theme: "Data"
 section: "De-identification"
 stage: "Data Governance"
 roles: [data-rc, pipeline]
+scope: core
+audit: merge
 kind: how-to
 status: migrated
 order: 2

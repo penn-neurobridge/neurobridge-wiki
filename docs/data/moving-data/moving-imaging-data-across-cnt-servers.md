@@ -4,6 +4,7 @@ theme: "Data"
 section: "Moving Data"
 stage: "Data Standardization & Integration"
 roles: [data-rc, analyst, pipeline]
+scope: flagged
 kind: how-to
 status: migrated
 order: 2

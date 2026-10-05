@@ -4,6 +4,7 @@ theme: "Electrophysiology"
 section: "Special Protocols"
 stage: "Data Standardization & Integration"
 roles: [data-rc, pipeline]
+scope: clinical-coverage
 kind: how-to
 status: migrated
 order: 3

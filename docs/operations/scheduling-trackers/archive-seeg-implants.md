@@ -4,6 +4,7 @@ theme: "Operations"
 section: "Scheduling Trackers"
 stage: "Data Collection"
 roles: [crc]
+scope: flagged
 kind: how-to
 status: phi-stub
 order: 4

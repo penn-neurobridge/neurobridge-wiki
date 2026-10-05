@@ -4,6 +4,7 @@ theme: "Electrophysiology"
 section: "Processing & Upload to ieeg.org"
 stage: "Data Governance"
 roles: [data-rc, pipeline]
+scope: core
 kind: how-to
 status: migrated
 order: 8

@@ -4,6 +4,7 @@ theme: "Imaging"
 section: "Scheduling & Visits"
 stage: "Data Collection"
 roles: [crc]
+scope: clinical-coverage
 kind: how-to
 status: migrated
 order: 1

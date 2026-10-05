@@ -4,6 +4,7 @@ theme: "Data"
 section: "Archiving (Azure)"
 stage: "Data Governance"
 roles: [pipeline, data-rc]
+scope: flagged
 kind: how-to
 status: migrated
 order: 3

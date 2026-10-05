@@ -4,6 +4,7 @@ theme: "Imaging"
 section: "Post-scan Transfer"
 stage: "Data Collection"
 roles: [crc, data-rc]
+scope: shared
 kind: how-to
 status: migrated
 order: 1

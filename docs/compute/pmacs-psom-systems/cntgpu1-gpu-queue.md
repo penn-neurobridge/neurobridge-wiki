@@ -4,6 +4,8 @@ theme: "Compute"
 section: "PMACS (PSOM) Systems"
 stage: "Data Analytics"
 roles: [analyst, pipeline, data-rc]
+scope: shared
+audit: merge
 kind: how-to
 status: migrated
 order: 4

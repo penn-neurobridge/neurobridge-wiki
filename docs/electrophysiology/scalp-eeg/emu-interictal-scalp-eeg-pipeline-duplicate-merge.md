@@ -4,6 +4,7 @@ theme: "Electrophysiology"
 section: "Scalp EEG"
 stage: "Data Analytics"
 roles: [analyst, pipeline]
+scope: flagged
 kind: how-to
 status: migrated
 order: 2

@@ -4,6 +4,7 @@ theme: "Data"
 section: "Storage Locations"
 stage: "Data Governance"
 roles: [data-rc, analyst, pi-manager]
+scope: core
 kind: how-to
 status: migrated
 order: 1

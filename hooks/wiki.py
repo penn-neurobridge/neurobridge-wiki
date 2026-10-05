@@ -100,7 +100,43 @@ def _collect(docs):
                     nodes.append(fm)
     return nodes
 
+SCOPE_BANNERS = {
+    "clinical-coverage": ("note", "Clinical coverage only",
+        "This is participant-facing work done by the CNT clinical research coordinators. NeuroBridge members need it "
+        "only when covering a clinical duty. Trainees and analysts can skip it."),
+    "shared": ("info", "Shared infrastructure",
+        "This describes a CNT or Penn system the lab depends on but does not run. Read it to understand the pipeline; "
+        "ask the data research coordinator before acting on it."),
+    "reference": ("abstract", "Background reading",
+        "Read once for orientation. It is not a procedure you will be asked to perform."),
+    "flagged": ("warning", "Flagged in the audit",
+        "The October 2026 audit recommends retiring or merging this page (see `AUDIT.md` in the repository). "
+        "Treat its content as unconfirmed until the lab decides."),
+}
+AUDIT_NOTE = {
+    "merge": ("warning", "Flagged for merging",
+        "The October 2026 audit recommends merging this page with a sibling (see `AUDIT.md`). The content stands until then."),
+    "retire": ("warning", "Flagged for retirement",
+        "The October 2026 audit recommends retiring this page (see `AUDIT.md`). Treat its content as unconfirmed."),
+}
+
+def _banner(kind, title, text):
+    return f'!!! {kind} "{title}"\n    {text}\n\n'
+
 def on_page_markdown(markdown, page, config, files):
+    meta = page.meta or {}
+    scope = meta.get("scope")
+    banners = ""
+    if scope in SCOPE_BANNERS:
+        banners += _banner(*SCOPE_BANNERS[scope])
+    if scope != "flagged" and meta.get("audit") in AUDIT_NOTE:
+        banners += _banner(*AUDIT_NOTE[meta["audit"]])
+    if banners:
+        lines = markdown.split("\n", 1)
+        if lines[0].startswith("# "):
+            markdown = lines[0] + "\n\n" + banners + (lines[1] if len(lines) > 1 else "")
+        else:
+            markdown = banners + markdown
     if page.file.src_path != "index.md" or "%%" not in markdown:
         return markdown
     docs = config["docs_dir"]
@@ -138,11 +174,14 @@ def on_post_build(config):
                 "theme": fm["theme"], "section": fm.get("section", ""), "stage": fm["stage"],
                 "roles": list(fm.get("roles") or []), "status": fm.get("status", ""),
                 "owner": fm.get("owner") or "", "last_reviewed": str(fm.get("last_reviewed") or ""),
+                "scope": fm.get("scope", ""), "audit": fm.get("audit", ""),
             })
     roles_path = os.path.join(os.path.dirname(docs), "roles.json")
     roles = json.load(open(roles_path)) if os.path.exists(roles_path) else {}
+    scopes = {"core": "Core: our people do this", "shared": "Shared infrastructure", "reference": "Background reading",
+              "clinical-coverage": "Clinical coverage only", "flagged": "Flagged: retire or merge"}
     out = {"generated": datetime.date.today().isoformat(), "themes": theme_titles,
-           "stages": config["extra"]["wiki"]["stages"], "roles": roles, "nodes": nodes}
+           "stages": config["extra"]["wiki"]["stages"], "roles": roles, "scopes": scopes, "nodes": nodes}
     os.makedirs(os.path.join(config["site_dir"], "map"), exist_ok=True)
     json.dump(out, open(os.path.join(config["site_dir"], "map", "graph.json"), "w"), indent=0)
 

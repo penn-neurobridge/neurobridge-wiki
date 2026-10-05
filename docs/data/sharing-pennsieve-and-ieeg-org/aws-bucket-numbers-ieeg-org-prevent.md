@@ -4,6 +4,7 @@ theme: "Data"
 section: "Sharing (Pennsieve & ieeg.org)"
 stage: "Data Standardization & Integration"
 roles: [data-rc, analyst, collaborator]
+scope: flagged
 kind: how-to
 status: migrated
 order: 5

@@ -4,6 +4,7 @@ theme: "Electrophysiology"
 section: "Archiving on ieeg.org"
 stage: "Data Governance"
 roles: [pipeline]
+scope: core
 kind: how-to
 status: migrated
 order: 2

@@ -4,6 +4,7 @@ theme: "Imaging"
 section: "Electrode Reconstruction"
 stage: "Data Standardization & Integration"
 roles: [data-rc, analyst]
+scope: core
 kind: how-to
 status: migrated
 order: 2

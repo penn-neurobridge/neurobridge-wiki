@@ -4,6 +4,8 @@ theme: "Electrophysiology"
 section: "Special Protocols"
 stage: "Data Standardization & Integration"
 roles: [data-rc, pipeline]
+scope: reference
+audit: merge
 kind: how-to
 status: migrated
 order: 1

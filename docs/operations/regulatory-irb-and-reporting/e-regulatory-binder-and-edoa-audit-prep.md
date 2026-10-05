@@ -4,6 +4,7 @@ theme: "Operations"
 section: "Regulatory, IRB & Reporting"
 stage: "Data Governance"
 roles: [crc, pi-manager]
+scope: shared
 kind: how-to
 status: migrated
 order: 5

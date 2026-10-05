@@ -4,6 +4,8 @@ theme: "Imaging"
 section: "At the Scanner"
 stage: "Data Collection"
 roles: [crc]
+scope: clinical-coverage
+audit: retire
 kind: how-to
 status: migrated
 order: 1

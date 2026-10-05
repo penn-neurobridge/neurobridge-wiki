@@ -1,13 +1,13 @@
 ---
-title: "7. Regulatory and privacy essentials"
+title: "6. Regulatory and privacy essentials"
 kind: explanation
 status: draft
-order: 7
+order: 6
 owner: ""
 last_reviewed: ""
 ---
 
-# 7. Regulatory and privacy essentials
+# 6. Regulatory and privacy essentials
 
 !!! warning "Draft"
     This section still needs the PI's pass. Edit it directly; the structure is a proposal.

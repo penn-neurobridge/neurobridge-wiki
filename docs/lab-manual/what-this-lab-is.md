@@ -31,8 +31,8 @@ The data comes from clinical partners. Each partnership brings its own patients,
 | Partner | What they are | What the lab does with them | Where their procedures live |
 |---|---|---|---|
 | **Center for Neuroengineering & Therapeutics (CNT)** and the **Penn Epilepsy Center** | The epilepsy groups of Erin Conrad, Kate Davis and Brian Litt; the lab has a touchdown space at CNT and shares its servers, data and coordinators | Intracranial and scalp EEG, MRI/CT, electrode reconstruction, surgical outcomes; most of the data pipelines the lab runs started here | Electrophysiology, Imaging, REDCap, Compute (cnt1/cnt-fs), Operations |
-| **Penn Stroke Center**, with the **Laboratory for Cognition and Neural Stimulation (LCNS)** and the **Penn Brain Science, Translation, Innovation and Modulation Center (brainSTIM)** | Roy Hamilton's neuromodulation and cognitive-neurology groups and the clinical stroke service | Stroke and aphasia cohorts, lesion imaging, neuromodulation trial data, outcome scales | *Procedures to be added — see §6* |
-| **Center for Brain Injury and Repair (CBIR)** | Penn's traumatic-brain-injury research center | TBI cohorts, imaging and clinical trajectories | *Procedures to be added — see §6* |
+| **Penn Stroke Center**, with the **Laboratory for Cognition and Neural Stimulation (LCNS)** and the **Penn Brain Science, Translation, Innovation and Modulation Center (brainSTIM)** | Roy Hamilton's neuromodulation and cognitive-neurology groups and the clinical stroke service | Stroke and aphasia cohorts, lesion imaging, neuromodulation trial data, outcome scales | *Procedures to be added — see §5* |
+| **Center for Brain Injury and Repair (CBIR)** | Penn's traumatic-brain-injury research center | TBI cohorts, imaging and clinical trajectories | *Procedures to be added — see §5* |
 | **IBI / DBEI / CCEB** | The methods institutes (not data sources) | Compute allocations, biostatistics and informatics collaborators, training programs, seminars | Compute (PMACS), Operations › Onboarding |
 
 !!! note "Why the wiki looks epilepsy-heavy today"

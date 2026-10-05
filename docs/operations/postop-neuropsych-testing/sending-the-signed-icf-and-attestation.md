@@ -4,6 +4,8 @@ theme: "Operations"
 section: "Postop Neuropsych Testing"
 stage: "Data Collection"
 roles: [crc]
+scope: clinical-coverage
+audit: merge
 kind: how-to
 status: migrated
 order: 3

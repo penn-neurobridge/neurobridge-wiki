@@ -4,6 +4,7 @@ theme: "REDCap & Clinical Metadata"
 section: "Projects & Data Entry"
 stage: "Data Collection"
 roles: [crc, data-rc]
+scope: clinical-coverage
 kind: how-to
 status: migrated
 order: 4

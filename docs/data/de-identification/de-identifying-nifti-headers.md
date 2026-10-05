@@ -4,6 +4,7 @@ theme: "Data"
 section: "De-identification"
 stage: "Data Governance"
 roles: [data-rc, pipeline]
+scope: core
 kind: how-to
 status: migrated
 order: 3

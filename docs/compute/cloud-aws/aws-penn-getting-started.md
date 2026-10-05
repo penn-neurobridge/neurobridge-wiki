@@ -4,6 +4,7 @@ theme: "Compute"
 section: "Cloud (AWS)"
 stage: "Data Analytics"
 roles: [pipeline]
+scope: reference
 kind: how-to
 status: migrated
 order: 1

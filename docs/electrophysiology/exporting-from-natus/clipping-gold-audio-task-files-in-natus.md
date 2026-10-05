@@ -4,6 +4,7 @@ theme: "Electrophysiology"
 section: "Exporting from Natus"
 stage: "Data Collection"
 roles: [data-rc, crc]
+scope: clinical-coverage
 kind: how-to
 status: migrated
 order: 3

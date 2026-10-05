@@ -4,6 +4,7 @@ theme: "Electrophysiology"
 section: "EMU Acquisition"
 stage: "Data Collection"
 roles: [crc]
+scope: clinical-coverage
 kind: how-to
 status: migrated
 order: 2

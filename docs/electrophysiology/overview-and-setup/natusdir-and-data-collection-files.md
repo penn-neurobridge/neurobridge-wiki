@@ -4,6 +4,7 @@ theme: "Electrophysiology"
 section: "Overview & Setup"
 stage: "Data Collection"
 roles: [data-rc, pipeline]
+scope: core
 kind: how-to
 status: migrated
 order: 4

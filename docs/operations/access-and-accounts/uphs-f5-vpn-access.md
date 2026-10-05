@@ -4,6 +4,7 @@ theme: "Operations"
 section: "Access & Accounts"
 stage: "Data Governance"
 roles: [crc, data-rc, analyst, pipeline, pi-manager]
+scope: shared
 kind: how-to
 status: migrated
 order: 2

@@ -4,6 +4,7 @@ theme: "Electrophysiology"
 section: "Channel Mapping"
 stage: "Data Standardization & Integration"
 roles: [data-rc, pipeline]
+scope: flagged
 kind: how-to
 status: migrated
 order: 2

@@ -4,6 +4,7 @@ theme: "Compute"
 section: "Overview"
 stage: "Data Analytics"
 roles: [data-rc, analyst, pipeline]
+scope: shared
 kind: how-to
 status: migrated
 order: 3

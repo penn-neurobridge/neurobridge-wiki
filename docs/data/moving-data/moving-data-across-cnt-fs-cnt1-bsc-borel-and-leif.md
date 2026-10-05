@@ -4,6 +4,8 @@ theme: "Data"
 section: "Moving Data"
 stage: "Data Standardization & Integration"
 roles: [data-rc, analyst, pipeline]
+scope: core
+audit: merge
 kind: how-to
 status: migrated
 order: 1

@@ -4,6 +4,7 @@ theme: "Operations"
 section: "Consenting"
 stage: "Data Collection"
 roles: [crc]
+scope: clinical-coverage
 kind: how-to
 status: migrated
 order: 6

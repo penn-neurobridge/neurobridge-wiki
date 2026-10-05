@@ -4,6 +4,7 @@ theme: "Operations"
 section: "Regulatory, IRB & Reporting"
 stage: "Data Governance"
 roles: [crc, pi-manager]
+scope: clinical-coverage
 kind: how-to
 status: migrated
 order: 4

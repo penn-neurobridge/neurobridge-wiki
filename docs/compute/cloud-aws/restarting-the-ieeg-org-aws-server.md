@@ -4,6 +4,7 @@ theme: "Compute"
 section: "Cloud (AWS)"
 stage: "Data Standardization & Integration"
 roles: [pipeline]
+scope: shared
 kind: how-to
 status: migrated
 order: 2

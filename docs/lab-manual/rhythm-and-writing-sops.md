@@ -1,13 +1,13 @@
 ---
-title: "8. Rhythm, communication and writing SOPs"
+title: "7. Rhythm, communication and writing SOPs"
 kind: explanation
 status: draft
-order: 8
+order: 7
 owner: ""
 last_reviewed: ""
 ---
 
-# 8. Rhythm, communication and writing SOPs
+# 7. Rhythm, communication and writing SOPs
 
 !!! warning "Draft"
     This section still needs the PI's pass. Edit it directly; the structure is a proposal.
@@ -16,12 +16,12 @@ last_reviewed: ""
 
 ## Meetings
 
-- **Lab meeting** — weekly; notes in **Lab Meetings** *(not yet in the wiki)*.
+- **Lab meeting**: weekly; notes are kept in the lab's project workspace.
 - **Imaging meeting** and **PIER meeting** — the CNT clinical-research meetings; join when covering clinical workflows. Confirm current meeting participation, days and times before adding them here.
 
 ## Channels
 
-- **Slack** — day-to-day; the channel roster is still a draft in **Slack Channels** *(not yet in the wiki)*.
+- **Slack**: day to day. The channel list is pinned in the general channel.
 - **Data-request queue and CRC trackers** — the ticket queues (data science, data pull, new-data requests) and the scheduling trackers live in a PHI-approved tracker; ask the lead CRC for access.
 - **This wiki** — procedures and this manual. **Project workspace** — projects, meeting notes, people pages (ask the PI).
 - **GitHub (penn-cnt)** — code.
@@ -34,7 +34,7 @@ last_reviewed: ""
 
 ## How to write a new SOP
 
-Use the house template, already in use on **Access CNT1 and CNT-fs** *(not yet in the wiki)*:
+Use the house template:
 1. **Purpose** — one sentence.
 2. **Scope** — who this applies to.
 3. **Prerequisites** — accounts, access, tools.

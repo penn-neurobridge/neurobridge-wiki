@@ -4,6 +4,7 @@ theme: "REDCap & Clinical Metadata"
 section: "Clinical Data Pulls (EHR \u2192 REDCap)"
 stage: "Data Collection"
 roles: [data-rc]
+scope: core
 kind: how-to
 status: migrated
 order: 1
