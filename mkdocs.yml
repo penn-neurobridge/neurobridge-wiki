@@ -1,6 +1,6 @@
 site_name: NeuroBridge Lab Wiki
 site_description: How the Penn NeuroBridge Lab / CNT handles data, compute, imaging, electrophysiology, REDCap and operations.
-site_url: ""            # set when the site is hosted (e.g. https://<org>.github.io/neurobridge-wiki/)
+site_url: https://manual.neurobridge.link/
 repo_url: https://github.com/penn-neurobridge/neurobridge-wiki
 repo_name: penn-neurobridge/neurobridge-wiki
 edit_uri: edit/main/docs/

@@ -19,7 +19,7 @@ variable "github_branch" {
 variable "create_github_oidc_provider" {
   description = "Create the GitHub OIDC identity provider. Set false if the AWS account already has one (token.actions.githubusercontent.com)."
   type        = bool
-  default     = true
+  default     = false
 }
 
 variable "domain_name" {
